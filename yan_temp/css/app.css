@@ -83,7 +83,7 @@ DISPLAY
 
 .slide
 {
-  background-size: cover;
+  background-size: cover !important;
   min-height: 100vh;
 }
 
