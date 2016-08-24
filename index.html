@@ -1,70 +1,25 @@
 ---
 layout: form
-title: "Formulaire"
-source: "Formulaire de test"
+title: "On se dit tout"
+source: "ESF - On se dit tout"
 champs :
- - type: champ_libre_court
-   nom: "email"
-   actif: true
-   requis: true
-   texte: "Veuillez entrer votre email (Obligatoire)"
-   message_erreur: "Email invalide"
-   placeholder: "Email *"
-   controle: email
-   reponses:
-    - valeur:
- - type: champ_libre_court
-   nom: "email-non-requis"
-   actif: true
-   requis: false
-   texte: "Veuillez entrer votre email"
-   message_erreur: "Email invalide"
-   placeholder: "Email"
-   controle: email
-   reponses:
-    - valeur:
- - type: champ_libre_court
-   nom: "phone"
-   actif: true
-   requis: true
-   texte: "Veuillez entrer votre numéro de téléphone (Obligatoire)"
-   message_erreur: "Numéro de téléphone invalide"
-   placeholder: "Téléphone *"
-   controle: telephone
-   reponses:
-    - valeur:
- - type: champ_libre_court
-   nom: "phone-non-requis"
-   actif: true
-   requis: false
-   texte: "Veuillez entrer votre numéro de téléphone"
-   message_erreur: "Numéro de téléphone invalide"
-   placeholder: "Téléphone"
-   controle: telephone
-   reponses:
-    - valeur:
  - type: choix_unique
-   nom: "optin"
+   nom: "rencontre"
    actif: true
    requis: true
-   texte: "Optin (Obligatoire) :"
-   message_erreur: "Vous devez faire un choix"
+   texte: "1. Comment nous sommes-nous rencontrés ?"
+   message_erreur: "Veuillez faire un choix"
    placeholder:
    controle:
    reponses:
-    - valeur: Oui
-    - valeur: Non
- - type: choix_unique
-   nom: "optin-non-requis"
-   actif: true
-   requis: false
-   texte: "Optin :"
-   message_erreur: "Vous devez faire un choix"
-   placeholder:
-   controle:
-   reponses:
-    - valeur: Oui
-    - valeur: Non
+    - valeur: J’ai découvert ESF grâce à ma famille, mes amis
+    - valeur: J’ai découvert ESF sur internet, en faisant des recherches
+    - valeur: J'ai offert ou reçu une carte cadeaux
+    - valeur: J'ai signé une pétition
+    - valeur: J’ai découvert ESF sur les réseaux sociaux
+    - valeur: J’ai reçu un courrier de la part d’ESF
+    - valeur: J’ai découvert ESF lors d’un événement public près de chez moi
+
 bouton_de_soumission: "Envoyer"
 page_de_remerciement: "https://google.com"
 
@@ -79,7 +34,7 @@ _comments:
 
 <div class="row">
   <div class="large-12 columns">
-    <h1>adfinitas.cx - Formulaire</h1>
+    <h1>Aidez-nous à mieux vous connaître !</h1>
   </div>
 </div>
 
