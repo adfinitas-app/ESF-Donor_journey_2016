@@ -1,0 +1,184 @@
+/*--
+TEXT
+---*/
+@font-face{font-family:tk-nimbus-sans-n4;src:url(https://fonts.typekit.net/af/911c19/00000000000000000001518d/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4) format("woff2");font-weight:400;font-style:normal;}
+@font-face{font-family:tk-nimbus-sans-i4;src:url(https://fonts.typekit.net/af/ffdb5a/00000000000000000001011f/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4) format("woff2");font-weight:400;font-style:italic;}
+@font-face{font-family:tk-nimbus-sans-n7;src:url(https://fonts.typekit.net/af/3c477d/000000000000000000012544/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7) format("woff2");font-weight:700;font-style:normal;}
+@font-face{font-family:tk-nimbus-sans-i7;src:url(https://fonts.typekit.net/af/c34db9/000000000000000000010121/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7) format("woff2");font-weight:700;font-style:italic;}
+@font-face{font-family:tk-nimbus-sans-condensed-n4;src:url(https://fonts.typekit.net/af/c68388/000000000000000000010124/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4) format("woff2");font-weight:400;font-style:normal;}
+@font-face{font-family:tk-nimbus-sans-condensed-n7;src:url(https://fonts.typekit.net/af/5291f1/000000000000000000010125/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7) format("woff2");font-weight:700;font-style:normal;}
+
+.text_title
+{
+  font-family: 'Slabo 13px', serif;
+  color : white;
+  font-size: 2.5em;
+  line-height: 1em;
+  margin-top: 30px;
+}
+
+.text_small
+{
+ font-family: 'tk-nimbus-sans-condensed-n4', serif;
+ color : white;
+ font-size: 1.2em; 
+}
+
+.text_bold
+{
+ font-family: 'tk-nimbus-sans-condensed-n4', serif;
+ color : white;
+ font-size: 1.2em;
+ font-weight: bold;
+ line-height: 0;
+}
+
+.text_input {
+  background-color: #f6f0e7;
+  border-radius: 7px;
+  font-family: 'tk-nimbus-sans-condensed-n4', serif;
+  font-size: 0.9em;
+  padding-left: 0.9em;
+  box-shadow: none;
+  border: none;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  outline: none;
+  max-width: 600px;
+  padding-right: 20px;
+  flex:1;
+}
+
+.text_input:focus {
+  outline-color: transparent;
+  outline-style: none;
+  box-shadow: none;
+  border: none;
+}
+
+.text_answer
+{
+  flex: 1;
+}
+/*--
+DISPLAY
+---*/
+
+.fullWidth {
+ width: 100%;
+ margin-left: auto;
+ margin-right: auto;
+ max-width: 100%;
+}
+
+.disable_highlight {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.slide
+{
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.img_top,
+.img_top_lright
+{
+  height: 50px;
+  margin-top: 30px;
+}
+
+.img_top_lright
+{
+  float: left;
+}
+
+.answer_container
+{
+  display: flex;
+  font-family: 'tk-nimbus-sans-condensed-n4', serif;
+  color : white;
+  font-size: 1.5em; 
+}
+
+.answer_check
+{
+  float: right;
+  flex:1;
+}
+
+.next_container
+{
+  margin
+  margin-bottom: 10px;
+}
+
+[type="radio"] {
+  display: none;
+  border: 0; 
+  overflow: hidden; 
+}
+
+[type="radio"] + span::before {
+  content: url('../img/unchecked.png');
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.3em;
+  margin-right: 1em;
+  transition: 0.5s ease all;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+[type="radio"]:checked + span::before {
+  content: url('../img/checked.png');
+}
+
+[type="radio"]:focus + span::after {
+  content: url('');
+  font-size: 1.5em;
+  line-height: 1;
+  vertical-align: -0.125em;
+}
+
+[type="checkbox"] {
+  display: none;
+  border: 0; 
+  overflow: hidden; 
+}
+
+[type="checkbox"] + span::before {
+  content: url('../img/arrow_unchecked.png');
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.1em;
+  margin-right: 1em;
+  transition: 0.5s ease all;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+[type="checkbox"]:checked + span::before {
+  content: url('../img/arrow_checked.png');
+}
+
+[type="checkbox"]:focus + span::after {
+  content: url('');
+  font-size: 1.5em;
+  line-height: 1;
+  vertical-align: -0.125em;
+}
