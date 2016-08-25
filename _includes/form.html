@@ -1,9 +1,18 @@
-<form class="adfinitas-cx" novalidate data-source="{{ page.source }}" data-success="{{ page.page_de_remerciement }}">
+<form class="adfinitas-cx" novalidate data-source="{{ page.source }}" data-success="{{ page.page_de_remerciement_path }}">
 
   {% assign inputId=0 %}
+  {% assign lineId=0 %}
   {% for champ in page.champs %}
     {% if champ.actif == true %}
-      <div class="row field-row">
+    <div class="input-container"
+	{% if champ.image_de_fond != nill and champ.image_de_fond != empty %}
+	style="background-image: url('{{ champ.image_de_fond }}')"
+	{% endif %}
+      >
+      <div class="row field-row"
+	   id="slide-{{ lineId }}"
+	   {% assign lineId=lineId | plus:1 %}
+	>
         <div class="large-12 columns">
         {% case champ.type %}
         {% when 'champ_libre_court' %}
@@ -29,6 +38,10 @@
 		 {% endif %}
                  placeholder="{{ champ.placeholder }}"
 		 name="{{ champ.nom }}"
+		 {% if champ.propriété_visiteur %}
+		 {% assign inputClasses = inputClasses
+			   | push: 'visitor_property' %}
+   		 {% endif %}
                  {% if champ.requis == true %}
 		 required
 		 {% endif %}
@@ -45,18 +58,40 @@
 	    <p class="texte-choix_multiple">{{ champ.texte }}</p>
 	  {% endif %}
 	  {% for reponse in champ.reponses %}
-	    <input class="input-choix_multiple" type="radio" id="input-{{ inputId }}"
+	    <input type="radio" id="input-{{ inputId }}"
 	           value="{{ reponse.valeur}}"
 	           name="{{ champ.nom }}"
                    {% if champ.requis == true %}
 	           required
 	           {% endif %}
+		   {% if champ.propriété_visiteur %}
+		   class="input-choix_multiple visitor_property" %}
+		   {% else %}
+		   class="input-choix_multiple"
+   		   {% endif %}
 	    />
 	    <label class="label-choix_multiple" for="input-{{ inputId }}">
 	      {{ reponse.valeur}}
       	    </label>
 	    {% assign inputId=inputId | plus:1 %}
 	  {% endfor %}
+	  {% if champ.autre_reponse %}
+	    <input type="radio" id="input-{{ inputId }}"
+		   value="Autre réponse"
+		   name="{{ champ.nom }}"
+                   {% if champ.requis == true %}
+	           required
+	           {% endif %}
+		   {% if champ.propriété_visiteur %}
+		   class="input-choix_multiple other visitor_property" %}
+		   {% else %}
+		   class="input-choix_multiple other"
+   		   {% endif %}
+	    />
+	    <input type="text" class="other-choice-text no-send"
+		   id="other-{{ inputId }}"/>
+	    {% assign inputId=inputId | plus:1 %}
+	  {% endif %}
 	  <p class="error-message">{{ champ.message_erreur }}</p>
         {% when 'choix_multiple' %}
 	  <p>TODO</p>
@@ -67,6 +102,7 @@
         {% endcase %}
         </div>
       </div>
+    </div>
     {% endif %}
   {% endfor %}
 

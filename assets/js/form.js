@@ -8,17 +8,25 @@ function pureField(string) {
 
 function submitForm(jqForm) {
   var FormData = {};
-  jqForm.find("input:not([type=submit])").each(function() {
+  jqForm.find("input:not([type=submit]):not(.no-send)").each(function() {
     // TODO: Check that it works with every types
     FormData[$(this).attr("name")] = $(this).val();
   });
   today = new Date();
-  woopra.track('inscription', {
+  /*
+  woopra.track("inscription", {
     url: document.URL,
     title: document.title,
     origine: jqForm.data("source"),
-    optin: "non" // TODO: Champ "Optin Woopra" oui/non ?
+    optin: "non" // Champ "Optin Woopra" oui/non ?
   });
+  */
+  var visitorProperties = {};
+  jqForm.find("input:not([type=submit]):not(.no-send).visitor_property").each(function() {
+    // TODO: Check that it works with every types
+    visitorProperties[$(this).attr("name")] = $(this).val();
+  });
+  woopra.identify(visitorProperties);
   woopra.track('adfinitascx-' + jqForm.data("source"), FormData);
   var dbData = {
     "schema": "{{ site.form-to-db_config.schema }}",
@@ -32,7 +40,9 @@ function submitForm(jqForm) {
   var success = function() {
     window.location = jqForm.data("success");
   };
-  makeCorsRequest(dbData, success);
+  // TODO: DEBUG ONLY
+  console.log(dbData);
+  //makeCorsRequest(dbData, success);
 }
 
 // Pre-filled inputs from query parameter in URL.
@@ -53,17 +63,32 @@ function preFill() {
       toHide = true;
       var name = key.substring(0, key.length - hideKeyword.length);
     }
-    if ($("input[name=" + name + "]").length > 0) {
+    if ($("select[name=" + name + "]").length > 0) {
+      var selector = $("select[name=" + name + "][value=" + value + "]");
+      selector.prop("selected", true);
+    } else if ($("input:radio[name=" + name + "]").length > 0) {
+      var selector = $("input:radio[name=" + name + "][value=" + value + "]");
+      selector.prop("checked", true);
+    } else if ($("input:checkbox[name=" + name + "]").length > 0) {
+      var selector = $("input:checkbox[name=" + name + "][value=" + value + "]");
+      selector.prop("checked", true);
+    } else if ($("input[name=" + name + "]").length > 0 &&
+	       $("input[name=" + name + "]").hasClass("check-phone")) {
       var selector = $("input[name=" + name + "]");
-    } else if ($("select[name=" + name + "]").length > 0) {
-      var selector = $("select[name=" + name + "]");
+      selector.intlTelInput("setNumber", value);
+    } else if ($("input[name=" + name + "]").length > 0) {
+      var selector = $("input[name=" + name + "]");
+      selector.val(value);
     } else {
       return;
     }
-    selector.val(value);
     if (toHide == true) {
-      if (isValidField(selector, !selector.prop("required")) == false) {
-	selector.val("");
+      if (isValidField(selector, !selector.prop("required")) === false) {
+	// Only un-fill the wrong value if this is an text/email input.
+	// However nothing happens
+	if (selector.attr('type') === 'text' || selector.attr('type') === 'email') {
+	  selector.val("");
+	}
       } else {
 	selector.closest(".field-row").css("display", "none")
       }
@@ -71,20 +96,41 @@ function preFill() {
   });
 }
 
+function otherChoice() {
+  $(".other-choice-text").each(function() {
+    $(this).on("keydown", function() {
+      var elemId = $(this).attr("id");
+      var id = elemId.substr("other-".length);
+      if ($(this).val() === "") {
+	$("#input-" + id).prop("checked", false);
+      } else {
+	$("#input-" + id).prop("checked", true);
+      }
+    });
+  });
+}
+
 $(document).ready(function() {
-  preFill();
   $(".check-phone").intlTelInput({
-    utilsScript: "/assets/js/vendor/intl-tel-input/lib/libphonenumber/build/utils.js",
+    "utilsScript": "/assets/js/vendor/intl-tel-input/build/js/utils.js",
     "initialCountry": "fr",
     "autoFormat": true
+  }).done(function() {
+    preFill();
   });
   var jqForm = $("form.adfinitas-cx");
   jqForm.on("submit", function(e) {
     e.preventDefault();
+    $(".other-choice-text").each(function() {
+      var elemId = $(this).attr("id");
+      var id = elemId.substr("other-".length);
+      $("#input-" + id).val($(this).val());
+    });
     if (isValidForm(jqForm) == true) {
       submitForm(jqForm);
     }
   });
+  otherChoice();
 });
 
 /*
@@ -96,4 +142,9 @@ $(document).ready(function() {
  * liste_deroulante
  * Responsive Design
  * Docs
+ *
+ * CSS / JS Statique :
+ * - Radio court
+ *   - Checkbox sur une demi-ligne (à la fin)
+ *   - Placement du label (avant ou au-dessus)
  */

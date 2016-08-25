@@ -4,6 +4,8 @@ title: "On se dit tout"
 source: "ESF - On se dit tout"
 champs :
  - type: choix_unique
+    propriété_visiteur: true
+    image_de_fond: "http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg"
    nom: "rencontre"
    actif: true
    requis: true
@@ -19,9 +21,10 @@ champs :
     - valeur: J’ai découvert ESF sur les réseaux sociaux
     - valeur: J’ai reçu un courrier de la part d’ESF
     - valeur: J’ai découvert ESF lors d’un événement public près de chez moi
+    autre_reponse: true
 
 bouton_de_soumission: "Envoyer"
-page_de_remerciement: "https://google.com"
+page_de_remerciement_path: "https://google.com"
 
 _comments:
   nom: "Obligatoire et unique. Description courte du champ"
@@ -29,7 +32,11 @@ _comments:
   placeholder: Seulement pour les champs de type "champ libre"
   controle: Seulement pour les champs de type "champ libre"
   reponses: Seulement pour les champs de type "choix"
-  page_de_remerciement: "URL de la page lorsque l'utilisateur valide le formulaire"
+  autre_reponse: 'Seulement pour les champs de type "choix"'
+  page_de_remerciement_path: "URL de la page lorsque l'utilisateur valide le formulaire"
+  propriété_visiteur: Cocher cette case si vous souhaitez que ce champs remonte dans les propriété du visiteur sur Woopra
+  source: Permet de personnaliser le nom de l'evenement sur Woopra
+  image_de_fond: Image de fond du champ
 ---
 
 <div class="row">

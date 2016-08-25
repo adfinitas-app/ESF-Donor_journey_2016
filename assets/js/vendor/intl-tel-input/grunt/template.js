@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         return {
           plugin: grunt.file.read('tmp/versioned.js'),
           data: grunt.file.read('src/js/data.js'),
-        }
+        };
       }
     },
     nationalMode: {
@@ -28,12 +28,12 @@ module.exports = function(grunt) {
         return {
           time: time,
           title: "National Mode",
-          desc: "Allow users to enter their national number, and then convert it to international format using the public method getCleanNumber.",
+          desc: "Allow users to enter their national number, and then convert it to international format using the public method getNumber.",
           stylesheet: "",
           markup: grunt.file.read('examples/partials/nationalMode.html'),
           code: grunt.file.read('examples/js/nationalMode.js'),
           script: "nationalMode.js"
-        }
+        };
       }
     },
     defaultCountryIp: {
@@ -43,12 +43,12 @@ module.exports = function(grunt) {
         return {
           time: time,
           title: "Lookup user's country",
-          desc: "Set defaultCountry to 'auto' and pass in a function for geoIpLookup to perform a JSONP request to ipinfo.io, which returns the user's country based on their IP address.",
+          desc: "Set initialCountry to 'auto' and pass in a function for geoIpLookup to perform a JSONP request to ipinfo.io, which returns the user's country based on their IP address.",
           stylesheet: "",
           markup: grunt.file.read('examples/partials/simpleInput.html'),
           code: grunt.file.read('examples/js/defaultCountryIp.js'),
           script: "defaultCountryIp.js"
-        }
+        };
       }
     },
     modifyCountryData: {
@@ -63,7 +63,7 @@ module.exports = function(grunt) {
           markup: grunt.file.read('examples/partials/simpleInput.html'),
           code: grunt.file.read('examples/js/modifyCountryData.js'),
           script: "modifyCountryData.js"
-        }
+        };
       }
     },
     onlyCountries: {
@@ -78,7 +78,7 @@ module.exports = function(grunt) {
           markup: grunt.file.read('examples/partials/simpleInput.html'),
           code: grunt.file.read('examples/js/onlyCountriesEurope.js'),
           script: "onlyCountriesEurope.js"
-        }
+        };
       }
     },
     countrySync: {
@@ -93,7 +93,7 @@ module.exports = function(grunt) {
           markup: grunt.file.read('examples/partials/countrySync.html'),
           code: grunt.file.read('examples/js/countrySync.js'),
           script: "countrySync.js"
-        }
+        };
       }
     },
     validation: {
@@ -108,7 +108,7 @@ module.exports = function(grunt) {
           markup: grunt.file.read('examples/partials/isValidNumber.html'),
           code: grunt.file.read('examples/js/isValidNumber.js'),
           script: "isValidNumber.js"
-        }
+        };
       }
     },
     hiddenInput: {
@@ -123,7 +123,7 @@ module.exports = function(grunt) {
           markup: grunt.file.read('examples/partials/hiddenInput.html'),
           code: grunt.file.read('examples/js/hiddenInput.js'),
           script: "hiddenInput.js"
-        }
+        };
       }
     }
   };

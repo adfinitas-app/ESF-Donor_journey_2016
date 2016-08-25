@@ -37,7 +37,7 @@ function isValidField(jqueryFieldSelector, allowEmpty = true) {
   var field = jqueryFieldSelector;
   var status = false;
   if (field.attr("type") === "radio" || field.attr("type") === "checkbox") {
-    if (allowEmpty === true || 
+    if (allowEmpty === true ||
 	$("input[name=" + field.attr("name") + "]:checked").length > 0) {
       status = true;
     }
@@ -52,7 +52,7 @@ function isValidField(jqueryFieldSelector, allowEmpty = true) {
       else if (field.hasClass("check-phone")) {
 	status = (field.intlTelInput("isValidNumber") === true);
       }
-      else {
+      else if (field.val() !== "" || field.val() !== null) {
 	status = true;
       }
     }
