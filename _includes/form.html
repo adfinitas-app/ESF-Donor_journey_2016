@@ -4,7 +4,22 @@
   {% assign lineId=0 %}
   {% for champ in page.champs %}
     {% if champ.actif == true %}
-    <div class="input-container"
+    <div class="input-container
+    {% case champ.type %}
+    {% when 'champ_libre_court' %}
+    input-container-champ_libre_court
+    {% when 'champ_libre_long' %}
+    input-container-champ_libre_long
+    {% when 'liste_deroulante' %}
+    input-container-liste_deroulante
+    {% when 'choix_unique' %}
+    input-container-choix_unique
+    {% when 'choix_multiple' %}
+    input-container-choix_multiple
+    {% when 'champ_caché' %}
+    input-container-champ_cache
+    {% endcase %}
+    "
 	{% if champ.image_de_fond != nill and champ.image_de_fond != empty %}
 	style="background-image: url('{{ champ.image_de_fond }}')"
 	{% endif %}
