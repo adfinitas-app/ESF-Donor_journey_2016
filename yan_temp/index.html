@@ -11,7 +11,7 @@
 </head>
 <body>
 	<form>
-		<div class="row fullWidth slide" style="background: url('./img/bg_slide1.png');  background-size: cover">
+		<div id="slide_1" class="row fullWidth slide" style="background: url('./img/bg_slide1.png'); background-size: cover; background-position: center;">
 			<div class=" small-6 text-center medium-offset-1 medium-2 columns">
 				<img src="./img/logo_esf.png" class="img_top">
 			</div>
@@ -21,7 +21,7 @@
 			<div class="small-0 medium-4"></div>
 			<div class="small-12 text-center columns">
 
-				<div class="row fullWidth">
+				<div class="row">
 					<div class="small-offset-1 small-centered small-10 medium-8 large-8 text-center columns">
 						<p class="text_title">AIDEZ-NOUS À MIEUX VOUS CONNAÎTRE !</p>
 					</div>
@@ -35,25 +35,25 @@
 						Vos attentes, vos remarques, vos interrogations :<br> 
 						parlez-nous de VOUS en répondant à notre enquête en trois parties !
 					</p>
-					<a href="#">
+					<a href="#slide_2">
 						<p class="text_bold" style="line-height: 0;">JE RÉPONDS</p>
 						<img src="./img/arrow_down.png">
 					</a>
 				</div>
 			</div>
 		</div>
-		<div class="row fullWidth slide" style="background: url('./img/bg_slide2.png');">
+		<div id="slide_2" class="row fullWidth slide" style="background: url('./img/bg_slide2.png'); background-size: cover; background-position: center;">
 			<div class="medium-offset-2 medium-10 columns">
 				<img src="./img/logo_tout.png" class="img_top">
 				<img src="./img/logo_esf.png" class="img_top_lright">
 			</div>
 			<div class="small-12 columns">
-				<div class="row fullWidth">
+				<div class="row">
 					<div class="small-centered small-12 medium-8 large-8 text-center columns">
 						<p class="text_title">1. COMMENT NOUS SOMMES-NOUS RECONTRÉS ?</p>
 					</div>
 				</div>		
-				<div class="row fullWidth" style="margin-top: 10px">
+				<div class="row bottom_item" style="margin-top: 10px;">
 					<label class="small-offset-1 small-10 medium-offset-3 medium-9 columns answer_container">
 						<input type="radio" name="slide_2" class="answer_check"><span></span>
 						<p class="text_answer">​​​​​​​​​​​​​​​​​​​​​​​​​​​J’ai découvert ESF grâce à ma famille, mes ami</p>
@@ -87,12 +87,73 @@
 						<input type="text" name="slide_2" class="text_input" placeholder="Autre">​​​​​​​​​​​​​​​​​​​​​​​​​​​
 					</label>
 				</div>
-				<a href="#" class="small-12 columns text-center next_container" style="margin-bottom: 10px; margin-top: 1%">
-					<p class="text_bold">QUESTION SUIVANTE</p>
-					<img src="./img/arrow_down.png">
-				</a>
 			</div>
 		</div>
+		<div id="slide_3" class="row fullWidth slide" style="background: url('./img/bg_slide6.png'); background-size: cover; background-position: center;">
+			<div class="small-12 medium-offset-2 medium-10 columns">
+				<img src="./img/logo_tout.png" class="img_top">
+				<img src="./img/logo_esf.png" class="img_top_lright">
+			</div>
+			<div class="small-12 medium-offset-1 medium-10 large-offset-3 large-6 text-center end columns">
+				<p class="text_title text-center">5. FAITES-VOUS CONFIANCE À L'ÉLEVAGE SANS FRONTIÉRES?</p>
+			</div>
+			<div class="small-0 medium-2 large-3 columns"></div>
+			<div class="small-offset-1 small-10 medium-offset-0 medium-12 large-offset-2 large-8 columns">
+				<div class="row" style="padding-top: 20px;">
+					<label class="small-offset-1 small-2 medium-1 columns">
+						<input type="radio" name="slide_6" class="answer_check"><span></span>
+						<p class="bullet_choice">1</p>
+					</label>
+					<label class="small-2 medium-1 columns">
+						<input type="radio" name="slide_6" class="answer_check"><span></span>
+						<p class="bullet_choice">2</p>
+					</label>
+					<label class="small-2 medium-1 columns">
+						<input type="radio" name="slide_6" class="answer_check"><span></span>
+						<p class="bullet_choice">3</p>
+					</label>
+					<label class="small-2 medium-1 columns">
+						<input type="radio" name="slide_6" class="answer_check"><span></span>
+						<p class="bullet_choice">4</p>
+					</label>
+					<label class="small-2 medium-1 columns">
+						<input type="radio" name="slide_6" class="answer_check"><span></span>
+						<p class="bullet_choice">5</p>
+					</label>
+					<div class="small-1 medium-0 columns"></div>
+					<label class="small-offset-1 medium-offset-0 small-2 medium-1 columns">
+						<input type="radio" name="slide_6" class="answer_check"><span></span>
+						<p class="bullet_choice">6</p>
+					</label>
+					<label class="small-2 medium-1 columns">
+						<input type="radio" name="slide_6" class="answer_check"><span></span>
+						<p class="bullet_choice">7</p>
+					</label>
+					<label class="small-2 medium-1 columns">
+						<input type="radio" name="slide_6" class="answer_check"><span></span>
+						<p class="bullet_choice">8</p>
+					</label>
+					<label class="small-2 medium-1 columns">
+						<input type="radio" name="slide_6" class="answer_check"><span></span>
+						<p class="bullet_choice">9</p>
+					</label>
+					<label class="small-2 medium-1 columns">
+						<input type="radio" name="slide_6" class="answer_check"><span></span>
+						<p class="bullet_choice" style="padding-left: 5px">10</p>
+					</label>
+					<div class="medium-1 columns">
+					</div>
+				</div>
+			</div>
+			<div class="small-1 medium-2 large-3 columns"></div>
+			<div class="small-offset-1 small-10 medium-offset-2 medium-8 large-offset-3 large-6 columns answer_container end" style="margin-top: 5%;">
+				<textarea class="text_input bottom_item" placeholder="Laissez-nous votre avis sur le sujet" style="min-height: 100px;"></textarea>
+			</div>
+		</div>
+		<a id="next_container" href="#" class="small-12 hide-for-small-only columns text-center" style="margin-bottom: 10px; margin-top: 1%">
+			<p class="text_bold">QUESTION SUIVANTE</p>
+			<img src="./img/arrow_down.png">
+		</a>
 	</form>
 	<script src="js/vendor/jquery.js"></script>
 	<script src="js/vendor/what-input.js"></script>
