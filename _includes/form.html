@@ -8,11 +8,10 @@
 	{% if champ.image_de_fond != nill and champ.image_de_fond != empty %}
 	style="background-image: url('{{ champ.image_de_fond }}')"
 	{% endif %}
+	id="slide-{{ lineId }}"
+	{% assign lineId=lineId | plus:1 %}
       >
-      <div class="row field-row"
-	   id="slide-{{ lineId }}"
-	   {% assign lineId=lineId | plus:1 %}
-	>
+      <div class="row field-row">
         <div class="large-12 columns">
         {% case champ.type %}
         {% when 'champ_libre_court' %}
