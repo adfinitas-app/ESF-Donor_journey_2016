@@ -134,6 +134,7 @@ DISPLAY
  right:25%;
  left:50%;
  margin-left:-150px;
+ padding-bottom: 10px;
 }
 
 @keyframes slide_in {
