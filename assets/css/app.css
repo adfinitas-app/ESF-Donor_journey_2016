@@ -156,7 +156,7 @@ textarea:-ms-input-placeholder, input:-ms-input-placeholder{
   margin-top: 30px;
 }
 
-.label-choix_unique {
+.label-choix_unique, .label {
   padding-left: 10px;
   font-family: 'tk-nimbus-sans-condensed-n4', serif;
   color : white;
@@ -176,7 +176,7 @@ textarea:-ms-input-placeholder, input:-ms-input-placeholder{
   overflow: hidden;
 }
 
-[type="radio"] + span::before {
+[type="radio"] + label span::before {
   content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/unchecked.png');
   width: 1em;
   height: 1em;
@@ -191,7 +191,7 @@ textarea:-ms-input-placeholder, input:-ms-input-placeholder{
   user-select: none;
 }
 
-[type="radio"]:checked + span::before {
+[type="radio"]:checked + label span::before {
   content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/checked.png');
 }
 
@@ -201,7 +201,7 @@ textarea:-ms-input-placeholder, input:-ms-input-placeholder{
   overflow: hidden;
 }
 
-[type="checkbox"] + span::before {
+[type="checkbox"] + label span::before {
   content: url('../img/arrow_unchecked.png');
   display: inline-block;
   width: 1em;
@@ -216,11 +216,11 @@ textarea:-ms-input-placeholder, input:-ms-input-placeholder{
   user-select: none;
 }
 
-[type="checkbox"]:checked + span::before {
+[type="checkbox"]:checked + label span::before {
   content: url('../img/arrow_checked.png');
 }
 
-[type="checkbox"]:focus + span::after {
+[type="checkbox"]:focus + label span::after {
   content: url('');
   font-size: 1.5em;
   line-height: 1;
