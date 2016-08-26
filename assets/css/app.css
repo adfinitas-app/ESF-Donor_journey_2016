@@ -77,21 +77,6 @@
   margin-top: 30px;
 }
 
-.texte-choix_multiple {
-  font-family: 'Slabo 13px', serif;
-  color : white;
-  font-size: 2.5em;
-  line-height: 1em;
-  margin-top: 30px;
-}
-
-.label-choix_multiple {
-  padding-left: 10px;
-  font-family: 'tk-nimbus-sans-condensed-n4', serif;
-  color : white;
-  font-size: 1.5em;
-}
-
 [type="text"] {
   background-color: #f6f0e7;
   border-radius: 7px;
@@ -154,9 +139,90 @@ textarea::-moz-placeholder, input::-moz-placeholder{
 textarea:-ms-input-placeholder, input:-ms-input-placeholder{
  color:    #c3afa0;
 }
+
 .row {
   max-width: 100% !important;
   width: 100% !important;
   margin-right: auto;
   margin-left: auto;
+}
+
+.texte-choix_unique {
+  padding-top: 5%;
+  font-family: 'Slabo 13px', serif;
+  color : white;
+  font-size: 2.5em;
+  line-height: 1em;
+  margin-top: 30px;
+}
+
+.label-choix_unique {
+  padding-left: 10px;
+  font-family: 'tk-nimbus-sans-condensed-n4', serif;
+  color : white;
+  font-size: 1.5em;
+}
+
+.reponse-container-choix_unique,
+.reponse-container-choix_multiple
+{
+  font-family: 'tk-nimbus-sans-condensed-n4', serif;
+  color : white;
+}
+
+[type="radio"] {
+  display: none;
+  border: 0;
+  overflow: hidden;
+}
+
+[type="radio"] + span::before {
+  content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/unchecked.png');
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -0.3em;
+  margin-right: 1em;
+  transition: 0.5s ease all;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+[type="radio"]:checked + span::before {
+  content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/checked.png');
+}
+
+[type="checkbox"] {
+  display: none;
+  border: 0;
+  overflow: hidden;
+}
+
+[type="checkbox"] + span::before {
+  content: url('../img/arrow_unchecked.png');
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.1em;
+  margin-right: 1em;
+  transition: 0.5s ease all;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+[type="checkbox"]:checked + span::before {
+  content: url('../img/arrow_checked.png');
+}
+
+[type="checkbox"]:focus + span::after {
+  content: url('');
+  font-size: 1.5em;
+  line-height: 1;
+  vertical-align: -0.125em;
 }

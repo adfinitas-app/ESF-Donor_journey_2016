@@ -16,6 +16,14 @@ function extractUrlParams() {
   return urlParams;
 }
 
+
+
+//DESIGN
+//$('.field-row > .columns').addClass("small-12 medium-offset-1 medium-10 large-offset-3 large-8");
+
+
+//
+
 var 	next_scroll;
 var 	q_number;
 
