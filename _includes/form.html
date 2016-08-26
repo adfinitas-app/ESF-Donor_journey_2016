@@ -168,11 +168,21 @@
 	  </div>
 	</div>
 	{% when 'champ_caché' %}
-	<div class="row field-row">
-	  <div class="large-12 columns">
-	    <p>TODO</p>
-	  </div>
-	</div>
+	  <input id="input-{{ inputId }}"
+		 type="hidden"
+		 value="{{ champ.valeur_champ_cache }}"
+		 {% assign inputClasses = site.array %}
+		 {% assign inputClasses = inputClasses
+			   | push: 'input-champ_cache ' %}
+		 placeholder="{{ champ.placeholder }}"
+		 name="{{ champ.nom }}"
+		 {% if champ.propriété_visiteur %}
+		 {% assign inputClasses = inputClasses
+			   | push: 'visitor_property' %}
+   		 {% endif %}
+		 class="{{ inputClasses }}"
+	  />
+	  {% assign inputId=inputId | plus:1 %}
 	{% else %}
 	<div class="row field-row">
 		  <div class="large-12 columns">
