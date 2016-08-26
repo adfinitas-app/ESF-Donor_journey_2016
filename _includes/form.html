@@ -25,77 +25,91 @@
 	{% endif %}
 	id="slide-{{ lineId }}"
 	{% assign lineId=lineId | plus:1 %}
-      >
-      <div class="row field-row">
-        <div class="large-12 columns">
-        {% case champ.type %}
-        {% when 'champ_libre_court' %}
+	>
+	{% case champ.type %}
+	{% when 'champ_libre_long' %}
+	<div class="row field-row">
+	  <div class="large-12 columns">
+	    <p>TODO</p>
+	  </div>
+	</div>
+	{% when 'champ_libre_court' %}
+	<div class="row field-row">
+	  <div class="large-12 columns">
 	  {% if champ.texte != nill and champ.texte != empty %}
 	    <label class="label-champ_libre_court" for="input-{{ inputId }}">
-	      {{ champ.texte }}
+		{{ champ.texte }}
 	    </label>
 	  {% endif %}
-          <input id="input-{{ inputId }}"
+	  <input id="input-{{ inputId }}"
 		 {% assign inputClasses = site.array %}
 		 {% assign inputClasses = inputClasses
 			   | push: 'input-champ_libre_court ' %}
 		 {% if champ.controle == "email" %}
 		 {% assign inputClasses = inputClasses
 			   | push: 'check-email ' %}
-                 type="email"
+		 type="email"
 		 {% elsif champ.controle == "telephone" %}
 		 {% assign inputClasses = inputClasses
 			   | push: 'check-phone ' %}
 		 type="text"
 		 {% else %}
-                 type="text"
+		 type="text"
 		 {% endif %}
-                 placeholder="{{ champ.placeholder }}"
+		 placeholder="{{ champ.placeholder }}"
 		 name="{{ champ.nom }}"
 		 {% if champ.propriété_visiteur %}
 		 {% assign inputClasses = inputClasses
 			   | push: 'visitor_property' %}
    		 {% endif %}
-                 {% if champ.requis == true %}
+		 {% if champ.requis == true %}
 		 required
 		 {% endif %}
 		 class="{{ inputClasses }}"
-          />
+	  />
 	  {% assign inputId=inputId | plus:1 %}
-          <p class="error-message">{{ champ.message_erreur }}</p>
-        {% when 'champ_libre_long' %}
-	  <p>TODO</p>
-        {% when 'liste_deroulante' %}
-	  <p>TODO</p>
-        {% when 'choix_unique' %}
+	  <p class="error-message">{{ champ.message_erreur }}</p>
+	  </div>
+	</div>
+	{% when 'liste_deroulante' %}
+	<div class="row field-row">
+		  <div class="large-12 columns">
+	    <p>TODO</p>
+	  </div>
+	</div>
+	{% when 'choix_unique' %}
+	<div class="row field-row">
+		  <div class="large-12 columns">
 	  {% if champ.texte != nill and champ.texte != empty %}
 	    <p class="texte-choix_multiple">{{ champ.texte }}</p>
 	  {% endif %}
 	  {% for reponse in champ.reponses %}
-	    <input type="radio" id="input-{{ inputId }}"
-	           value="{{ reponse.valeur}}"
-	           name="{{ champ.nom }}"
-                   {% if champ.requis == true %}
-	           required
-	           {% endif %}
-		   {% if champ.propriété_visiteur %}
-		   class="input-choix_multiple visitor_property" %}
-		   {% else %}
-		   class="input-choix_multiple"
-   		   {% endif %}
-	    />
-	    <label class="label-choix_multiple" for="input-{{ inputId }}">
-	      {{ reponse.valeur}}
-      	    </label>
+	    <div class="reponse-container">
+		<input type="radio" id="input-{{ inputId }}"
+		     value="{{ reponse.valeur}}"
+		     name="{{ champ.nom }}"
+		     {% if champ.requis == true %}
+		     required
+		     {% endif %}
+		     {% if champ.propriété_visiteur %}
+		     class="input-choix_multiple visitor_property" %}
+		     {% else %}
+		     class="input-choix_multiple"
+   		     {% endif %}
+		/>
+		<label class="label-choix_multiple" for="input-{{ inputId }}">
+		{{ reponse.valeur}}
+			</label>
+	    </div>
 	    {% assign inputId=inputId | plus:1 %}
 	  {% endfor %}
 	  {% if champ.autre_reponse %}
 	    <input type="radio" id="input-{{ inputId }}"
 		   value="Autre réponse"
 		   name="{{ champ.nom }}"
-                   {% if champ.requis == true %}
-	           required
-	           {% endif %}
+		   {% if champ.requis == true %}
+		   required
+		   {% endif %}
 		   {% if champ.propriété_visiteur %}
 		   class="input-choix_multiple other visitor_property" %}
 		   {% else %}
@@ -106,22 +120,34 @@
 		   id="other-{{ inputId }}"/>
 	    {% assign inputId=inputId | plus:1 %}
 	  {% endif %}
-	  <p class="error-message">{{ champ.message_erreur }}</p>
-        {% when 'choix_multiple' %}
-	  <p>TODO</p>
-        {% when 'champ_caché' %}
-	  <p>TODO</p>
+	    <p class="error-message">{{ champ.message_erreur }}</p>
+	  </div>
+	</div>
+	{% when 'choix_multiple' %}
+	<div class="row field-row">
+		  <div class="large-12 columns">
+	    <p>TODO</p>
+	  </div>
+	</div>
+	{% when 'champ_caché' %}
+	<div class="row field-row">
+		  <div class="large-12 columns">
+	    <p>TODO</p>
+	  </div>
+	</div>
 	{% else %}
-	  <p style="color: red">[Erreur]: Type de champ inconnu: {{ champ.type }}</p>
-        {% endcase %}
-        </div>
-      </div>
+	<div class="row field-row">
+		  <div class="large-12 columns">
+	    <p style="color: red">[Erreur]: Type de champ inconnu: {{ champ.type }}</p>
+	  </div>
+	</div>
+	{% endcase %}
     </div>
     {% endif %}
   {% endfor %}
   <div class="row field-row">
     <div class="large-12 columns">
-      <input type="submit" value="Envoyer">
+	<input type="submit" value="Envoyer">
     </div>
   </div>
 </form>
