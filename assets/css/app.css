@@ -23,12 +23,19 @@
   min-height: 100vh;
 }
 
-.label-champ_libre_court {
+.texte-choix_multiple {
   font-family: 'Slabo 13px', serif;
   color : white;
   font-size: 2.5em;
   line-height: 1em;
   margin-top: 30px;
+}
+
+.label-choix_multiple {
+  padding-left: 10px;
+  font-family: 'tk-nimbus-sans-condensed-n4', serif;
+  color : white;
+  font-size: 1.5em;
 }
 
 [type="text"] {
