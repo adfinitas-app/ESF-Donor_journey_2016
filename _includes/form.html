@@ -144,8 +144,10 @@
 		   class="input-choix_unique other"
    		   {% endif %}
 	    />
-	    <input type="text" class="other-choice-text no-send"
-		   id="other-{{ inputId }}"/>
+	    <label class="label-other" for="input-{{ inputId }}">
+	      <input type="text" class="other-choice-text no-send"
+	  	   id="other-{{ inputId }}"/>
+	    </label>
 	    {% assign inputId=inputId | plus:1 %}
 	  {% endif %}
 	    <p class="error-message">{{ champ.message_erreur }}</p>
@@ -190,8 +192,10 @@
 		   class="input-choix_multiple other"
    		   {% endif %}
 	    />
-	    <input type="text" class="other-choice-text no-send"
-		   id="other-{{ inputId }}"/>
+	    <label class="label-other" for="input-{{ inputId }}">
+	      <input type="text" class="other-choice-text no-send"
+	  	   id="other-{{ inputId }}"/>
+	    </label>
 	    {% assign inputId=inputId | plus:1 %}
 	  {% endif %}
 	    <p class="error-message">{{ champ.message_erreur }}</p>
