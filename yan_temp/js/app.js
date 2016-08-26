@@ -16,8 +16,8 @@ $(document).ready()
 
 		next_question = document.getElementById("next_container");
 		scrollPosition = window.scrollY;
-		divPosition = $('#slide_2').offset().top;
-		divPosition -= $('#slide_2').height() / 2;
+		divPosition = $('#slide_1').offset().top;
+		divPosition -= $('#slide_1').height() / 2;
 		next_question.href = refresh_next();
 		if(divPosition < scrollPosition && current_q <= q_number){
 			$('#next_container').css({"animation" : "slide_in 0.4s ease-out", "animation-direction": "normal"});
@@ -52,7 +52,7 @@ $(document).ready()
 			if (divPosition > scrollPosition)
 				check = false;
 			else
-			{	
+			{
 				count++;
 				current = "#slide_" + count;
 			}

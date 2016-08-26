@@ -34,8 +34,8 @@ champs :
    controle:
    reponses:
     - valeur: Il y a quelques jours
-    - valeur: Il y a 1 à 2 mois 
-    - valeur: Il y a 3 à 6 mois 
+    - valeur: Il y a 1 à 2 mois
+    - valeur: Il y a 3 à 6 mois
     - valeur: Il y a entre 1 et 5 ans
     - valeur: Il y a entre 5 et 10 ans
     - valeur: Il y a plus de 10 ans
@@ -64,7 +64,7 @@ champs :
  - type: choix_unique
    propriété_visiteur: true
    image_de_fond: "https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/bg_slide5.png"
-   nom: "engagement"
+   nom: "choix"
    actif: true
    requis: true
    texte: "4. De quel(s) aspect(s) de notre action vous sentez-vous proche ?"
@@ -98,10 +98,34 @@ _comments:
   image_de_fond: Image de fond du champ
 ---
 
-<div class="row">
-  <div class="large-12 columns">
-    <h1>Aidez-nous à mieux vous connaître !</h1>
-  </div>
-</div>
-
-{% include form.html %}
+<div class="row input-container" style="background-image: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/bg_slide1.png');">
+			<div class=" small-6 text-center medium-offset-1 medium-2 columns">
+				<img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/logo_esf.png" class="img_top">
+			</div>
+			<div class="small-6  text-center medium-6 columns">
+				<img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/logo_tout.png" class="img_top">
+			</div>
+			<div class="small-0 medium-4"></div>
+			<div class="small-12 text-center columns">
+				<div class="row">
+					<div class="small-offset-1 small-centered small-10 medium-8 large-8 text-center columns">
+						<p class="texte-choix_multiple">AIDEZ-NOUS À MIEUX VOUS CONNAÎTRE !</p>
+					</div>
+				</div>
+				<p class="text_small">
+					Le soutien que vous nous apportez est très important à nos yeux et nous aimerions en apprendre davantage…<br>
+					Racontez-nous comment Elevages sans frontières est entré dans votre vie !
+				</p>
+				<div style="margin-bottom: 10px; margin-top: 26%">
+					<p class="text_small text-center">
+						Vos attentes, vos remarques, vos interrogations :<br>
+						parlez-nous de VOUS en répondant à notre enquête en trois parties !
+					</p>
+					<a href="#slide-0">
+						<p class="text_bold" style="line-height: 0;">JE RÉPONDS</p>
+						<img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_down.png">
+					</a>
+				</div>
+			</div>
+		</div>
+  {% include form.html %}

@@ -11,6 +11,22 @@
   color: white;
 }
 
+.text_bold
+{
+ font-family: 'tk-nimbus-sans-condensed-n4', serif;
+ color : white;
+ font-size: 1.2em;
+ font-weight: bold;
+ line-height: 0;
+}
+
+.text_small
+{
+ font-family: 'tk-nimbus-sans-condensed-n4', serif;
+ color : white;
+ font-size: 1.2em;
+}
+
 .other-choice-text {
   display: inline-block;
   width: auto;
@@ -18,9 +34,15 @@
 }
 
 .input-container {
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
+  background-size: cover !important;
+  background-position: center !important;
+  min-height: 100vh !important;
+}
+
+.img_top
+{
+  height: 50px;
+  margin-top: 30px;
 }
 
 .texte-choix_multiple {
@@ -99,4 +121,10 @@ textarea::-moz-placeholder, input::-moz-placeholder{
 }
 textarea:-ms-input-placeholder, input:-ms-input-placeholder{
  color:    #c3afa0;
+}
+.row {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin-right: auto;
+  margin-left: auto;
 }
