@@ -72,7 +72,37 @@
 	{% when 'liste_deroulante' %}
 	<div class="row field-row">
 	  <div class="large-12 columns">
-	    <p>TODO</p>
+	  {% if champ.texte != nill and champ.texte != empty %}
+	    <label class="label-champ_libre" for="input-{{ inputId }}">
+		{{ champ.texte }}
+	    </label>
+	  {% endif %}
+	    <select
+	      {% assign inputClasses = site.array %}
+	      {% assign inputClasses = inputClasses
+	                | push: 'input-liste_deroulante' %}
+	      {% if champ.propriété_visiteur %}
+	      {% assign inputClasses = inputClasses
+	                | push: 'visitor_property' %}
+   	      {% endif %}
+	      {% if champ.requis == true %}
+	      required
+	      {% endif %}
+	      name="{{ champ.nom }}"
+	      id="input-{{ inputId }}"
+	      class="{{ inputClasses }}"
+	      >
+	      {% if champ.placeholder != nill and champ.placeholder != empty %}
+	      <option selected="selected" disabled="disabled">
+		{{ champ.placeholder }}
+	      </option>
+	      {% endif %}
+	      {% for reponse in champ.reponses %}
+		<option value="{{ reponse.valeur }}">{{ reponse.valeur }}</option>
+	      {% endfor %}
+	    </select>
+	    {% assign inputId=inputId | plus:1 %}
+	    <p class="error-message">{{ champ.message_erreur }}</p>
 	  </div>
 	</div>
 	{% when 'choix_unique' %}
@@ -97,7 +127,7 @@
 		/>
 		<label class="label-choix_unique" for="input-{{ inputId }}">
 		{{ reponse.valeur}}
-			</label>
+		</label>
 	    </div>
 	    {% assign inputId=inputId | plus:1 %}
 	  {% endfor %}

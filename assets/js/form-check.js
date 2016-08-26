@@ -33,12 +33,22 @@ function showError(elem) {
   }
 }
 
+/*
+ * Take as argument :
+ * - select element (not option)
+ * - input[type="text"], input[type="email"]
+ * - input[type="checkbox"], input[type="radio"]
+*/
 function isValidField(jqueryFieldSelector, allowEmpty = true) {
   var field = jqueryFieldSelector;
   var status = false;
   if (field.attr("type") === "radio" || field.attr("type") === "checkbox") {
     if (allowEmpty === true ||
 	$("input[name=" + field.attr("name") + "]:checked").length > 0) {
+      status = true;
+    }
+  } else if (field.is("select")) {
+    if (field.find("option:selected").is(":disabled") === false) {
       status = true;
     }
   } else {
@@ -63,7 +73,7 @@ function isValidField(jqueryFieldSelector, allowEmpty = true) {
 function isValidForm(jqueryFormSelector) {
   var status = true;
   $(".error").removeClass("error");
-  jqueryFormSelector.find("input:not([type=submit])").each(function() {
+  jqueryFormSelector.find("input:not([type=submit]), select").each(function() {
     if (isValidField($(this), !$(this).prop("required")) == false) {
       showError($(this));
       status = false;

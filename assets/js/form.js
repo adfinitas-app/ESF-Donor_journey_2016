@@ -64,7 +64,7 @@ function preFill() {
       var name = key.substring(0, key.length - hideKeyword.length);
     }
     if ($("select[name=" + name + "]").length > 0) {
-      var selector = $("select[name=" + name + "][value=" + value + "]");
+      var selector = $("select[name=" + name + "] option[value=" + value + "]");
       selector.prop("selected", true);
     } else if ($("input:radio[name=" + name + "]").length > 0) {
       var selector = $("input:radio[name=" + name + "][value=" + value + "]");
@@ -135,11 +135,7 @@ $(document).ready(function() {
 
 /*
  * TODO
- * champ_libre_long
- * choix_multiple
- * champ_caché
  * scoring (radio de 1 à 10 en presentation horizontale)
- * liste_deroulante
  * Responsive Design
  * Docs
  *
