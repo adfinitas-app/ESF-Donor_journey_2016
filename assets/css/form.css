@@ -7,35 +7,3 @@
 .error .error-message {
   display: initial;
 }
-
-#next_container
-{
- position: fixed;
- width:300px;
- bottom: -100px;
- right:25%;
- left:50%;
- margin-left:-150px;
- padding-bottom: 10px;
-}
-
-.text_bold
-{
- font-family: 'tk-nimbus-sans-condensed-n4', serif;
- color : white;
- font-size: 1.2em;
- font-weight: bold;
- line-height: 0;
-}
-
-@keyframes slide_in {
-  100% {
-    bottom: 0px;
-  }
-}
-
-@keyframes slide_out {
-  100% {
-    bottom: -100px;
-  }
-}
