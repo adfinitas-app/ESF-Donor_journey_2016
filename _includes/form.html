@@ -27,24 +27,22 @@
 	{% assign lineId=lineId | plus:1 %}
 	>
 	{% case champ.type %}
-	{% when 'champ_libre_long' %}
+	{% when 'champ_libre_court' or 'champ_libre_long' %}
 	<div class="row field-row">
-	  <div class="large-12 columns">
-	    <p>TODO</p>
-	  </div>
-	</div>
-	{% when 'champ_libre_court' %}
-	<div class="row field-row">
-	  <div class="large-12 columns">
+	  {% if champ.type == 'champ_libre_court' %}
+	    <div class="large-6 columns large-centered champ_libre_court">
+	  {% elsif champ.type == 'champ_libre_long' %}
+	    <div class="large-12 columns champ_libre_long">
+	  {% endif %}
 	  {% if champ.texte != nill and champ.texte != empty %}
-	    <label class="label-champ_libre_court" for="input-{{ inputId }}">
+	    <label class="label-champ_libre" for="input-{{ inputId }}">
 		{{ champ.texte }}
 	    </label>
 	  {% endif %}
 	  <input id="input-{{ inputId }}"
 		 {% assign inputClasses = site.array %}
 		 {% assign inputClasses = inputClasses
-			   | push: 'input-champ_libre_court ' %}
+			   | push: 'input-champ_libre ' %}
 		 {% if champ.controle == "email" %}
 		 {% assign inputClasses = inputClasses
 			   | push: 'check-email ' %}
@@ -73,19 +71,65 @@
 	</div>
 	{% when 'liste_deroulante' %}
 	<div class="row field-row">
-		  <div class="large-12 columns">
+	  <div class="large-12 columns">
 	    <p>TODO</p>
 	  </div>
 	</div>
 	{% when 'choix_unique' %}
 	<div class="row field-row">
-		  <div class="large-12 columns">
+	    <div class="large-12 columns">
+	  {% if champ.texte != nill and champ.texte != empty %}
+	    <p class="texte-choix_unique">{{ champ.texte }}</p>
+	  {% endif %}
+	  {% for reponse in champ.reponses %}
+	    <div class="reponse-container-choix_multiple">
+		<input type="radio" id="input-{{ inputId }}"
+		     value="{{ reponse.valeur}}"
+		     name="{{ champ.nom }}"
+		     {% if champ.requis == true %}
+		     required
+		     {% endif %}
+		     {% if champ.propriété_visiteur %}
+		     class="input-choix_unique visitor_property" %}
+		     {% else %}
+		     class="input-choix_unique"
+   		     {% endif %}
+		/>
+		<label class="label-choix_unique" for="input-{{ inputId }}">
+		{{ reponse.valeur}}
+			</label>
+	    </div>
+	    {% assign inputId=inputId | plus:1 %}
+	  {% endfor %}
+	  {% if champ.autre_reponse %}
+	    <input type="radio" id="input-{{ inputId }}"
+		   value="Autre réponse"
+		   name="{{ champ.nom }}"
+		   {% if champ.requis == true %}
+		   required
+		   {% endif %}
+		   {% if champ.propriété_visiteur %}
+		   class="input-choix_unique other visitor_property" %}
+		   {% else %}
+		   class="input-choix_unique other"
+   		   {% endif %}
+	    />
+	    <input type="text" class="other-choice-text no-send"
+		   id="other-{{ inputId }}"/>
+	    {% assign inputId=inputId | plus:1 %}
+	  {% endif %}
+	    <p class="error-message">{{ champ.message_erreur }}</p>
+	  </div>
+	</div>
+	{% when 'choix_multiple' %}
+	<div class="row field-row">
+	  <div class="large-12 columns">
 	  {% if champ.texte != nill and champ.texte != empty %}
 	    <p class="texte-choix_multiple">{{ champ.texte }}</p>
 	  {% endif %}
 	  {% for reponse in champ.reponses %}
-	    <div class="reponse-container">
-		<input type="radio" id="input-{{ inputId }}"
+	    <div class="reponse-container-choix_multiple">
+		<input type="checkbox" id="input-{{ inputId }}"
 		     value="{{ reponse.valeur}}"
 		     name="{{ champ.nom }}"
 		     {% if champ.requis == true %}
@@ -104,7 +148,7 @@
 	    {% assign inputId=inputId | plus:1 %}
 	  {% endfor %}
 	  {% if champ.autre_reponse %}
-	    <input type="radio" id="input-{{ inputId }}"
+	    <input type="checkbox" id="input-{{ inputId }}"
 		   value="Autre réponse"
 		   name="{{ champ.nom }}"
 		   {% if champ.requis == true %}
@@ -123,15 +167,9 @@
 	    <p class="error-message">{{ champ.message_erreur }}</p>
 	  </div>
 	</div>
-	{% when 'choix_multiple' %}
-	<div class="row field-row">
-		  <div class="large-12 columns">
-	    <p>TODO</p>
-	  </div>
-	</div>
 	{% when 'champ_caché' %}
 	<div class="row field-row">
-		  <div class="large-12 columns">
+	  <div class="large-12 columns">
 	    <p>TODO</p>
 	  </div>
 	</div>
