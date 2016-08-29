@@ -68,7 +68,7 @@
 .input-container {
   background-size: cover !important;
   background-position: center !important;
-  min-height: 100vh !important;
+  min-height: 100vh ;
 }
 
 .img_top
@@ -81,7 +81,7 @@
   background-color: #f6f0e7;
   border-radius: 7px;
   font-family: 'tk-nimbus-sans-condensed-n4', serif;
-  font-size: 0.9em;
+  font-size: 1.3em;
   padding-left: 0.9em;
   box-shadow: none;
   border: none;
@@ -104,6 +104,11 @@
 p {
   font-family: 'tk-nimbus-sans-condensed-n4', serif;
   font-size: 1.3em;
+}
+
+.p {
+  font-family: 'tk-nimbus-sans-condensed-n4', serif !important;
+  font-size: 1.3em !important;
 }
 
 textarea {
@@ -130,18 +135,18 @@ textarea:focus {
   border: none;
 }
 
-textarea::-webkit-input-placeholder, input::-webkit-input-placeholder {
+textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder {
   color:    #c3afa0;
 }
-textarea:-moz-placeholder, input:-moz-placeholder {
+textarea:-moz-placeholder, [type="text"]:-moz-placeholder {
  color:    #c3afa0;
  opacity:  1;
 }
-textarea::-moz-placeholder, input::-moz-placeholder{
+textarea::-moz-placeholder, [type="text"]::-moz-placeholder{
  color:    #c3afa0;
  opacity:  1;
 }
-textarea:-ms-input-placeholder, input:-ms-input-placeholder{
+textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder{
  color:    #c3afa0;
 }
 
