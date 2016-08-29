@@ -1,10 +1,9 @@
 $(document).ready(function() {
   //DESIGN
-  //$('.field-row > .columns').addClass("small-12 medium-offset-1 medium-10 large-offset-3 large-8");
+  $('.field-row > .columns').removeClass("large-12 large-6");
+  $('.field-row > .columns').addClass("small-12 medium-offset-1 medium-10 large-offset-3 large-7 columns");
   
-  
-  //
-  
+  //SCROLLING 
   var 	next_scroll;
   var 	q_number;
   
@@ -16,7 +15,7 @@ $(document).ready(function() {
     var 	divPosition;
     var 	scrollPosition;
     var 	next_question
-  
+
     next_question = document.getElementById("next_container");
     scrollPosition = window.scrollY;
     divPosition = $('#slide-0').offset().top;
@@ -30,7 +29,6 @@ $(document).ready(function() {
     }
     else
     {
-      console.log("w")
       $('#next_container').css({"animation" : "slide_out 0.4s ease-out", "animation-direction": "normal"});
       $('#next_container').on('animationend webkitAnimationEnd oAnimationEnd oanimationend MSAnimationEnd', function() {
         $('#next_container').css({"bottom" : "-100px"});
@@ -45,7 +43,7 @@ $(document).ready(function() {
     var 	current;
     var 	scrollPosition;
     var 	divPosition;
-  
+
     check = true;
     count = 0;
     current = "#slide-0";
@@ -62,7 +60,6 @@ $(document).ready(function() {
       }
     }
     current_q = count - 1;
-    console.log(current);
     next_scroll = current;
     return current;
   }
