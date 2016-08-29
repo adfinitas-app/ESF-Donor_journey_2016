@@ -27,10 +27,9 @@ $(document).ready(function() {
     count = slide_count - 9;
     while (count < slide_count)
     {
-      $("#slide-" + count).css({"min-height" : "0vh", "height" : "auto"});
+      $("#slide-" + count).css({"min-height" : "0vh", "height" : "auto", "font-size" : "1em"});
       count++;
     }
-    $('#slide-4').css({"font-size" : "1em", "font-family" : "tk-nimbus-sans-condensed-n4"});
   }
 
   resize_last_slide();
