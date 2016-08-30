@@ -49,7 +49,7 @@ $(document).ready(function() {
     $("#slide-" + (count)).css({"min-height" : height + "vh", "padding-bottom" : "50px"});
   }
 
-  $("#slide-6 > .columns").addClass("large-offset-0 large-3");
+  $("#slide-6 > .row > .columns").addClass("large-offset-0 large-3");
   document.addEventListener("resize", resize_last_slide());
 
   //DELAY SHOW
