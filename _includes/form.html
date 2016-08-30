@@ -3,7 +3,6 @@
   {% assign inputId=0 %}
   {% assign lineId=0 %}
   {% for champ in page.champs %}
-    {% if champ.actif == true %}
     <div class="input-container
     {% case champ.type %}
     {% when 'champ_libre_court' %}
@@ -20,8 +19,9 @@
     input-container-champ_cache
     {% endcase %}
     "
-	{% if champ.image_de_fond != nill and champ.image_de_fond != empty %}
-	style="background-image: url('{{ champ.image_de_fond }}')"
+	{% if champ.image_de_fond_image_path != nill and
+	 champ.image_de_fond_image_path != empty %}
+	style="background-image: url('{{ champ.image_de_fond_image_path }}')"
 	{% endif %}
 	id="slide-{{ lineId }}"
 	{% assign lineId=lineId | plus:1 %}
@@ -56,7 +56,7 @@
 		 {% endif %}
 		 placeholder="{{ champ.placeholder }}"
 		 name="{{ champ.nom }}"
-		 {% if champ.propriété_visiteur %}
+		 {% if champ.propriete_visiteur %}
 		 {% assign inputClasses = inputClasses
 			   | push: 'visitor_property' %}
    		 {% endif %}
@@ -81,7 +81,7 @@
 	      {% assign inputClasses = site.array %}
 	      {% assign inputClasses = inputClasses
 	                | push: 'input-liste_deroulante' %}
-	      {% if champ.propriété_visiteur %}
+	      {% if champ.propriete_visiteur %}
 	      {% assign inputClasses = inputClasses
 	                | push: 'visitor_property' %}
    	      {% endif %}
@@ -119,7 +119,7 @@
 		     {% if champ.requis == true %}
 		     required
 		     {% endif %}
-		     {% if champ.propriété_visiteur %}
+		     {% if champ.propriete_visiteur %}
 		     class="input-choix_unique visitor_property" %}
 		     {% else %}
 		     class="input-choix_unique"
@@ -138,13 +138,14 @@
 		   {% if champ.requis == true %}
 		   required
 		   {% endif %}
-		   {% if champ.propriété_visiteur %}
+		   {% if champ.propriete_visiteur %}
 		   class="input-choix_unique other visitor_property" %}
 		   {% else %}
 		   class="input-choix_unique other"
    		   {% endif %}
 	    />
 	    <label class="label-choix_unique label-other" for="input-{{ inputId }}">
+	      <span>Autre :</span>
 	      <input type="text" class="other-choice-text no-send"
 	  	   id="other-{{ inputId }}"/>
 	    </label>
@@ -167,7 +168,7 @@
 		     {% if champ.requis == true %}
 		     required
 		     {% endif %}
-		     {% if champ.propriété_visiteur %}
+		     {% if champ.propriete_visiteur %}
 		     class="input-choix_multiple visitor_property" %}
 		     {% else %}
 		     class="input-choix_multiple"
@@ -175,7 +176,7 @@
 		/>
 		<label class="label-choix_multiple" for="input-{{ inputId }}">
 		{{ reponse.valeur}}
-			</label>
+		</label>
 	    </div>
 	    {% assign inputId=inputId | plus:1 %}
 	  {% endfor %}
@@ -186,13 +187,14 @@
 		   {% if champ.requis == true %}
 		   required
 		   {% endif %}
-		   {% if champ.propriété_visiteur %}
+		   {% if champ.propriete_visiteur %}
 		   class="input-choix_multiple other visitor_property" %}
 		   {% else %}
 		   class="input-choix_multiple other"
    		   {% endif %}
 	    />
 	    <label class="label-choix_multiple label-other" for="input-{{ inputId }}">
+	      <span>Autre :</span>
 	      <input type="text" class="other-choice-text no-send"
 	  	   id="other-{{ inputId }}"/>
 	    </label>
@@ -210,7 +212,7 @@
 			   | push: 'input-champ_cache ' %}
 		 placeholder="{{ champ.placeholder }}"
 		 name="{{ champ.nom }}"
-		 {% if champ.propriété_visiteur %}
+		 {% if champ.propriete_visiteur %}
 		 {% assign inputClasses = inputClasses
 			   | push: 'visitor_property' %}
    		 {% endif %}
@@ -225,11 +227,10 @@
 	</div>
 	{% endcase %}
     </div>
-    {% endif %}
   {% endfor %}
   <div class="row field-row">
     <div class="large-12 columns">
-	<input type="submit" value="Envoyer">
+      <input type="submit" value="{{ page.bouton_de_soumission }}">
     </div>
   </div>
 </form>
