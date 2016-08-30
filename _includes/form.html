@@ -3,7 +3,6 @@
   {% assign inputId=0 %}
   {% assign lineId=0 %}
   {% for champ in page.champs %}
-    {% if champ.actif == true %}
     <div class="input-container
     {% case champ.type %}
     {% when 'champ_libre_court' %}
@@ -226,11 +225,10 @@
 	</div>
 	{% endcase %}
     </div>
-    {% endif %}
   {% endfor %}
   <div class="row field-row">
     <div class="large-12 columns">
-	<input type="submit" value="Envoyer">
+      <input type="submit" value="{{ page.bouton_de_soumission }}">
     </div>
   </div>
 </form>
