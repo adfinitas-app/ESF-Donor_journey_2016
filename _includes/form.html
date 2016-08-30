@@ -20,8 +20,9 @@
     input-container-champ_cache
     {% endcase %}
     "
-	{% if champ.image_de_fond != nill and champ.image_de_fond != empty %}
-	style="background-image: url('{{ champ.image_de_fond }}')"
+	{% if champ.image_de_fond_image_path != nill and
+	 champ.image_de_fond_image_path != empty %}
+	style="background-image: url('{{ champ.image_de_fond_image_path }}')"
 	{% endif %}
 	id="slide-{{ lineId }}"
 	{% assign lineId=lineId | plus:1 %}
