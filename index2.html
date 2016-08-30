@@ -1,0 +1,168 @@
+---
+layout: form
+title: "On se dit tout"
+source: "ESF - On se dit tout"
+champs :
+ - type: choix_multiple
+   propriété_visiteur: true
+   image_de_fond: "https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/bg_slide2.png"
+   nom: "rencontre"
+   actif: true
+   requis: true
+   texte: "1. Quels sont vos supports d’information préferés?"
+   message_erreur: "Veuillez faire un choix"
+   placeholder:
+   controle:
+   reponses:
+    - valeur: La newsletter ESF
+    - valeur: Les réseaux sociaux
+    - valeur: Le site internet
+    - valeur: Les courriers  d’ESF
+    - valeur: Nos dépliants explicatifs
+   autre_reponse: true
+   valeur_champ_cache:
+ - type: choix_unique
+   propriété_visiteur: true
+   image_de_fond: "https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/bg_slide3.png"
+   nom: "date_rencontre"
+   actif: true
+   requis: true
+   texte: "2. Que pensez-vous de la fréquence d’envoi de nos newsletters ?"
+   message_erreur: "Veuillez faire un choix"
+   placeholder:
+   controle:
+   reponses:
+    - valeur: Je souhaite une actualité plus régulière
+    - valeur: Je suis satisfait(e) de la fréquence d’envoi des newsletters
+    - valeur: J’estime en recevoir trop souvent
+   autre_reponse: false
+   valeur_champ_cache:
+ - type: choix_multiple
+   propriété_visiteur: true
+   image_de_fond: "https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/bg_slide4.png"
+   nom: "engagement"
+   actif: true
+   requis: true
+   texte: "3. Quelles informations souhaitez-vous recevoir ?"
+   message_erreur: "Veuillez faire au moins un choix"
+   placeholder:
+   controle:
+   reponses:
+    - valeur: Des informations sur nos projets d’élevage
+    - valeur: Des informations sur nos projets agricoles
+    - valeur: Des témoignages des familles soutenues
+    - valeur: Des nouvelles des projets passés des actions mises en place sur le terrain
+    - valeur: Des photos ou diaporamas commentés
+    - valeur: Des vidéos
+    - valeur: Des annonces sur nos prochains projets
+    - valeur: Des actualités autour de notre vie associative en régions
+    - valeur: Des informations pratiques sur l’élevage et l’agriculture en zone tropicale
+   autre_reponse: true
+   valeur_champ_cache:
+ - type: choix_unique
+   propriété_visiteur: true
+   image_de_fond: "https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/bg_slide5.png"
+   nom: "choix"
+   actif: true
+   requis: true
+   texte: "4. Avez-vous déjà fait un don à ESF ?"
+   message_erreur: "Veuillez faire au moins un choix"
+   placeholder:
+   controle:
+   reponses:
+    - valeur: Oui
+    - valeur: Non
+   autre_reponse: false
+   valeur_champ_cache:
+ - type: choix_unique
+   propriété_visiteur: true
+   image_de_fond: "https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/bg_slide5.png"
+   nom: "choix"
+   actif: true
+   requis: true
+   texte: "Si oui, quel fut l'élément déclencheur de votre don ?"
+   message_erreur: "Veuillez faire au moins un choix"
+   placeholder:
+   controle:
+   reponses:
+    - valeur: Un courrier
+    - valeur: Un email
+    - valeur: L'envie d’offrir un cadeau solidaire
+    - valeur: Le témoignage d’un proche
+    - valeur: Mon attachement à la cause
+    - valeur: Un article dans la presse
+    - valeur: L'avantage fiscal
+   autre_reponse: true
+   valeur_champ_cache:
+ - type: choix_unique
+   propriété_visiteur: true
+   image_de_fond: "https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/bg_slide5.png"
+   nom: "choix"
+   actif: true
+   requis: true
+   texte: "5. Seriez-vous prêt à soutenir ESF au cours des 12 mois à venir ?"
+   message_erreur: "Veuillez faire au moins un choix"
+   placeholder:
+   controle:
+   reponses:
+    - valeur: Oui
+    - valeur: Non
+    - valeur: Je ne sais pas
+   autre_reponse: false
+   valeur_champ_cache:
+
+
+bouton_de_soumission: "Envoyer"
+page_de_remerciement_path: "https://google.com"
+
+_comments:
+  nom: "Obligatoire et unique. Description courte du champ"
+  texte: Ce champ peut etre vide
+  placeholder: Seulement pour les champs de type "champ libre"
+  controle: Seulement pour les champs de type "champ libre"
+  reponses: Seulement pour les champs de type "choix"
+  autre_reponse: 'Seulement pour les champs de type "choix"'
+  page_de_remerciement_path: "URL de la page lorsque l'utilisateur valide le formulaire"
+  propriété_visiteur: Cocher cette case si vous souhaitez que ce champs remonte dans les propriété du visiteur sur Woopra
+  source: Permet de personnaliser le nom de l'evenement sur Woopra
+  image_de_fond: Image de fond du champ
+  valeur_champ_cache: 'Seulement pour les champs de type "champ_cache". Définit la valeur du champ'
+---
+
+<div class="row input-container" style="background-image: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/bg_slide1.png');">
+			<div class=" small-6 text-center medium-offset-1 medium-2 columns">
+				<img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/logo_esf.png" class="img_top">
+			</div>
+			<div class="small-6  text-center medium-6 columns">
+				<img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/logo_tout.png" class="img_top">
+			</div>
+			<div class="small-0 medium-4"></div>
+			<div class="small-12 text-center columns">
+				<div class="row">
+					<div class="small-offset-1 small-centered small-10 medium-8 large-8 text-center columns">
+						<p id="first_text" class="texte-choix_unique">VOS ATTENTES</p>
+					</div>
+				</div>
+				<p id="second_text" class="text_small">
+          Tout au long de l’année, nous vous informons à propos de nos projets sur le terrain : ceux qui ont vu le jour grâce à vous mais aussi ceux à venir.<br>
+          Confiez-nous ce que vous attendez d’Elevages sans frontières à ce sujet !
+				</p>
+			</div>
+      <div id="third_text" class="small-12 columns text-center" style="position: absolute; bottom: 0; left: 0; padding-bottom: 20px;">
+        <div class="row">
+          <div class="small-centered columns ">
+            <a href="#slide-0">
+              <p class="text_bold" style="line-height: 0;">JE RÉPONDS</p>
+              <img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_down.png">
+            </a>
+          </div>
+			</div>
+    </div>
+  </div>
+    {% include form.html %}
+  <div class="row field-row">
+    <a id="next_container" href="#" class="small-12 hide-for-small-only columns text-center">
+      <p class="text_bold">QUESTION SUIVANTE</p>
+      <img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_down.png">
+    </a>
+  </div>
