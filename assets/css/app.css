@@ -22,15 +22,6 @@
  padding-bottom: 10px;
 }
 
-.text_bold
-{
- font-family: 'tk-nimbus-sans-condensed-n4', serif;
- color : white;
- font-size: 1.2em;
- font-weight: bold;
- line-height: 0;
-}
-
 @keyframes slide_in {
   100% {
     bottom: 0px;
@@ -104,11 +95,6 @@
 p {
   font-family: 'tk-nimbus-sans-condensed-n4', serif;
   font-size: 1.3em;
-}
-
-.p {
-  font-family: 'tk-nimbus-sans-condensed-n4', serif !important;
-  font-size: 1.3em !important;
 }
 
 textarea {
@@ -231,4 +217,28 @@ label {
 
 [type="checkbox"]:checked + label span::before {
   content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_checked.png');
+}
+
+@media all and (min-width: 1280px) {
+  .text_bold,
+  .text_small,
+  p
+  {
+    font-size: 1.8em;
+  }
+  [type="text"],
+  textarea {
+    font-size: 1.6em;
+  }
+  .texte-choix_unique,
+  .texte-choix_multiple
+  {
+    font-size: 3em;
+  }
+  .label-choix_unique,
+  .label-choix_multiple,
+  label
+  {
+    font-size: 2em;
+  }
 }
