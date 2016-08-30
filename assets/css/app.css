@@ -64,6 +64,11 @@
   margin-top: 30px;
 }
 
+.img_top_right /*Merci.html*/
+{
+  margin-top: 30px;
+}
+
 [type="text"] {
   background-color: #f6f0e7;
   border-radius: 7px;
@@ -215,7 +220,45 @@ label {
   content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_checked.png');
 }
 
-@media all and (min-width: 1280px) {
+/*MERCI.HTML*/
+
+.text_title
+{
+  padding-top: 5%;
+  font-family: 'Slabo 13px', serif;
+  color : white;
+  font-size: 2em;
+  line-height: 1em;
+  margin-top: 3%;
+}
+
+.text_main
+{
+  color: white;
+  line-height: 1.3em;
+  font-family: 'tk-nimbus-sans-condensed-n4', serif;
+  font-size: 1.3em;
+}
+
+.bouton_merci
+{
+    transition: 0.3s ease all;
+}
+
+.bouton_merci:hover
+{
+  background-color: rgba(255, 255, 255, 0.302);
+}
+
+
+@media (max-width: 640px) {
+  .img_top_right /*Merci.html*/
+  {
+    height: 50px;
+  }
+}
+
+@media (min-width: 1440px) and (min-height:600px){
   .text_bold,
   .text_small,
   p
@@ -245,22 +288,35 @@ label {
   }
   textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder
   {
-   font-size: 1.3em;
- }
- textarea:-moz-placeholder, [type="text"]:-moz-placeholder
- {
-  font-size: 1.3em;
-}
-textarea::-moz-placeholder, [type="text"]::-moz-placeholder
-{
- font-size: 1.3em;
-}
-textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder{
- font-size: 1.3em;
-}
+    font-size: 1.3em;
+  }
+  textarea:-moz-placeholder, [type="text"]:-moz-placeholder
+  {
+    font-size: 1.3em;
+  }
+  textarea::-moz-placeholder, [type="text"]::-moz-placeholder
+  {
+    font-size: 1.3em;
+  }
+  textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder{
+    font-size: 1.3em;
+  }
+  .text_main
+  {
+    font-size: 2em;
+  }
+  .text_title
+  {
+    font-size: 3em;
+  }
+
+  .img_top
+  {
+      height:80px;
+  }
 }
 
-@media all and (min-width: 2500px) {
+@media (min-width: 2200px){
   .text_bold,
   .text_small,
   p
@@ -303,5 +359,22 @@ label
 }
 [type="checkbox"] + label span::before {
   vertical-align: -0.1em;
+}
+.text_main
+{
+  font-size: 4.5em;
+}
+.text_title
+{
+  font-size: 6em;
+}
+
+.img_top
+{
+    height:160px;
+}
+.img_top_right
+{
+    height:300px;
 }
 }
