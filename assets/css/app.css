@@ -378,3 +378,30 @@ label
     height:300px;
 }
 }
+
+.slide-url {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 3px;
+    color: #eb6800;
+}
+
+.slide-url:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+    color: #eb6800;
+    background: #eb6800;
+}
+
+.slide-url:hover:after {
+    width: 100%;
+    color: #eb6800;
+    background: #eb6800;
+}
