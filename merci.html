@@ -8,7 +8,7 @@ don_path: "https://dons.elevagessansfrontieres.org/"
 site_path: "http://www.elevagessansfrontieres.org/"
 fb_path: "https://www.facebook.com/ONGElevagesSansFrontieres"
 twitter_path: "https://twitter.com/ElevagesSF"
-share_path: "http://www.elevagessansfrontieres.org/a-propos/qui-recoit-donne/"
+share_path: "https://www.facebook.com/sharer/sharer.php?u=%20http%3A//www.elevagessansfrontieres.org/a-propos/qui-recoit-donne/"
 confiance: "http://www.donenconfiance.org/"
 background: "./assets/img/background_merci.jpg"
 logo: "https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/logo_esf.png"
@@ -18,7 +18,7 @@ logo_path: "http://www.elevagessansfrontieres.org/"
 
 <div class="row input-container" style="background-image: url('{{ page.background }}');">
  <div class=" small-6 text-center medium-offset-1 medium-2 columns">
-  <a href="{{ page.logo_path }}"><img src="{{ page.logo }}" class="img_top"></a>
+  <a href="{{ page.logo_path }}" target="_blank"><img src="{{ page.logo }}" class="img_top"></a>
 </div>
 <div class="small-6  text-center medium-6 columns">
   <img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/logo_tout.png" class="img_top_right">
@@ -68,3 +68,11 @@ logo_path: "http://www.elevagessansfrontieres.org/"
     <p style="color : white; padding-top: 0.5em">Réalisé par <a href="http://www.adfinitas.fr/" target="_blank" class="slide-url">Adfinitas</a></p>
   </div>
 </div>
+<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+  </script>

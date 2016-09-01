@@ -382,8 +382,7 @@ label
 .slide-url {
     display: inline-block;
     position: relative;
-    padding-bottom: 3px;
-    color: #eb6800;
+    color: #eb6800 !important;
 }
 
 .slide-url:after {
@@ -392,16 +391,15 @@ label
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 3px;
+    height: 2px;
     width: 0;
     background: transparent;
     transition: width .5s ease, background-color .5s ease;
-    color: #eb6800;
-    background: #eb6800;
+      color: #eb6800 !important;
 }
 
 .slide-url:hover:after {
     width: 100%;
-    color: #eb6800;
+    color: #eb6800 !important;
     background: #eb6800;
 }
