@@ -51,7 +51,7 @@ $(document).ready(function() {
       set_count++;
       count++;
     }
-    html_code = '<p class="texte-choix_multiple text-center">MERCI DE RENSEIGNER LES INFORMATIONS SUIVANTES POUR ENREGISTRER VOS RÉPONSES</p>';
+    html_code = '<p class="texte-choix_multiple text-center" style="margin-bottom: 2rem">MERCI DE RENSEIGNER LES INFORMATIONS SUIVANTES POUR ENREGISTRER VOS RÉPONSES</p>';
     selector = $("#slide-" + 4  + " > .field-row > .columns > .texte-choix_unique")
     $(selector).removeClass(".texte-choix_unique");
     $(selector).addClass("small-12 medium-4 columns label-choix_multiple");
