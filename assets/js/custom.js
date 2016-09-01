@@ -3,7 +3,6 @@ $(document).ready(function() {
   var   slide_count;
 
   slide_count = count_slides();
-  apply_layout();
 
   $('.field-row > .columns').removeClass("large-12 large-6 large-centered");
   $('.field-row > .columns').addClass("small-12 medium-offset-1 medium-10 large-offset-3 large-6 columns");
@@ -20,19 +19,51 @@ $(document).ready(function() {
     return (count);
   }
 
-  function  apply_layout()
+  apply_last_slide();
+  function    apply_last_slide()
   {
-    var   count;
+    var     count;
+    var     set_count;
+    var     selector;
+    var     html_code;
+    var     set =
+    ["small-offset-1 small-10 large-offset-3 large-6",
+    "small-12",
+    "small-12 medium-6",
+    "small-12 medium-6",
+    "small-12 medium-12",
+    "small-12 medium-6",
+    "small-12 medium-6",
+    "small-12 medium-6",
+    "small-12 medium-6"];
 
-    count = slide_count - 9;
+    set_count = 1;
+    count = slide_count - 8;
+    $("#slide-" + count - 1 + " > .field-row > .columns").removeClass("small-12 medium-10 large-6 medium-offset-1 large-offset-3");
+    $("#slide-" + count - 1 + " > .field-row > .columns").addClass(set[0]);
     while (count < slide_count)
     {
-      $("#slide-" + count).css({"min-height" : "0vh", "height" : "auto", "font-size" : "1em"});
+      console.log("#slide-" + count);
+      $("#slide-" + count + " > .field-row > .columns").removeClass("small-12 medium-10 large-6 medium-offset-1 large-offset-3");
+      $("#slide-" + count + " > .field-row > .columns").addClass(set[set_count]);
+      $("#slide-4 > .field-row > .columns").append($("#slide-" + count + " > .field-row > .columns"));
+      $("#slide-" + count).remove();
+      set_count++;
       count++;
     }
+    html_code = '<div class="columns small-12" style="margin-top: 5%;"></div>';
+    console.log(slide_count - 9);
+    selector = $("#slide-" + 4  + " > .field-row > .columns > .texte-choix_unique")
+    $(selector).removeClass(".texte-choix_unique");
+    $(selector).addClass("small-12 medium-4 columns label-choix_multiple");
+    $(selector).css({"margin-bottom" : "0px", "padding-top" : "0.8em", "margin-top" : "0px", "line-height" : "1em"});
+    $("#slide-" + 4 + " > .field-row > .columns").prepend(html_code);
+    $("#slide-" + 4 + " > .field-row > .columns > .reponse-container-choix_multiple").addClass("small-6 medium-4 columns");
+    $("#slide-" + 4 + " > .field-row > .columns > .reponse-container-choix_multiple").css({"margin-bottom" : "0px", "padding-top" : "0.4em", "margin-top" : "0px", "line-height" : "1em"});
+    $("#slide-" + 4 + " > .field-row > .columns > .champ_libre_court > .label-champ_libre").addClass("small-12 medium-6 columns");
+    $("#slide-" + 4 + " > .field-row > .columns > .champ_libre_court > .input-champ_libre").addClass("small-12 medium-6 columns");
   }
 
-  resize_last_slide();
   function  resize_last_slide()
   {
     var     count;
@@ -48,9 +79,6 @@ $(document).ready(function() {
     height = 100 - ((100 / $(window).height()) * height);
     $("#slide-" + (count)).css({"min-height" : height + "vh", "padding-bottom" : "50px"});
   }
-
-  $("#slide-6 > .row > .columns").addClass("large-offset-0 large-3");
-  document.addEventListener("resize", resize_last_slide());
 
   //DELAY SHOW
   $('#first_text').hide().fadeIn(700);

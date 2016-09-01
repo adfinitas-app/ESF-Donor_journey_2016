@@ -81,7 +81,6 @@
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
   outline: none;
-  max-width: 600px;
   padding-right: 20px;
   flex:1;
 }
@@ -110,7 +109,6 @@ textarea {
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
   outline: none;
-  max-width: 600px;
   padding-right: 20px;
   flex:1;
 }
@@ -159,7 +157,7 @@ textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder{
 label {
   padding-left: 10px;
   font-family: 'tk-nimbus-sans-condensed-n4', serif;
-  color : white;
+  color : white !important;
   font-size: 1.5em;
 }
 
@@ -242,7 +240,7 @@ label {
 
 .bouton_merci
 {
-    transition: 0.3s ease all;
+  transition: 0.3s ease all;
 }
 
 .bouton_merci:hover
@@ -312,7 +310,7 @@ label {
 
   .img_top
   {
-      height:80px;
+    height:80px;
   }
 }
 
@@ -371,35 +369,35 @@ label
 
 .img_top
 {
-    height:160px;
+  height:160px;
 }
 .img_top_right
 {
-    height:300px;
+  height:300px;
 }
 }
 
 .slide-url {
-    display: inline-block;
-    position: relative;
-    color: #eb6800 !important;
+  display: inline-block;
+  position: relative;
+  color: #eb6800 !important;
 }
 
 .slide-url:after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 0;
-    background: transparent;
-    transition: width .5s ease, background-color .5s ease;
-      color: #eb6800 !important;
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: transparent;
+  transition: width .5s ease, background-color .5s ease;
+  color: #eb6800 !important;
 }
 
 .slide-url:hover:after {
-    width: 100%;
-    color: #eb6800 !important;
-    background: #eb6800;
+  width: 100%;
+  color: #eb6800 !important;
+  background: #eb6800;
 }
