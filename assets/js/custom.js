@@ -51,8 +51,7 @@ $(document).ready(function() {
       set_count++;
       count++;
     }
-    html_code = '<div class="columns small-12" style="margin-top: 5%;"></div>';
-    console.log(slide_count - 9);
+    html_code = '<p class="texte-choix_multiple text-center">MERCI DE RENSEIGNER LES INFORMATIONS SUIVANTES POUR ENREGISTRER VOS RÉPONSES</p>';
     selector = $("#slide-" + 4  + " > .field-row > .columns > .texte-choix_unique")
     $(selector).removeClass(".texte-choix_unique");
     $(selector).addClass("small-12 medium-4 columns label-choix_multiple");
@@ -62,22 +61,6 @@ $(document).ready(function() {
     $("#slide-" + 4 + " > .field-row > .columns > .reponse-container-choix_multiple").css({"margin-bottom" : "0px", "padding-top" : "0.4em", "margin-top" : "0px", "line-height" : "1em"});
     $("#slide-" + 4 + " > .field-row > .columns > .champ_libre_court > .label-champ_libre").addClass("small-12 medium-6 columns");
     $("#slide-" + 4 + " > .field-row > .columns > .champ_libre_court > .input-champ_libre").addClass("small-12 medium-6 columns");
-  }
-
-  function  resize_last_slide()
-  {
-    var     count;
-    var     height;
-
-    count = slide_count - 9;
-    height = 0;
-    while (count < slide_count - 1)
-    {
-      height += $("#slide-" + count).height();
-      count++;
-    }
-    height = 100 - ((100 / $(window).height()) * height);
-    $("#slide-" + (count)).css({"min-height" : height + "vh", "padding-bottom" : "50px"});
   }
 
   //DELAY SHOW
