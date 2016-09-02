@@ -1,10 +1,5 @@
 array: []
-version: 3.0.3
-defaults:
-  - scope:
-      path: ''
-    values:
-      layout: default
+version: 3.2.1
 woopra_config:
   domain: "adfinitas.fr"
   cookie_domain: ".adfinitas.fr"
@@ -13,7 +8,6 @@ form-to-db_config:
   envoi_base_de_donnée: true
   message_erreur: "Une erreur est survenue, veuillez envoyer un mail à lghionna@adfinitas.fr"
 controles:
-  - email
   - telephone
 types:
   - champ_libre_court
@@ -21,5 +15,31 @@ types:
   - liste_deroulante
   - choix_unique
   - choix_multiple
-  - champ_caché
   - scoring
+largeur_champs:
+  - "100%"
+  - "50% centré"
+defaults:
+  - scope:
+      path: ''
+    values:
+      layout: default
+  - scope:
+      path: ''
+      type: formulaire
+    values:
+      layout: formulaire
+  - scope:
+      path: ''
+      type: petition
+    values:
+      layout: petition
+collections:
+  formulaire:
+    output: true
+    permalink: /:collection/:title/
+    _hide_content: true
+  petition:
+    output: true
+    permalink: /:collection/:title/
+    _hide_content: true

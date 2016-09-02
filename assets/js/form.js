@@ -6,13 +6,33 @@ function pureField(string) {
   return (string.replace(/'/g, "%27").replace(/"/g, "&quot;"));
 }
 
-function submitForm(jqForm) {
+function getFields(jqForm, selector) {
   var FormData = {};
-  jqForm.find("input:not([type=submit]):not(.no-send)").each(function() {
-    // TODO: Check that it works with every types
-    FormData[$(this).attr("name")] = $(this).val();
+  jqForm.find(selector).each(function() {
+    if ($(this).attr("type") === "radio") {
+      if ($(this).is(":checked"))
+      FormData[$(this).attr("name")] = $(this).val();
+    } else if ($(this).attr("type") === "checkbox") {
+      if ($(this).is(":checked")) {
+	var concat = FormData[$(this).attr("name")] || "";
+	if (concat.length === 0) {
+	  FormData[$(this).attr("name")] = $(this).val();
+	} else {
+	  FormData[$(this).attr("name")] =
+	    concat + ", " + $(this).val();
+	}
+      }
+    } else if ($(this).prop("tagName") === "SELECT") {
+      FormData[$(this).attr("name")] = $(this).find("option:selected").val();
+    } else {
+      FormData[$(this).attr("name")] = $(this).val();
+    }
   });
-  today = new Date();
+  return (FormData);
+}
+
+function submitForm(jqForm) {
+  var FormData = getFields(jqForm, "input:not([type=submit]):not(.no-send), select, textarea");
   /*
   woopra.track("inscription", {
     url: document.URL,
@@ -21,17 +41,14 @@ function submitForm(jqForm) {
     optin: "non" // Champ "Optin Woopra" oui/non ?
   });
   */
-  var visitorProperties = {};
-  jqForm.find("input:not([type=submit]):not(.no-send).visitor_property").each(function() {
-    // TODO: Check that it works with every types
-    visitorProperties[$(this).attr("name")] = $(this).val();
-  });
+  var visitorProperties = getFields(jqForm, "input:not([type=submit]):not(.no-send).visitor_property, select.visitor_property, textarea.visitor_property");
   woopra.identify(visitorProperties);
   woopra.track('adfinitascx-' + jqForm.data("source"), FormData);
+  var now = new Date();
   var dbData = {
     "schema": "{{ site.form-to-db_config.schema }}",
     "db": {
-      "signin_date": today.toString()
+      "signin_date": now.toString()
     }
   }
   for (var attrname in FormData) {
@@ -40,9 +57,7 @@ function submitForm(jqForm) {
   var success = function() {
     window.location = jqForm.data("success");
   };
-  // TODO: DEBUG ONLY
-  console.log(dbData);
-  //makeCorsRequest(dbData, success);
+  makeCorsRequest(dbData, success);
 }
 
 // Pre-filled inputs from query parameter in URL.
@@ -63,21 +78,24 @@ function preFill() {
       toHide = true;
       var name = key.substring(0, key.length - hideKeyword.length);
     }
-    if ($("select[name=" + name + "]").length > 0) {
-      var selector = $("select[name=" + name + "] option[value=" + value + "]");
+    if ($("select[name='" + name + "']").length > 0) {
+      var selector = $("select[name='" + name + "'] option[value='" + value + "']");
       selector.prop("selected", true);
-    } else if ($("input:radio[name=" + name + "]").length > 0) {
-      var selector = $("input:radio[name=" + name + "][value=" + value + "]");
+    } else if ($("input:radio[name='" + name + "']").length > 0) {
+      var selector = $("input:radio[name='" + name + "'][value='" + value + "']");
       selector.prop("checked", true);
-    } else if ($("input:checkbox[name=" + name + "]").length > 0) {
-      var selector = $("input:checkbox[name=" + name + "][value=" + value + "]");
+    } else if ($("input:checkbox[name='" + name + "']").length > 0) {
+      var selector = $("input:checkbox[name='" + name + "'][value='" + value + "']");
       selector.prop("checked", true);
-    } else if ($("input[name=" + name + "]").length > 0 &&
-	       $("input[name=" + name + "]").hasClass("check-phone")) {
-      var selector = $("input[name=" + name + "]");
+    } else if ($("input[name='" + name + "']").length > 0 &&
+	       $("input[name='" + name + "']").hasClass("check-phone")) {
+      var selector = $("input[name='" + name + "']");
       selector.intlTelInput("setNumber", value);
-    } else if ($("input[name=" + name + "]").length > 0) {
-      var selector = $("input[name=" + name + "]");
+    } else if ($("input[name='" + name + "']").length > 0) {
+      var selector = $("input[name='" + name + "']");
+      selector.val(value);
+    } else if ($("textarea[name='" + name + "']").length > 0) {
+      var selector = $("textarea[name='" + name + "']");
       selector.val(value);
     } else {
       return;
@@ -135,12 +153,6 @@ $(document).ready(function() {
 
 /*
  * TODO
- * scoring (radio de 1 à 10 en presentation horizontale)
- * Responsive Design
+ * Test responsive Design
  * Docs
- *
- * CSS / JS Statique :
- * - Radio court
- *   - Checkbox sur une demi-ligne (à la fin)
- *   - Placement du label (avant ou au-dessus)
  */

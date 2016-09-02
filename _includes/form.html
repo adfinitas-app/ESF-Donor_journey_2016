@@ -1,236 +1,138 @@
-<form class="adfinitas-cx" novalidate data-source="{{ page.source }}" data-success="{{ page.page_de_remerciement_path }}">
-
+<div class="panneau-introduction"
+     style="
+     {% if page.panneau_introduction.fond_image_path != nill  and 
+	page.panneau_introduction.fond_image_path != empty %}
+      background-image: url('{{ page.panneau_introduction.fond_image_path }}');
+     {% endif %}
+     {% if page.panneau_introduction.fond_color != nill and 
+     page.panneau_introduction.fond_color != empty %}
+     background-color: {{ page.panneau_introduction.fond_color }};
+     {% endif %}
+     "
+  >
+  {% if page.panneau_introduction.texte_html != nill and
+     page.panneau_introduction != empty %}
+    <div class="panneau-introduction-texte">
+      <div class="row">
+	{% if page.options.largeur_champs == "50% centré" %}
+	  <div class="large-6 medium-12 small-12 large-centered columns">
+	{% else %}
+	  <div class="large-12 medium-12 small-12 columns">
+	{% endif %}
+          {{ page.panneau_introduction.texte_html }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+<form class="adfinitas-cx" novalidate
+			   data-source="{{ page.event_woopra }}"
+			   data-success="{{ page.options.page_de_remerciement_path }}">
   {% assign inputId=0 %}
   {% assign lineId=0 %}
-  {% for champ in page.champs %}
-    <div class="input-container
-    {% case champ.type %}
-    {% when 'champ_libre_court' %}
-    input-container-champ_libre_court
-    {% when 'champ_libre_long' %}
-    input-container-champ_libre_long
-    {% when 'liste_deroulante' %}
-    input-container-liste_deroulante
-    {% when 'choix_unique' %}
-    input-container-choix_unique
-    {% when 'choix_multiple' %}
-    input-container-choix_multiple
-    {% when 'champ_caché' %}
-    input-container-champ_cache
-    {% endcase %}
-    "
-	{% if champ.image_de_fond_image_path != nill and
-	 champ.image_de_fond_image_path != empty %}
-	style="background-image: url('{{ champ.image_de_fond_image_path }}')"
-	{% endif %}
-	id="slide-{{ lineId }}"
-	{% assign lineId=lineId | plus:1 %}
-	>
-	{% case champ.type %}
-	{% when 'champ_libre_court' or 'champ_libre_long' %}
-	<div class="row field-row">
-	  {% if champ.type == 'champ_libre_court' %}
-	    <div class="large-6 columns large-centered champ_libre_court">
-	  {% elsif champ.type == 'champ_libre_long' %}
-	    <div class="large-12 columns champ_libre_long">
-	  {% endif %}
-	  {% if champ.texte != nill and champ.texte != empty %}
-	    <label class="label-champ_libre" for="input-{{ inputId }}">
-		{{ champ.texte }}
-	    </label>
-	  {% endif %}
-	  <input id="input-{{ inputId }}"
-		 {% assign inputClasses = site.array %}
-		 {% assign inputClasses = inputClasses
-			   | push: 'input-champ_libre ' %}
-		 {% if champ.controle == "email" %}
-		 {% assign inputClasses = inputClasses
-			   | push: 'check-email ' %}
-		 type="email"
-		 {% elsif champ.controle == "telephone" %}
-		 {% assign inputClasses = inputClasses
-			   | push: 'check-phone ' %}
-		 type="text"
-		 {% else %}
-		 type="text"
-		 {% endif %}
-		 placeholder="{{ champ.placeholder }}"
-		 name="{{ champ.nom }}"
-		 {% if champ.propriete_visiteur %}
-		 {% assign inputClasses = inputClasses
-			   | push: 'visitor_property' %}
-   		 {% endif %}
-		 {% if champ.requis == true %}
-		 required
-		 {% endif %}
-		 class="{{ inputClasses }}"
-	  />
-	  {% assign inputId=inputId | plus:1 %}
-	  <p class="error-message">{{ champ.message_erreur }}</p>
-	  </div>
-	</div>
-	{% when 'liste_deroulante' %}
-	<div class="row field-row">
-	  <div class="large-12 columns">
-	  {% if champ.texte != nill and champ.texte != empty %}
-	    <label class="label-champ_libre" for="input-{{ inputId }}">
-		{{ champ.texte }}
-	    </label>
-	  {% endif %}
-	    <select
-	      {% assign inputClasses = site.array %}
-	      {% assign inputClasses = inputClasses
-	                | push: 'input-liste_deroulante' %}
-	      {% if champ.propriete_visiteur %}
-	      {% assign inputClasses = inputClasses
-	                | push: 'visitor_property' %}
-   	      {% endif %}
-	      {% if champ.requis == true %}
-	      required
-	      {% endif %}
-	      name="{{ champ.nom }}"
-	      id="input-{{ inputId }}"
-	      class="{{ inputClasses }}"
-	      >
-	      {% if champ.placeholder != nill and champ.placeholder != empty %}
-	      <option selected="selected" disabled="disabled">
-		{{ champ.placeholder }}
-	      </option>
-	      {% endif %}
-	      {% for reponse in champ.reponses %}
-		<option value="{{ reponse.valeur }}">{{ reponse.valeur }}</option>
-	      {% endfor %}
-	    </select>
-	    {% assign inputId=inputId | plus:1 %}
-	    <p class="error-message">{{ champ.message_erreur }}</p>
-	  </div>
-	</div>
-	{% when 'choix_unique' %}
-	<div class="row field-row">
-	    <div class="large-12 columns">
-	  {% if champ.texte != nill and champ.texte != empty %}
-	    <p class="texte-choix_unique">{{ champ.texte }}</p>
-	  {% endif %}
-	  {% for reponse in champ.reponses %}
-	    <div class="reponse-container-choix_multiple">
-		<input type="radio" id="input-{{ inputId }}"
-		     value="{{ reponse.valeur}}"
-		     name="{{ champ.nom }}"
-		     {% if champ.requis == true %}
-		     required
-		     {% endif %}
-		     {% if champ.propriete_visiteur %}
-		     class="input-choix_unique visitor_property" %}
-		     {% else %}
-		     class="input-choix_unique"
-   		     {% endif %}
-		/>
-		<label class="label-choix_unique" for="input-{{ inputId }}">
-		{{ reponse.valeur}}
-		</label>
-	    </div>
-	    {% assign inputId=inputId | plus:1 %}
-	  {% endfor %}
-	  {% if champ.autre_reponse %}
-	    <input type="radio" id="input-{{ inputId }}"
-		   value="Autre réponse"
-		   name="{{ champ.nom }}"
-		   {% if champ.requis == true %}
-		   required
-		   {% endif %}
-		   {% if champ.propriete_visiteur %}
-		   class="input-choix_unique other visitor_property" %}
-		   {% else %}
-		   class="input-choix_unique other"
-   		   {% endif %}
-	    />
-	    <label class="label-choix_unique label-other" for="input-{{ inputId }}">
-	      <span>Autre :</span>
-	      <input type="text" class="other-choice-text no-send"
-	  	   id="other-{{ inputId }}"/>
-	    </label>
-	    {% assign inputId=inputId | plus:1 %}
-	  {% endif %}
-	    <p class="error-message">{{ champ.message_erreur }}</p>
-	  </div>
-	</div>
-	{% when 'choix_multiple' %}
-	<div class="row field-row">
-	  <div class="large-12 columns">
-	  {% if champ.texte != nill and champ.texte != empty %}
-	    <p class="texte-choix_multiple">{{ champ.texte }}</p>
-	  {% endif %}
-	  {% for reponse in champ.reponses %}
-	    <div class="reponse-container-choix_multiple">
-		<input type="checkbox" id="input-{{ inputId }}"
-		     value="{{ reponse.valeur}}"
-		     name="{{ champ.nom }}"
-		     {% if champ.requis == true %}
-		     required
-		     {% endif %}
-		     {% if champ.propriete_visiteur %}
-		     class="input-choix_multiple visitor_property" %}
-		     {% else %}
-		     class="input-choix_multiple"
-   		     {% endif %}
-		/>
-		<label class="label-choix_multiple" for="input-{{ inputId }}">
-		{{ reponse.valeur}}
-		</label>
-	    </div>
-	    {% assign inputId=inputId | plus:1 %}
-	  {% endfor %}
-	  {% if champ.autre_reponse %}
-	    <input type="checkbox" id="input-{{ inputId }}"
-		   value="Autre réponse"
-		   name="{{ champ.nom }}"
-		   {% if champ.requis == true %}
-		   required
-		   {% endif %}
-		   {% if champ.propriete_visiteur %}
-		   class="input-choix_multiple other visitor_property" %}
-		   {% else %}
-		   class="input-choix_multiple other"
-   		   {% endif %}
-	    />
-	    <label class="label-choix_multiple label-other" for="input-{{ inputId }}">
-	      <span>Autre :</span>
-	      <input type="text" class="other-choice-text no-send"
-	  	   id="other-{{ inputId }}"/>
-	    </label>
-	    {% assign inputId=inputId | plus:1 %}
-	  {% endif %}
-	    <p class="error-message">{{ champ.message_erreur }}</p>
-	  </div>
-	</div>
-	{% when 'champ_caché' %}
-	  <input id="input-{{ inputId }}"
-		 type="hidden"
-		 value="{{ champ.valeur_champ_cache }}"
-		 {% assign inputClasses = site.array %}
-		 {% assign inputClasses = inputClasses
-			   | push: 'input-champ_cache ' %}
-		 placeholder="{{ champ.placeholder }}"
-		 name="{{ champ.nom }}"
-		 {% if champ.propriete_visiteur %}
-		 {% assign inputClasses = inputClasses
-			   | push: 'visitor_property' %}
-   		 {% endif %}
-		 class="{{ inputClasses }}"
-	  />
-	  {% assign inputId=inputId | plus:1 %}
+  <div class="container-panneau_question"
+       style="
+       {% if page.panneau_question.fond_image_path != nill  and 
+  	page.panneau_question.fond_image_path != empty %}
+        background-image: url('{{ page.panneau_question.fond_image_path }}');
+       {% endif %}
+       {% if page.panneau_question.fond_color != nill and 
+       page.panneau_question.fond_color != empty %}
+       background-color: {{ page.panneau_question.fond_color }};
+       {% endif %}
+       "
+    >
+    {% if page.panneau_question.texte_html != nill and
+       page.panneau_question != empty %}
+      <div class="panneau-question-texte">
+        <div class="row">
+	{% if page.options.largeur_champs == "50% centré" %}
+	  <div class="large-6 medium-12 small-12 large-centered columns">
 	{% else %}
-	<div class="row field-row">
-		  <div class="large-12 columns">
-	    <p style="color: red">[Erreur]: Type de champ inconnu: {{ champ.type }}</p>
-	  </div>
-	</div>
-	{% endcase %}
+	  <div class="large-12 medium-12 small-12 columns">
+	{% endif %}
+            {{ page.panneau_question.texte_html }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% include form-fields.html champs=page.panneau_question.champs %}
+  </div>
+  <div class="container-panneau_informations_personnelles"
+       style="
+       {% if page.panneau_informations_personnelles.fond_image_path != nill  and 
+  	page.panneau_informations_personnelles.fond_image_path != empty %}
+        background-image: url('{{ page.panneau_informations_personnelles.fond_image_path }}');
+       {% endif %}
+       {% if page.panneau_informations_personnelles.fond_color != nill and 
+       page.panneau_informations_personnelles.fond_color != empty %}
+       background-color: {{ page.panneau_informations_personnelles.fond_color }};
+       {% endif %}
+       "
+    >
+  {% if page.panneau_informations_personnelles.texte_html != nill and
+     page.panneau_informations_personnelles != empty %}
+    <div class="panneau-informations_personnelles-texte">
+      <div class="row">
+	{% if page.options.largeur_champs == "50% centré" %}
+	  <div class="large-6 medium-12 small-12 large-centered columns">
+	{% else %}
+	  <div class="large-12 medium-12 small-12 columns">
+	{% endif %}
+          {{ page.panneau_informations_personnelles.texte_html }}
+        </div>
+      </div>
     </div>
-  {% endfor %}
+    {% endif %}
+    <div class="input-container input-container-champ_libre_court">
+      <div class="row field-row">
+	{% if page.options.largeur_champs == "50% centré" %}
+	  <div class="large-6 medium-12 small-12 large-centered columns">
+	{% else %}
+	  <div class="large-12 medium-12 small-12 columns">
+	{% endif %}
+          <label class="label-champ_libre" for="input-{{ inputId }}">
+            Email *
+          </label>
+          <input id="input-{{ inputId }}"
+                 class="input-champ_libre check-email visitor_property"
+                 type="email"
+                 placeholder=""
+                 name="email"
+                 required
+          />
+          <p class="error-message">Vous devez indiquer votre email</p>
+        </div>
+      </div>
+    </div>
+    {% assign inputId=inputId | plus:1 %}
+    {% include form-fields.html champs=page.panneau_informations_personnelles.champs %}
+  </div>
+  <div class="hidden_fields" style="display: none;">
+    {% for champ in page.options.champs_caches %}
+      <input id="input-{{ inputId }}"
+             type="hidden"
+             value="{{ champ.valeur }}"
+             {% assign inputClasses = site.array %}
+             {% assign inputClasses = inputClasses
+            	   | push: 'input-champ_cache ' %}
+             name="{{ champ.nom }}"
+             {% if champ.propriete_visiteur %}
+             {% assign inputClasses = inputClasses
+            	   | push: 'visitor_property' %}
+             {% endif %}
+             class="{{ inputClasses }}"
+      />
+      {% assign inputId=inputId | plus:1 %}
+    {% endfor %}
+  </div>
   <div class="row field-row">
-    <div class="large-12 columns">
-      <input type="submit" value="{{ page.bouton_de_soumission }}">
+    {% if page.options.largeur_champs == "50% centré" %}
+      <div class="large-6 medium-12 small-12 large-centered columns">
+    {% else %}
+      <div class="large-12 medium-12 small-12 columns">
+    {% endif %}
+      <input type="submit" value="{{ page.options.bouton_de_soumission }}">
     </div>
   </div>
 </form>
