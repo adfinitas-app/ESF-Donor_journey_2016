@@ -1,11 +1,11 @@
 ---
 layout: form
-title: "On se dit tout"
+title: "Vos attentes"
 source: "ESF - On se dit tout"
 champs :
  - type: choix_multiple
    propriete_visiteur: true
-   image_de_fond_image_path: "https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/bg_slide2.png"
+   image_de_fond_image_path: "./assets/img/mail2-slide-1.jpg"
    nom: "rencontre"
    requis: true
    texte: "1. Quels sont vos supports d’information préferés?"
@@ -22,7 +22,7 @@ champs :
    valeur_champ_cache:
  - type: choix_unique
    propriete_visiteur: true
-   image_de_fond_image_path: "https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/bg_slide3.png"
+   image_de_fond_image_path: "./assets/img/mail2-slide-2.jpg"
    nom: "date_rencontre"
    requis: true
    texte: "2. Que pensez-vous de la fréquence d’envoi de nos newsletters ?"
@@ -37,7 +37,7 @@ champs :
    valeur_champ_cache:
  - type: choix_multiple
    propriete_visiteur: true
-   image_de_fond_image_path: "https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/bg_slide4.png"
+   image_de_fond_image_path: "./assets/img/mail2-slide-3.jpg"
    nom: "engagement"
    requis: true
    texte: "3. Quelles informations souhaitez-vous recevoir ?"
@@ -58,7 +58,7 @@ champs :
    valeur_champ_cache:
  - type: choix_unique
    propriete_visiteur: true
-   image_de_fond_image_path: "https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/bg_slide5.png"
+   image_de_fond_image_path: "./assets/img/mail2-slide-4.jpg"
    nom: "choix"
    requis: true
    texte: "4. Avez-vous déjà fait un don à ESF ?"
@@ -72,7 +72,7 @@ champs :
    valeur_champ_cache:
  - type: choix_unique
    propriete_visiteur: true
-   image_de_fond_image_path: "https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/bg_slide5.png"
+   image_de_fond_image_path: "./assets/img/mail2-slide-4.jpg"
    nom: "choix"
    requis: true
    texte: "Si oui, quel fut l'élément déclencheur de votre don ?"
@@ -91,7 +91,7 @@ champs :
    valeur_champ_cache:
  - type: choix_unique
    propriete_visiteur: true
-   image_de_fond_image_path: "https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/bg_slide5.png"
+   image_de_fond_image_path: "./assets/img/mail2-slide-5.jpg"
    nom: "choix"
    requis: true
    texte: "5. Seriez-vous prêt à soutenir ESF au cours des 12 mois à venir ?"
@@ -102,6 +102,111 @@ champs :
     - valeur: Oui
     - valeur: Non
     - valeur: Je ne sais pas
+   autre_reponse: false
+   valeur_champ_cache:
+ - type: choix_unique
+   propriete_visiteur: true
+   image_de_fond_image_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Libya_(1977-2011).svg/2000px-Flag_of_Libya_(1977-2011).svg.png"
+   nom: "champ_naissance"
+   texte:
+   requis: true
+   texte: "Vous êtes* :"
+   message_erreur: "Veuillez faire un choix"
+   placeholder:
+   controle:
+   reponses:
+    - valeur: un homme
+    - valeur: une femme
+   autre_reponse: false
+   valeur_champ_cache:
+ - type: champ_libre_court
+   image_de_fond_image_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Libya_(1977-2011).svg/2000px-Flag_of_Libya_(1977-2011).svg.png"
+   propriete_visiteur: true
+   nom: "choix_nom"
+   requis: true
+   texte: "Votre année de naissance* :"
+   message_erreur: "Veuillez entrer une date valide"
+   placeholder: "Choisissez votre tranche d'âge"
+   controle:
+   valeur_champ_cache:
+ - type: champ_libre_court
+   image_de_fond_image_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Libya_(1977-2011).svg/2000px-Flag_of_Libya_(1977-2011).svg.png"
+   propriete_visiteur: true
+   nom: "champ_nom"
+   texte:
+   requis: true
+   texte:
+   message_erreur: "Veuillez remplir ce champ"
+   placeholder: "Nom*"
+   controle:
+   valeur_champ_cache:
+ - type: champ_libre_court
+   image_de_fond_image_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Libya_(1977-2011).svg/2000px-Flag_of_Libya_(1977-2011).svg.png"
+   propriete_visiteur: true
+   nom: "champ_prenom"
+   texte:
+   requis: true
+   texte:
+   message_erreur: "Veuillez remplir ce champ"
+   placeholder: "Prénom*"
+   controle:
+   valeur_champ_cache:
+ - type: champ_libre_court
+   image_de_fond_image_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Libya_(1977-2011).svg/2000px-Flag_of_Libya_(1977-2011).svg.png"
+   propriete_visiteur: true
+   nom: "champ_mail"
+   texte:
+   requis: true
+   texte:
+   message_erreur: "Veuillez remplir ce champ"
+   placeholder: "Adresse mail*"
+   controle:
+   valeur_champ_cache:
+ - type: champ_libre_court
+   image_de_fond_image_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Libya_(1977-2011).svg/2000px-Flag_of_Libya_(1977-2011).svg.png"
+   propriete_visiteur: true
+   nom: "champ_ville"
+   texte:
+   requis: true
+   texte:
+   message_erreur: "Veuillez remplir ce champ"
+   placeholder: "Ville*"
+   controle:
+   valeur_champ_cache:
+ - type: champ_libre_court
+   image_de_fond_image_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Libya_(1977-2011).svg/2000px-Flag_of_Libya_(1977-2011).svg.png"
+   propriete_visiteur: true
+   nom: "champ_pays"
+   texte:
+   requis: true
+   texte:
+   message_erreur: "Veuillez remplir ce champ"
+   placeholder: "Pays*"
+   controle:
+   valeur_champ_cache:
+ - type: champ_libre_court
+   image_de_fond_image_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Libya_(1977-2011).svg/2000px-Flag_of_Libya_(1977-2011).svg.png"
+   propriete_visiteur: true
+   nom: "champ_tel"
+   texte:
+   requis: true
+   texte:
+   message_erreur: "Veuillez remplir ce champ"
+   placeholder: "Numéro de téléphone"
+   controle:
+   valeur_champ_cache:
+ - type: choix_multiple
+   propriete_visiteur: true
+   image_de_fond_image_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Libya_(1977-2011).svg/2000px-Flag_of_Libya_(1977-2011).svg.png"
+   nom: "champ_naissance"
+   texte:
+   requis: true
+   texte:
+   message_erreur: "Veuillez cocher cette case choix"
+   placeholder:
+   controle:
+   reponses:
+    - valeur: En laissant mon numéro, j'accepte que ESF me contacte pour m'informer de ses projets.
    autre_reponse: false
    valeur_champ_cache:
 
