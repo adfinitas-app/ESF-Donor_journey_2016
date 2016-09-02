@@ -19,7 +19,8 @@ $(document).ready(function() {
     return (count);
   }
 
-  apply_last_slide();
+  if (document.title == "On se dit tout")
+    apply_last_slide();
   function    apply_last_slide()
   {
     var     count;
@@ -41,6 +42,7 @@ $(document).ready(function() {
     count = slide_count - 8;
     $("#slide-" + count - 1 + " > .field-row > .columns").removeClass("small-12 medium-10 large-6 medium-offset-1 large-offset-3");
     $("#slide-" + count - 1 + " > .field-row > .columns").addClass(set[0]);
+    $("#slide-" + count - 1 + " > .field-row > .columns").css({"padding-bottom" : "2000px"})
     while (count < slide_count)
     {
       console.log("#slide-" + count);
@@ -54,13 +56,14 @@ $(document).ready(function() {
     html_code = '<p class="texte-choix_multiple text-center" style="margin-bottom: 2rem">MERCI DE RENSEIGNER LES INFORMATIONS SUIVANTES POUR ENREGISTRER VOS RÉPONSES</p>';
     selector = $("#slide-" + 4  + " > .field-row > .columns > .texte-choix_unique")
     $(selector).removeClass(".texte-choix_unique");
-    $(selector).addClass("small-12 medium-4 columns label-choix_multiple");
+    $(selector).addClass("small-12 columns label-choix_multiple responsive_padding");
     $(selector).css({"margin-bottom" : "0px", "padding-top" : "0.8em", "margin-top" : "0px", "line-height" : "1em"});
     $("#slide-" + 4 + " > .field-row > .columns").prepend(html_code);
-    $("#slide-" + 4 + " > .field-row > .columns > .reponse-container-choix_multiple").addClass("small-6 medium-4 columns");
+    $("#slide-" + 4 + " > .field-row > .columns > .reponse-container-choix_multiple").addClass("small-6 columns");
     $("#slide-" + 4 + " > .field-row > .columns > .reponse-container-choix_multiple").css({"margin-bottom" : "0px", "padding-top" : "0.4em", "margin-top" : "0px", "line-height" : "1em"});
-    $("#slide-" + 4 + " > .field-row > .columns > .champ_libre_court > .label-champ_libre").addClass("small-12 medium-6 columns");
-    $("#slide-" + 4 + " > .field-row > .columns > .champ_libre_court > .input-champ_libre").addClass("small-12 medium-6 columns");
+    $("#slide-" + 4 + " > .field-row > .columns > .champ_libre_court > .label-champ_libre").addClass("small-12 columns");
+    $("#slide-" + 4 + " > .field-row > .columns > .champ_libre_court > .input-champ_libre").addClass("small-12 columns");
+    $("#slide-" + 4 + " > .field-row > .columns").css({"padding-bottom" : "4em"});
   }
 
   //DELAY SHOW

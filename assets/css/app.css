@@ -248,133 +248,9 @@ label {
   background-color: rgba(255, 255, 255, 0.302);
 }
 
-
-@media (max-width: 640px) {
-  .img_top_right /*Merci.html*/
-  {
-    height: 50px;
-  }
-}
-
-@media (min-width: 1440px) and (min-height:600px){
-  .text_bold,
-  .text_small,
-  p
-  {
-    font-size: 1.8em;
-  }
-  [type="text"],
-  textarea {
-    font-size: 0.9em;
-  }
-  .texte-choix_unique,
-  .texte-choix_multiple
-  {
-    font-size: 3em;
-  }
-  .label-choix_unique,
-  .label-choix_multiple,
-  label
-  {
-    font-size: 2em;
-  }
-  [type="radio"] + label span:first-child::before {
-    vertical-align: -0.14em;
-  }
-  [type="checkbox"] + label span:first-child::before {
-    vertical-align: -0.1em;
-  }
-  textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder
-  {
-    font-size: 1.3em;
-  }
-  textarea:-moz-placeholder, [type="text"]:-moz-placeholder
-  {
-    font-size: 1.3em;
-  }
-  textarea::-moz-placeholder, [type="text"]::-moz-placeholder
-  {
-    font-size: 1.3em;
-  }
-  textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder{
-    font-size: 1.3em;
-  }
-  .text_main
-  {
-    font-size: 2em;
-  }
-  .text_title
-  {
-    font-size: 3em;
-  }
-
-  .img_top
-  {
-    height:80px;
-  }
-}
-
-@media (min-width: 2200px){
-  .text_bold,
-  .text_small,
-  p
-  {
-    font-size: 3em;
-  }
-  [type="text"],
-  textarea {
-    height: 80px;
-    font-size: 1em;
-  }
-  textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder
-  {
-   font-size: 1.8em;
- }
- textarea:-moz-placeholder, [type="text"]:-moz-placeholder
- {
-  font-size: 1.8em;
-}
-textarea::-moz-placeholder, [type="text"]::-moz-placeholder
+.responsive_padding
 {
- font-size: 1.8em;
-}
-textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder{
- font-size: 1.8em;
-}
-.texte-choix_unique,
-.texte-choix_multiple
-{
-  font-size: 3em;
-}
-.label-choix_unique,
-.label-choix_multiple,
-label
-{
-  font-size: 3em;
-}
-[type="radio"] + label span:first-child::before {
-  vertical-align: -0.14em;
-}
-[type="checkbox"] + label span:first-child::before {
-  vertical-align: -0.1em;
-}
-.text_main
-{
-  font-size: 4.5em;
-}
-.text_title
-{
-  font-size: 6em;
-}
-
-.img_top
-{
-  height:160px;
-}
-.img_top_right
-{
-  height:300px;
-}
+  padding-left: 1.22em;
 }
 
 .slide-url {
@@ -400,4 +276,82 @@ label
   width: 100%;
   color: #eb6800 !important;
   background: #eb6800;
+}
+
+@media (max-width: 640px) {
+  .img_top_right /*Merci.html*/
+  {height: 50px;}
+  .responsive_padding
+  {padding-left: 0.8em;}
+}
+
+@media (min-width: 1440px) and (min-height:600px){
+ .responsive_padding
+ {padding-left: 1.22em;}
+ .text_bold,
+ .text_small,
+ p
+ {font-size: 1.8em;}
+ [type="text"],
+ textarea {font-size: 0.9em;}
+ .texte-choix_unique,
+ .texte-choix_multiple
+ {font-size: 3em;}
+ .label-choix_unique,
+ .label-choix_multiple,
+ label
+ {font-size: 2em;}
+ [type="radio"] + label span:first-child::before {vertical-align: -0.14em;}
+ [type="checkbox"] + label span:first-child::before {vertical-align: -0.1em;}
+ textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder
+ {font-size: 1.3em;}
+ textarea:-moz-placeholder, [type="text"]:-moz-placeholder
+ {font-size: 1.3em;}
+ textarea::-moz-placeholder, [type="text"]::-moz-placeholder
+ {font-size: 1.3em;}
+ textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder{font-size: 1.3em;}
+ .text_main
+ {font-size: 2em;}
+ .text_title
+ {font-size: 3em;}
+ .img_top
+ {height:80px;}
+}
+
+@media (min-width: 2200px){
+  .responsive_padding
+  {padding-left: 0.8em;}
+  .text_bold,
+  .text_small,
+  p
+  {font-size: 3em;}
+  [type="text"],
+  textarea {height: 80px; font-size: 1em;}
+  textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder
+  {font-size: 1.8em;}
+  textarea:-moz-placeholder, [type="text"]:-moz-placeholder
+  {font-size: 1.8em;}
+  textarea::-moz-placeholder, [type="text"]::-moz-placeholder
+  {font-size: 1.8em;}
+  textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder
+  {font-size: 1.8em;}
+  .texte-choix_unique,
+  .texte-choix_multiple
+  {font-size: 3em;}
+  .label-choix_unique,
+  .label-choix_multiple,
+  label
+  {font-size: 3em;}
+  [type="radio"] + label span:first-child::before
+  {vertical-align: -0.14em;}
+  [type="checkbox"] + label span:first-child::before
+  {vertical-align: -0.1em;}
+  .text_main
+  {font-size: 4.5em;}
+  .text_title
+  {font-size: 6em;}
+  .img_top
+  {height:160px;}
+  .img_top_right
+  {height:300px;}
 }
