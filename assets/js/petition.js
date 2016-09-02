@@ -1,1 +1,0 @@
-/* Here you can design everything specific to the formulaire collection */
