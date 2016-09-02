@@ -3,10 +3,11 @@ $(document).ready(function() {
   var   slide_count;
 
   slide_count = count_slides();
-
   $('.field-row > .columns').removeClass("large-12 large-6 large-centered");
   $('.field-row > .columns').addClass("small-12 medium-offset-1 medium-10 large-offset-3 large-6 columns");
-
+  apply_last_slide();
+  if(document.title == "Vos attentes")
+    place_question(3);
 
   function  count_slides()
   {
@@ -19,7 +20,6 @@ $(document).ready(function() {
     return (count);
   }
 
-  apply_last_slide();
   function    apply_last_slide()
   {
     var     count;
@@ -64,6 +64,7 @@ $(document).ready(function() {
     $("#slide-" + place + " > .field-row > .columns > .champ_libre_court > .label-champ_libre").addClass("small-12 columns");
     $("#slide-" + place + " > .field-row > .columns > .champ_libre_court > .input-champ_libre").addClass("small-12 columns");
     $("#slide-" + place + " > .field-row > .columns").css({"padding-bottom" : "4em"});
+    slide_count = count_slides();
   }
 
   //DELAY SHOW
@@ -74,16 +75,33 @@ $(document).ready(function() {
 
   //SCROLLING
   var 	next_scroll;
-  var 	q_number;
 
   next_scroll = "#slide-0";
-  current_q = 0;
-  q_number = 4;
+
+  function    on_last()
+  {
+    var   divPosition;
+    var   scrollPosition;
+    var   last;
+
+    scrollPosition = window.scrollY;
+    last = slide_count - 1;
+    divPosition = $('#slide-' + last).offset().top;
+    divPosition -= $('#slide-' + last).height() / 2;
+    if (scrollPosition > divPosition)
+    {
+      console.log("on last");
+      return (true);
+    }
+    console.log("not on last");
+    return (false);
+  }
+
   $(window).on('scroll', function()
   {
     var 	divPosition;
     var 	scrollPosition;
-    var 	next_question
+    var 	next_question;
 
     if ($('#slide-0').length != 0)
     {
@@ -92,7 +110,7 @@ $(document).ready(function() {
       divPosition = $('#slide-0').offset().top;
       divPosition -= $('#slide-0').height() / 2;
       next_question.href = refresh_next();
-      if(divPosition < scrollPosition){
+      if(divPosition < scrollPosition && on_last() == false){
         $('#next_container').css({"animation" : "slide_in 0.4s ease-out", "animation-direction": "normal"});
         $('#next_container').on('animationend webkitAnimationEnd oAnimationEnd oanimationend MSAnimationEnd', function() {
           $('#next_container').css({"bottom" : "0px"});
@@ -108,7 +126,6 @@ $(document).ready(function() {
     }
   });
 
-  place_question(3);
   function  place_question(slide)
   {
     var     remove;
@@ -158,5 +175,3 @@ $(document).ready(function() {
   });
   $(".label-choix_unique, .label-choix_multiple, .label-other").prepend("<span></span>");
 });
-
-
