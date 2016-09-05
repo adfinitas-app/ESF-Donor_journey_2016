@@ -196,5 +196,5 @@
       return false;
     }
   });
-  $(".label-choix_unique, .label-choix_multiple, .label-other").prepend("<span></span>");
+  $(".label-choix_unique, .label-choix_multiple, .label-other, .label-scoring").prepend("<span></span>");
 });
