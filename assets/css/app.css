@@ -278,6 +278,18 @@ label {
   background: #eb6800;
 }
 
+[type="submit"]
+{
+  margin-top: 2em;
+  background: none;
+  border: none;
+  color: white;
+  font-family: 'tk-nimbus-sans-condensed-n4', serif;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: bold
+}
+
 @media (max-width: 640px) {
   .img_top_right /*Merci.html*/
   {height: 50px;}
@@ -290,9 +302,10 @@ label {
  {padding-left: 1.22em;}
  .text_bold,
  .text_small,
+ [type="submit"],
  p
  {font-size: 1.8em;}
- [type="text"],
+ [type="text"],[type="submit"]
  textarea {font-size: 0.9em;}
  .texte-choix_unique,
  .texte-choix_multiple
@@ -323,6 +336,7 @@ label {
   {padding-left: 0.8em;}
   .text_bold,
   .text_small,
+  [type="submit"],
   p
   {font-size: 3em;}
   [type="text"],
