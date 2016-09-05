@@ -1,15 +1,16 @@
 /* 
  * This file is made to be edited 
  * It will be available for formulaire and petition layouts
-*/
+ */
 
-$(document).ready(function() {
+ $(document).ready(function() {
   //DESIGN
   var   slide_count;
 
   slide_count = count_slides();
-  $('.field-row > .columns').removeClass("large-12 large-6 large-centered");
+  $('.field-row > .columns').removeClass("large-12 medium-12 small-12 large-centered");
   $('.field-row > .columns').addClass("small-12 medium-offset-1 medium-10 large-offset-3 large-6 columns");
+  apply_margin();
   apply_last_slide();
   if(document.title == "Vos attentes")
     place_question(3);
@@ -21,8 +22,23 @@ $(document).ready(function() {
     count = 0;
     while ($("#slide-" + count).length != 0)
       count++;
-    console.log(count);
     return (count);
+  }
+
+  function    apply_margin()
+  {
+    var       count;
+
+    count = 0;
+    while (count < slide_count)
+    {
+      $("#slide-" + count).css({"padding-bottom":"5em"});
+      $("#slide-" + count + " > .field-row > .columns > .label-choix_unique").first().addClass("texte-choix_unique");
+      $("#slide-" + count + " > .field-row > .columns > .label-choix_multiple").first().addClass("texte-choix_multiple");
+      $("#slide-" + count + " > .field-row > .columns > .label-choix_unique").first().removeClass("label-choix_unique");
+      $("#slide-" + count + " > .field-row > .columns > .label-choix_multiple").first().removeClass("label-choix_multiple");
+      count++;
+    }
   }
 
   function    apply_last_slide()
@@ -50,7 +66,6 @@ $(document).ready(function() {
     $("#slide-" + count - 1 + " > .field-row > .columns").addClass(set[0]);
     while (count < slide_count)
     {
-      console.log("#slide-" + count);
       $("#slide-" + count + " > .field-row > .columns").removeClass("small-12 medium-10 large-6 medium-offset-1 large-offset-3");
       $("#slide-" + count + " > .field-row > .columns").addClass(set[set_count]);
       $("#slide-" + place + " > .field-row > .columns").append($("#slide-" + count + " > .field-row > .columns"));
@@ -58,6 +73,10 @@ $(document).ready(function() {
       set_count++;
       count++;
     }
+    $('input[type="submit"]').parent().append("<br><input type='image' src='https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_down.png' alt='Submit'>");
+    $('input[type="submit"]').parent().removeClass(" medium-offset-1 medium-10 large-offset-3 large-6");
+    $('input[type="submit"]').parent().addClass("text-center");
+    $("#slide-" + place + " > .field-row > .columns").append($('input[type="submit"]').parent());
     html_code = '<p class="texte-choix_multiple text-center" style="margin-bottom: 2rem">MERCI DE RENSEIGNER LES INFORMATIONS SUIVANTES POUR ENREGISTRER VOS RÉPONSES</p>';
     selector = $("#slide-" + place  + " > .field-row > .columns > .texte-choix_unique")
     $(selector).removeClass(".texte-choix_unique text-center");
@@ -69,6 +88,8 @@ $(document).ready(function() {
     $("#slide-" + place + " > .field-row > .columns > .champ_libre_court > .label-champ_libre").addClass("small-12 columns");
     $("#slide-" + place + " > .field-row > .columns > .champ_libre_court > .input-champ_libre").addClass("small-12 columns");
     $("#slide-" + place + " > .field-row > .columns").css({"padding-bottom" : "4em"});
+    $("#slide-" + place + " > .field-row > .columns > .columns > .reponse-container-choix_multiple > .label-choix_multiple").css({"font-size" : "1.1em"});
+    $("#slide-" + place).css({"padding-bottom":"0em"});
     slide_count = count_slides();
   }
 
@@ -79,7 +100,7 @@ $(document).ready(function() {
   $('#fourth_text').delay(1700).hide().fadeIn(700);
 
   //SCROLLING
-  var 	next_scroll;
+  var   next_scroll;
 
   next_scroll = "#slide-0";
 
@@ -94,19 +115,15 @@ $(document).ready(function() {
     divPosition = $('#slide-' + last).offset().top;
     divPosition -= $('#slide-' + last).height() / 2;
     if (scrollPosition > divPosition)
-    {
-      console.log("on last");
       return (true);
-    }
-    console.log("not on last");
     return (false);
   }
 
   $(window).on('scroll', function()
   {
-    var 	divPosition;
-    var 	scrollPosition;
-    var 	next_question;
+    var   divPosition;
+    var   scrollPosition;
+    var   next_question;
 
     if ($('#slide-0').length != 0)
     {
@@ -141,13 +158,13 @@ $(document).ready(function() {
     $("#slide-" + remove).css({"display":"none"});
   }
 
-  function 	refresh_next()
+  function  refresh_next()
   {
-    var 	count;
-    var 	check;
-    var 	current;
-    var 	scrollPosition;
-    var 	divPosition;
+    var   count;
+    var   check;
+    var   current;
+    var   scrollPosition;
+    var   divPosition;
 
     check = true;
     count = 0;
