@@ -1,5 +1,5 @@
-/* 
- * This file is made to be edited 
+/*
+ * This file is made to be edited
  * It will be available for formulaire and petition layouts
  */
 
@@ -145,6 +145,7 @@ textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder{
   margin-left: auto;
 }
 
+.text-scoring,
 .texte-choix_unique,
 .texte-choix_multiple {
   padding-top: 5%;
@@ -153,6 +154,7 @@ textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder{
   font-size: 2.5em;
   line-height: 1em;
   margin-top: 30px;
+  text-align: center;
 }
 
 .label-choix_unique,
@@ -165,7 +167,8 @@ label {
 }
 
 .reponse-container-choix_unique,
-.reponse-container-choix_multiple
+.reponse-container-choix_multiple,
+.label-scoring,
 {
   font-family: 'tk-nimbus-sans-condensed-n4', serif;
   color : white;
@@ -372,4 +375,3 @@ label {
   .img_top_right
   {height:300px;}
 }
-

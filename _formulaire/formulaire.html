@@ -90,6 +90,18 @@ panneau_question:
         controle:
         fond_image_path: "https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/bg_slide5.png"
         fond_color:
+    - type: scoring
+      nom_machine: "choix"
+      reponses:
+      options:
+        propriete_visiteur: true
+        label: "5. Faites-vous confiance à elevage sans frontières ?"
+        placeholder:
+        requis: true
+        message_erreur: "Veuillez faire au moins un choix"
+        controle:
+        fond_image_path: "https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/bg_slide5.png"
+        fond_color:
 panneau_informations_personnelles:
   fond_image_path:
   fond_color:
@@ -128,7 +140,7 @@ panneau_informations_personnelles:
         - valeur:
       options:
         propriete_visiteur: true
-        label: 
+        label:
         placeholder: "Nom*"
         requis: true
         message_erreur: "Veuillez remplir ce champ"
@@ -141,7 +153,7 @@ panneau_informations_personnelles:
         - valeur:
       options:
         propriete_visiteur: true
-        label: 
+        label:
         placeholder: "Prénom*"
         requis: true
         message_erreur: "Veuillez remplir ce champ"
@@ -154,7 +166,7 @@ panneau_informations_personnelles:
         - valeur:
       options:
         propriete_visiteur: true
-        label: 
+        label:
         placeholder: "Adresse mail*"
         requis: true
         message_erreur: "Veuillez remplir ce champ"
@@ -167,7 +179,7 @@ panneau_informations_personnelles:
         - valeur:
       options:
         propriete_visiteur: true
-        label: 
+        label:
         placeholder: "Ville*"
         requis: true
         message_erreur: "Veuillez remplir ce champ"
@@ -193,7 +205,7 @@ panneau_informations_personnelles:
         - valeur:
       options:
         propriete_visiteur: true
-        label: 
+        label:
         placeholder: "Numéro de téléphone"
         requis: true
         message_erreur: "Veuillez remplir ce champ"
@@ -206,7 +218,7 @@ panneau_informations_personnelles:
         - valeur: En laissant mon numéro, j'accepte que ESF me contacte pour m'informer de ses projets.
       options:
         propriete_visiteur: true
-        label: 
+        label:
         placeholder: "Numéro de téléphone"
         requis: true
         message_erreur: "Veuillez cocher cette case choix"
@@ -215,11 +227,11 @@ panneau_informations_personnelles:
         fond_color:
 options:
   bouton_de_soumission: "Envoyer"
-  page_de_remerciement_path: /index.html
+  page_de_remerciement_path: /merci.html
   largeur_champs: "100%"
   champs_caches:
-    - nom: 
-      valeur: 
+    - nom:
+      valeur:
       propriete_visiteur: false
   meta:
     title: "On se dit tout"

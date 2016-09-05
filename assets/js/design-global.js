@@ -10,6 +10,7 @@
   slide_count = count_slides();
   $('.field-row > .columns').removeClass("large-12 medium-12 small-12 large-centered");
   $('.field-row > .columns').addClass("small-12 medium-offset-1 medium-10 large-offset-3 large-6 columns");
+  $('.field-row > .columns > .text-scoring').parent().addClass("text-center");
   apply_margin();
   apply_last_slide();
   if(document.title == "Vos attentes")
