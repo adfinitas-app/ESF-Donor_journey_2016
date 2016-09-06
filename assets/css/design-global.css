@@ -72,7 +72,7 @@
   margin-top: 30px;
 }
 
-[type="text"] {
+[type="text"], [type="email"] {
   background-color: #f6f0e7;
   border-radius: 7px;
   font-family: 'tk-nimbus-sans-condensed-n4', serif;
@@ -88,7 +88,7 @@
   flex:1;
 }
 
-[type="text"]:focus {
+[type="text"]:focus, [type="email"]:focus {
   outline-color: transparent;
   outline-style: none;
   box-shadow: none;
@@ -123,18 +123,18 @@ textarea:focus {
   border: none;
 }
 
-textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder {
+textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder, [type="email"]::-webkit-input-placeholder {
   color:    #c3afa0;
 }
-textarea:-moz-placeholder, [type="text"]:-moz-placeholder {
+textarea:-moz-placeholder, [type="text"]:-moz-placeholder, [type="email"]:-moz-placeholder {
  color:    #c3afa0;
  opacity:  1;
 }
-textarea::-moz-placeholder, [type="text"]::-moz-placeholder{
+textarea::-moz-placeholder, [type="text"]::-moz-placeholder, [type="email"]::-moz-placeholder{
  color:    #c3afa0;
  opacity:  1;
 }
-textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder{
+textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder, [type="email"]:-ms-input-placeholder{
  color:    #c3afa0;
 }
 
@@ -311,7 +311,7 @@ label {
  [type="submit"],
  p
  {font-size: 1.8em;}
- [type="text"],[type="submit"]
+ [type="text"],[type="submit"], [type="text"],
  textarea {font-size: 0.9em;}
  .texte-choix_unique,
  .texte-choix_multiple
@@ -322,13 +322,13 @@ label {
  {font-size: 2em;}
  [type="radio"] + label span:first-child::before {vertical-align: -0.14em;}
  [type="checkbox"] + label span:first-child::before {vertical-align: -0.1em;}
- textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder
+ textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder, [type="email"]::-webkit-input-placeholder
  {font-size: 1.3em;}
- textarea:-moz-placeholder, [type="text"]:-moz-placeholder
+ textarea:-moz-placeholder, [type="text"]:-moz-placeholder, [type="email"]:-moz-placeholder
  {font-size: 1.3em;}
- textarea::-moz-placeholder, [type="text"]::-moz-placeholder
+ textarea::-moz-placeholder, [type="text"]::-moz-placeholder, [type="email"]::-moz-placeholder
  {font-size: 1.3em;}
- textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder{font-size: 1.3em;}
+ textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder, [type="email"]:-ms-input-placeholder{font-size: 1.3em;}
  .text_main
  {font-size: 2em;}
  .text_title
@@ -347,13 +347,13 @@ label {
   {font-size: 3em;}
   [type="text"],
   textarea {height: 80px; font-size: 1em;}
-  textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder
+  textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder, [type="email"]::-webkit-input-placeholder
   {font-size: 1.8em;}
-  textarea:-moz-placeholder, [type="text"]:-moz-placeholder
+  textarea:-moz-placeholder, [type="text"]:-moz-placeholder, [type="email"]:-moz-placeholder
   {font-size: 1.8em;}
-  textarea::-moz-placeholder, [type="text"]::-moz-placeholder
+  textarea::-moz-placeholder, [type="text"]::-moz-placeholder, [type="email"]::-moz-placeholder
   {font-size: 1.8em;}
-  textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder
+  textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder, [type="email"]:-ms-input-placeholder
   {font-size: 1.8em;}
   .texte-choix_unique,
   .texte-choix_multiple
