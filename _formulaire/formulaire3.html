@@ -1,0 +1,282 @@
+---
+event_woopra: "ESF - On se dit tout"
+panneau_introduction:
+  fond_image_path: ''
+  fond_color: ''
+  texte_html: ""
+panneau_question:
+  fond_image_path:
+  fond_color:
+  texte_html: ''
+  champs:
+    - type: choix_unique
+      nom_machine: "cause_soutiens"
+      reponses:
+        - valeur: La lutte contre la faim à travers la production animale et végétale
+        - valeur: L'accès à l'eau propre
+        - valeur: L'accaparement des terres
+        - valeur: La reconnaissance du statut des femmes paysannes
+        - valeur: L'éducation des enfants
+        - valeur: La santé et le bien être animal
+        - valeur: Le développement des ventes des produits paysans en circuits
+        - valeur: La défense de la souveraineté alimentaire des pays en Afrique
+        - valeur: Autre
+      options:
+        propriete_visiteur: true
+        label: "1. Quelle est la cause qui vous tient le plus à coeur, si vous deviez n'en choisir qu'une"
+        placeholder:
+        requis: true
+        message_erreur: "Veuillez faire un choix"
+        controle:
+        fond_image_path: "/assets/img/mail2-slide-2.jpg"
+        fond_color:
+    - type: choix_multiple
+      nom_machine: "pays"
+      reponses:
+        - valeur: Albanie
+        - valeur: Algérie
+        - valeur: Arménie
+        - valeur: Bénin
+        - valeur: Burkina Faso
+        - valeur: Haïti
+        - valeur: Kosovo
+        - valeur: Maroc
+      options:
+        propriete_visiteur: true
+        label: "2. Avez-vous déjà voyagé ou vécu dans l'un de ces pays"
+        placeholder:
+        requis: true
+        message_erreur: "Veuillez faire au moins un choix"
+        controle:
+        fond_image_path: "/assets/img/mail2-slide-3.jpg"
+        fond_color:
+    - type: choix_multiple
+      nom_machine: "environnement"
+      reponses:
+        - valeur: Vous consommez bio
+        - valeur: Vous mangez moins de viande ou n'en consommez plus
+        - valeur: Vous achetez moins et tentez de réparer avant de jeter
+        - valeur: Vous triez vos déchets
+        - valeur: Vous trouvez des moyens de déplacement alternatifs à la voiture
+        - valeur: Vous aidez les personnes dans le besoin
+        - valeur: Vous militez pour les causes qui vous tiennent à coeur dans la vie
+        - valeur: Vous faites du bénévolat
+      options:
+        propriete_visiteur: true
+        label: "3. Que faites-vous pour votre environnement"
+        placeholder:
+        requis: true
+        message_erreur: "Veuillez faire au moins un choix"
+        controle:
+        fond_image_path: "/assets/img/mail2-slide-3.jpg"
+        fond_color:
+    - type: choix_unique
+      nom_machine: "attention"
+      reponses:
+        - valeur: Sur mobile/tablette
+        - valeur: Sur ordinateur
+        - valeur: Sur papier
+      options:
+        propriete_visiteur: true
+        label: "4. Vous accordez plus d'attention aux informations..."
+        placeholder:
+        requis: true
+        message_erreur: "Veuillez faire au moins un choix"
+        controle:
+        fond_image_path: "/assets/img/mail2-slide-4.jpg"
+        fond_color:
+    - type: scoring
+      nom_machine: "évaluation"
+      reponses:
+      options:
+        propriete_visiteur: true
+        label: "5. Comment évaluez-vous la qualité de nos projets et pourquoi?"
+        placeholder:
+        requis: true
+        message_erreur: "Veuillez faire un choix"
+        controle:
+        fond_image_path: "/assets/img/mail2-slide-5.jpg"
+        fond_color:
+    - type: champ_libre_long
+      nom_machine: "champ_avis"
+      reponses:
+      options:
+        propriete_visiteur: true
+        label: "En complément de votre réponse laissez-nous un petit mot pour nous améliorer"
+        placeholder: "Laissez-nous votre avis sur le sujet..."
+        requis: false
+        message_erreur:
+        controle:
+        fond_image_path:
+        fond_color:
+panneau_informations_personnelles:
+  fond_image_path:
+  fond_color:
+  texte_html: ""
+  champs:
+    - type: choix_unique
+      nom_machine: "champ_naissance"
+      reponses:
+        - valeur: une femme
+        - valeur: un homme
+      options:
+        propriete_visiteur: true
+        label: "Vous êtes* :"
+        placeholder:
+        requis: true
+        message_erreur: "Veuillez faire un choix"
+        controle:
+        fond_image_path:
+        fond_color: "#40b082"
+    - type: champ_libre_court
+      nom_machine: "choix_age"
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label: "Votre année de naissance* :"
+        placeholder: "Choisissez votre tranche d'âge"
+        requis: true
+        message_erreur: "Veuillez entrer une date valide"
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: champ_libre_court
+      nom_machine: "champ_nom"
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: "Nom*"
+        requis: true
+        message_erreur: "Veuillez remplir ce champ"
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: champ_libre_court
+      nom_machine: "champ_prenom"
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: "Prénom*"
+        requis: true
+        message_erreur: "Veuillez remplir ce champ"
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: champ_libre_court
+      nom_machine: "champ_ville"
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: "Ville*"
+        requis: true
+        message_erreur: "Veuillez remplir ce champ"
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: champ_libre_court
+      nom_machine: "champ_pays"
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: "Pays*"
+        requis: true
+        message_erreur: "Veuillez remplir ce champ"
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: champ_libre_court
+      nom_machine: "champ_tel"
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: "Numéro de téléphone"
+        requis: true
+        message_erreur: "Veuillez remplir ce champ"
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: choix_multiple
+      nom_machine: "champ_verify"
+      reponses:
+        - valeur: En laissant mon numéro, j'accepte que ESF me contacte pour m'informer de ses projets.
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: "Numéro de téléphone"
+        requis: true
+        message_erreur: "Veuillez cocher cette case choix"
+        controle:
+        fond_image_path:
+        fond_color:
+options:
+  bouton_de_soumission: "Je valide"
+  page_de_remerciement_path: /merci.html
+  largeur_champs: "100%"
+  champs_caches:
+    - nom:
+      valeur:
+      propriete_visiteur: false
+  meta:
+    title: "Ce qui vous tient au coeur"
+    description: 'alors la description, ca farte'
+_comments:
+  nom: Obligatoire et unique. Description courte du champ
+  texte: Ce champ peut etre vide
+  placeholder: 'Seulement pour les champs de type "champ libre"'
+  controle: 'Seulement pour les champs de type "champ libre"'
+  reponses: 'Seulement pour les champs de type "choix"'
+  page_de_remerciement_path: "URL de la page lorsque l'utilisateur valide le formulaire"
+  propriete_visiteur: Cocher cette case si vous souhaitez que ce champs remonte dans les propriété du visiteur sur Woopra
+  event_woopra: "Nom de l'evenement sur Woopra qui stockera les répondants <a href=\"http://google.com\" target=\"_blank\">blabla</a>"
+  fond_image_path: Image de fond du champ
+  largeur_champs: "Définit la taille des champs"
+---
+
+<div class="row input-container" style="background-image: url('/assets/img/mail2-slide-0.jpg');">
+			<div class=" small-6 text-center medium-offset-1 medium-2 columns">
+				<img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/logo_esf.png" class="img_top">
+			</div>
+			<div class="small-6  text-center medium-6 columns">
+				<img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/logo_tout.png" class="img_top">
+			</div>
+			<div class="small-0 medium-4"></div>
+			<div class="small-12 text-center columns">
+				<div class="row">
+					<div class="small-offset-1 small-centered small-10 medium-8 large-8 text-center columns">
+						<p id="first_text" class="texte-choix_unique">CE QUI VOUS TIENT À COEUR</p>
+					</div>
+				</div>
+				<p id="second_text" class="label-choix_unique">
+          Vous connaissez certainement déjà beaucoup de choses à propos d'Élevages sans frontières<br>
+          Dans ce questionnaire c'est à votre tour de nous parler de vous, de vos valuers et de vos habitudes !
+				</p>
+			</div>
+      <div id="third_text" class="small-12 columns text-center" style="position: absolute; bottom: 0; left: 0; padding-bottom: 20px;">
+        <div class="row">
+          <div class="small-centered columns ">
+            <a href="#slide-0">
+              <p class="text_bold" style="line-height: 0;">JE RÉPONDS</p>
+              <img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_down.png">
+            </a>
+          </div>
+			</div>
+    </div>
+  </div>
+    {% include form.html %}
+  <div class="row field-row">
+    <a id="next_container" href="#" class="small-12 hide-for-small-only columns text-center">
+      <p class="text_bold">QUESTION SUIVANTE</p>
+      <img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_down.png">
+    </a>
+  </div>
