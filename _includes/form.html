@@ -14,7 +14,7 @@
      page.panneau_introduction != empty %}
     <div class="panneau-introduction-texte">
       <div class="row">
-	{% if page.options.largeur_champs == "50% centré" %}
+	{% if page.options.largeur_champ == "50% centré" %}
 	  <div class="large-6 medium-12 small-12 large-centered columns">
 	{% else %}
 	  <div class="large-12 medium-12 small-12 columns">
@@ -46,7 +46,7 @@
        page.panneau_question != empty %}
       <div class="panneau-question-texte">
         <div class="row">
-	{% if page.options.largeur_champs == "50% centré" %}
+	{% if page.options.largeur_champ == "50% centré" %}
 	  <div class="large-6 medium-12 small-12 large-centered columns">
 	{% else %}
 	  <div class="large-12 medium-12 small-12 columns">
@@ -74,7 +74,7 @@
      page.panneau_informations_personnelles != empty %}
     <div class="panneau-informations_personnelles-texte">
       <div class="row">
-	{% if page.options.largeur_champs == "50% centré" %}
+	{% if page.options.largeur_champ == "50% centré" %}
 	  <div class="large-6 medium-12 small-12 large-centered columns">
 	{% else %}
 	  <div class="large-12 medium-12 small-12 columns">
@@ -86,7 +86,7 @@
     {% endif %}
     <div class="input-container input-container-champ_libre_court">
       <div class="row field-row">
-	{% if page.options.largeur_champs == "50% centré" %}
+	{% if page.options.largeur_champ == "50% centré" %}
 	  <div class="large-6 medium-12 small-12 large-centered columns">
 	{% else %}
 	  <div class="large-12 medium-12 small-12 columns">
@@ -127,7 +127,7 @@
     {% endfor %}
   </div>
   <div class="row field-row">
-    {% if page.options.largeur_champs == "50% centré" %}
+    {% if page.options.largeur_champ == "50% centré" %}
       <div class="large-6 medium-12 small-12 large-centered columns">
     {% else %}
       <div class="large-12 medium-12 small-12 columns">

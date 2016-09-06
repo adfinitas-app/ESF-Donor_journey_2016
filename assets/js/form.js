@@ -42,8 +42,11 @@ function submitForm(jqForm) {
   });
   */
   var visitorProperties = getFields(jqForm, "input:not([type=submit]):not(.no-send).visitor_property, select.visitor_property, textarea.visitor_property");
+  if (visitorProperties['firstname'] && visitorProperties['lastname']) {
+    visitorProperties['name'] = visitorProperties['firstname'] + ' ' + visitorProperties['lastname'];
+  }
   woopra.identify(visitorProperties);
-  woopra.track('adfinitascx-' + jqForm.data("source"), FormData);
+  woopra.track('adfinitas-' + jqForm.data("source"), FormData);
   var now = new Date();
   var dbData = {
     "schema": "{{ site.form-to-db_config.schema }}",

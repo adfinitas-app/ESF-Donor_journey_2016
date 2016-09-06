@@ -29,7 +29,7 @@
 	{% assign lineId=lineId | plus:1 %}
 	>
 	<div class="row field-row">
-	  {% if page.options.largeur_champs == "50% centré" %}
+	  {% if page.options.largeur_champ == "50% centré" %}
 	    <div class="large-6 medium-12 small-12 large-centered columns">
 	  {% else %}
 	    <div class="large-12 medium-12 small-12 columns">
@@ -115,7 +115,7 @@
 	                | push: 'input-liste_deroulante ' %}
 	      {% if champ.options.propriete_visiteur %}
 	      {% assign inputClasses = inputClasses
-	                | push: 'visitor_property' %}
+	                | push: 'visitor_property ' %}
    	      {% endif %}
 	      {% if champ.options.requis == true %}
 	      required
@@ -149,7 +149,7 @@
 	             required
 	             {% endif %}
 	             {% if champ.options.propriete_visiteur %}
-	             class="input-choix_unique other visitor_property" %}
+	             class="input-choix_unique other visitor_property"
 	             {% else %}
 	             class="input-choix_unique other"
    	             {% endif %}
@@ -169,7 +169,7 @@
 	               required
 	               {% endif %}
 	               {% if champ.options.propriete_visiteur %}
-	               class="input-choix_unique visitor_property" %}
+	               class="input-choix_unique visitor_property"
 	               {% else %}
 	               class="input-choix_unique"
    	               {% endif %}
@@ -195,7 +195,7 @@
 	             required
 	             {% endif %}
 	             {% if champ.options.propriete_visiteur %}
-	             class="input-choix_multiple other visitor_property" %}
+	             class="input-choix_multiple other visitor_property"
 	             {% else %}
 	             class="input-choix_multiple other"
    	             {% endif %}
@@ -215,7 +215,7 @@
 	               required
 	               {% endif %}
 	               {% if champ.options.propriete_visiteur %}
-	               class="input-choix_multiple visitor_property" %}
+	               class="input-choix_multiple visitor_property"
 	               {% else %}
 	               class="input-choix_multiple"
    	               {% endif %}
@@ -239,7 +239,7 @@
 	  	   required
 	  	   {% endif %}
 	  	   {% if champ.options.propriete_visiteur %}
-	  	   class="input-scoring other visitor_property" %}
+	  	   class="input-scoring other visitor_property"
 	  	   {% else %}
 	  	   class="input-scoring other"
    	  	   {% endif %}
@@ -247,6 +247,7 @@
 	  <label class="label-scoring" for="input-{{ inputId }}">
 	    {{ i }}
 	  </label>
+	  {% assign inputId=inputId | plus:1 %}
 	  {% endfor %}
 	  <p class="error-message">{{ champ.options.message_erreur }}</p>
 	{% else %}
