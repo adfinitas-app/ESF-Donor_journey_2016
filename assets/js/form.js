@@ -51,7 +51,8 @@ function submitForm(jqForm) {
   var dbData = {
     "schema": "{{ site.form-to-db_config.schema }}",
     "db": {
-      "signin_date": now.toString()
+      "signin_date": now.toString(),
+      "event_woopra": pureField(jqForm.data("source"))
     }
   }
   for (var attrname in FormData) {
