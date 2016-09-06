@@ -44,8 +44,16 @@ function isValidField(jqueryFieldSelector, allowEmpty = true) {
   var status = false;
   if (field.hasClass("other") && (field.hasClass("input-choix_multiple") ||
       field.hasClass("input-choix_unique"))) {
-    if (field.is(":checked") && field.val() !== "") {
-      status = true;
+    if (field.is(":checked")) {
+      if (field.val() !== "") {
+	status = true;
+      }
+    }
+    else {
+      if (allowEmpty === true ||
+	  $("input[name='" + field.attr("name") + "']:checked").length > 0) {
+	status = true;
+      }
     }
   }
   else if (field.attr("type") === "radio" || field.attr("type") === "checkbox") {
@@ -79,7 +87,7 @@ function isValidField(jqueryFieldSelector, allowEmpty = true) {
 function isValidForm(jqueryFormSelector) {
   var status = true;
   $(".error").removeClass("error");
-  jqueryFormSelector.find("input:not([type=submit]), select, textarea").each(function() {
+  jqueryFormSelector.find("input:not([type=submit]):not(.no-send), select, textarea").each(function() {
     if (isValidField($(this), !$(this).prop("required")) == false) {
       showError($(this));
       status = false;
