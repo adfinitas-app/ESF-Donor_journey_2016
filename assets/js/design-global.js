@@ -47,24 +47,24 @@
     var     count;
     var     set_count;
     var     selector;
-    var     html_code;
     var     place;
     var     set =
     ["small-12",
     "small-12",
     "small-12 medium-6",
     "small-12 medium-6",
-    "small-12 medium-12",
     "small-12 medium-6",
     "small-12 medium-6",
     "small-12 medium-6",
     "small-12 medium-6"];
 
     set_count = 1;
-    count = slide_count - 8;
-    place = slide_count - 9;
+    count = slide_count - 7;
+    place = slide_count - 8;
+    /*VOUS ETES*/
     $("#slide-" + count - 1 + " > .field-row > .columns").removeClass("small-12 medium-10 large-6 medium-offset-1 large-offset-3");
     $("#slide-" + count - 1 + " > .field-row > .columns").addClass(set[0]);
+    /*REMOVE UNWANTED CLASSES AND REPLACE THE FORMATTING CLASSES*/
     while (count < slide_count)
     {
       $("#slide-" + count + " > .field-row > .columns").removeClass("small-12 medium-10 large-6 medium-offset-1 large-offset-3");
@@ -74,23 +74,35 @@
       set_count++;
       count++;
     }
+    /*SUBMIT BUTTON*/
     $('input[type="submit"]').parent().append("<br><input type='image' src='https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_down.png' alt='Submit'>");
     $('input[type="submit"]').parent().removeClass(" medium-offset-1 medium-10 large-offset-3 large-6");
     $('input[type="submit"]').parent().addClass("text-center");
     $("#slide-" + place + " > .field-row > .columns").append($('input[type="submit"]').parent());
-    html_code = '<p class="texte-choix_multiple text-center" style="margin-bottom: 2rem">MERCI DE RENSEIGNER LES INFORMATIONS SUIVANTES POUR ENREGISTRER VOS RÉPONSES</p>';
+
+    /*VOUS ETES*/
     selector = $("#slide-" + place  + " > .field-row > .columns > .texte-choix_unique")
     $(selector).removeClass(".texte-choix_unique text-center");
     $(selector).addClass("small-12 columns label-choix_multiple responsive_padding text-left");
-    $(selector).css({"margin-bottom" : "0px", "padding-top" : "0.8em", "margin-top" : "0px", "line-height" : "1em"});
-    $("#slide-" + place + " > .field-row > .columns").prepend(html_code);
+    $(selector).css({"margin-bottom" : "0px", "padding-top" : "0em", "margin-top" : "0px", "line-height" : "1em", "text-align" : "left"});
+
+    /*EMAIL*/
+    selector = $(".container-panneau_informations_personnelles > .input-container > .field-row > .columns > input[type='email']").parent().parent().parent();
+    $(".container-panneau_informations_personnelles > .input-container > .field-row > .columns > input[type='email']").parent().removeClass("small-12 medium-10 large-6 medium-offset-1 large-offset-3");
+    $(".container-panneau_informations_personnelles > .input-container > .field-row > .columns > input[type='email']").parent().addClass("small-12")
+    $("#slide-" + place + " > .field-row > .columns").prepend($(".container-panneau_informations_personnelles > .input-container > .field-row > .columns"));
+    $(selector).remove();
+    $("#slide-" + place + " > .field-row > .columns").prepend('<p class="texte-choix_multiple text-center" style="margin-bottom: 2rem">MERCI DE RENSEIGNER LES INFORMATIONS SUIVANTES POUR ENREGISTRER VOS RÉPONSES</p>');
+
+    /*REST*/    
     $("#slide-" + place + " > .field-row > .columns > .reponse-container-choix_multiple").addClass("small-6 columns");
-    $("#slide-" + place + " > .field-row > .columns > .reponse-container-choix_multiple").css({"margin-bottom" : "0px", "padding-top" : "0.4em", "margin-top" : "0px", "line-height" : "1em"});
+    $("#slide-" + place + " > .field-row > .columns > .reponse-container-choix_multiple").css({"margin-bottom" : "0px", "padding-top" : "0em", "margin-top" : "0px", "line-height" : "1em"});
     $("#slide-" + place + " > .field-row > .columns > .champ_libre_court > .label-champ_libre").addClass("small-12 columns");
     $("#slide-" + place + " > .field-row > .columns > .champ_libre_court > .input-champ_libre").addClass("small-12 columns");
     $("#slide-" + place + " > .field-row > .columns").css({"padding-bottom" : "4em"});
     $("#slide-" + place + " > .field-row > .columns > .columns > .reponse-container-choix_multiple > .label-choix_multiple").css({"font-size" : "1.1em"});
     $("#slide-" + place).css({"padding-bottom":"0em"});
+
     slide_count = count_slides();
   }
 
