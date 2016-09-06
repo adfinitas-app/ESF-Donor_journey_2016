@@ -73,6 +73,7 @@
     $("#slide-" + count + " > .field-row > .columns").removeClass("small-12 medium-10 large-6 medium-offset-1 large-offset-3");
     $("#slide-" + count + " > .field-row > .columns").addClass("small-12 medium-offset-1 medium-10 end ");
     $("#slide-" + count + " > .field-row > .columns").css({"margin-top" : "4em"});
+    $("#slide-" + count + " > .field-row > .columns > .input-champ_libre-long").css({"height" : "14em", "font-size" : "1.5em"});
     $("#slide-" + slide + " > .field-row > .columns").append($("#slide-" + count + " > .field-row > .columns"));
     $("#slide-" + count).remove();
   }
@@ -128,14 +129,15 @@
     /*SUBMIT BUTTON*/
     $('input[type="submit"]').parent().removeClass(" medium-offset-1 medium-10 large-offset-3 large-6");
     $('input[type="submit"]').parent().addClass("text-center");
-      $('input[type="submit"]').addClass("text_main");
+    $('input[type="submit"]').addClass("text_main");
     $("#slide-" + place + " > .field-row > .columns").append($('input[type="submit"]').parent());
 
     /*VOUS ETES*/
-    selector = $("#slide-" + place  + " > .field-row > .columns > .texte-choix_unique")
+    selector = $("#slide-" + place  + " > .field-row > .columns > .texte-choix_unique");
     $(selector).removeClass(".texte-choix_unique text-center");
-    $(selector).addClass("small-12 columns label-choix_multiple responsive_padding text-left");
+    $(selector).addClass("small-12 columns label-choix_multiple text-left");
     $(selector).css({"margin-bottom" : "0px", "padding-top" : "0em", "margin-top" : "0px", "line-height" : "1em", "text-align" : "left"});
+    $('input[type="email"]').parent().append(selector);
 
     /*EMAIL*/
     selector = $(".container-panneau_informations_personnelles > .input-container > .field-row > .columns > input[type='email']").parent().parent().parent();

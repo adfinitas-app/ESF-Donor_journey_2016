@@ -76,7 +76,6 @@
   background-color: #f6f0e7;
   border-radius: 7px;
   font-family: 'tk-nimbus-sans-condensed-n4', serif;
-  font-size: 1.3em;
   padding-left: 0.9em;
   box-shadow: none;
   border: none;
@@ -286,15 +285,15 @@ label {
 
 [type="submit"]
 {
-    margin-top: 1.5em;
-    transition: 0.3s ease all;
-    background: none;
-    color: white;
-    border: solid 0.1em white;
-    border-radius: 0.2em;
-    text-transform: uppercase;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+  margin-top: 1.5em;
+  transition: 0.3s ease all;
+  background: none;
+  color: white;
+  border: solid 0.1em white;
+  border-radius: 0.2em;
+  text-transform: uppercase;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 [type="submit"]:hover
@@ -322,8 +321,9 @@ label {
  [type="submit"],
  p
  {font-size: 1.8em;}
- [type="text"],[type="submit"], [type="text"],
- textarea {font-size: 0.9em;}
+ [type="email"],
+ [type="text"],
+ textarea {font-size: 1.4em;}
  .texte-choix_unique,
  .texte-choix_multiple
  {font-size: 3em;}
@@ -334,7 +334,7 @@ label {
  [type="radio"] + label span:first-child::before {vertical-align: -0.14em;}
  [type="checkbox"] + label span:first-child::before {vertical-align: -0.1em;}
  textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder, [type="email"]::-webkit-input-placeholder
- {font-size: 1.3em;}
+ {font-size: 1em;}
  textarea:-moz-placeholder, [type="text"]:-moz-placeholder, [type="email"]:-moz-placeholder
  {font-size: 1.3em;}
  textarea::-moz-placeholder, [type="text"]::-moz-placeholder, [type="email"]::-moz-placeholder
@@ -356,8 +356,7 @@ label {
   [type="submit"],
   p
   {font-size: 3em;}
-  [type="text"],
-  textarea {height: 80px; font-size: 1em;}
+  textarea {font-size: 1.5em;}
   textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder, [type="email"]::-webkit-input-placeholder
   {font-size: 1.8em;}
   textarea:-moz-placeholder, [type="text"]:-moz-placeholder, [type="email"]:-moz-placeholder
