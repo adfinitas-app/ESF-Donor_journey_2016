@@ -10,12 +10,12 @@ panneau_question:
   texte_html: ''
   champs:
     - type: choix_multiple
-      nom_machine: "rencontre"
+      nom_machine: "support_préférés"
       reponses:
-        - valeur: La newsletter ESF
-        - valeur: Les réseaux sociaux
+        - valeur: Notre newsletter
+        - valeur: Les réseaux sociaux (facebook, twitter, instagram)
         - valeur: Le site internet
-        - valeur: Les courriers  d’ESF
+        - valeur: Nos courriers
         - valeur: Nos dépliants explicatifs
         - valeur: Autre
       options:
@@ -28,7 +28,7 @@ panneau_question:
         fond_image_path: "/assets/img/mail2-slide-1.jpg"
         fond_color:
     - type: choix_unique
-      nom_machine: "date_rencontre"
+      nom_machine: "actualité"
       reponses:
         - valeur: Je souhaite une actualité plus régulière
         - valeur: Je suis satisfait(e) de la fréquence d’envoi des newsletters
@@ -43,7 +43,7 @@ panneau_question:
         fond_image_path: "/assets/img/mail2-slide-2.jpg"
         fond_color:
     - type: choix_multiple
-      nom_machine: "engagement"
+      nom_machine: "informations"
       reponses:
         - valeur: Des informations sur nos projets d’élevage
         - valeur: Des informations sur nos projets agricoles
@@ -65,13 +65,13 @@ panneau_question:
         fond_image_path: "/assets/img/mail2-slide-3.jpg"
         fond_color:
     - type: choix_unique
-      nom_machine: "choix"
+      nom_machine: "don"
       reponses:
         - valeur: Oui
         - valeur: Non
       options:
         propriete_visiteur: true
-        label: "4. Avez-vous déjà fait un don à ESF ?"
+        label: "4. Avez-vous déjà fait un don à notre association?"
         placeholder:
         requis: true
         message_erreur: "Veuillez faire au moins un choix"
@@ -79,7 +79,7 @@ panneau_question:
         fond_image_path: "/assets/img/mail2-slide-4.jpg"
         fond_color:
     - type: choix_unique
-      nom_machine: "choix"
+      nom_machine: "element_déclencheur"
       reponses:
         - valeur: Un courrier
         - valeur: Un email
@@ -99,7 +99,7 @@ panneau_question:
         fond_image_path: "/assets/img/mail2-slide-4.jpg"
         fond_color:
     - type: choix_unique
-      nom_machine: "choix"
+      nom_machine: "soutiens"
       reponses:
         - valeur: Oui
         - valeur: Non
@@ -121,8 +121,8 @@ panneau_informations_personnelles:
     - type: choix_unique
       nom_machine: "champ_naissance"
       reponses:
-        - valeur: un homme
         - valeur: une femme
+        - valeur: un homme
       options:
         propriete_visiteur: true
         label: "Vous êtes* :"
@@ -130,10 +130,10 @@ panneau_informations_personnelles:
         requis: true
         message_erreur: "Veuillez faire un choix"
         controle:
-        fond_image_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Libya_(1977-2011).svg/2000px-Flag_of_Libya_(1977-2011).svg.png"
-        fond_color:
+        fond_image_path:
+        fond_color: "#40b082"
     - type: champ_libre_court
-      nom_machine: "choix_nom"
+      nom_machine: "choix_age"
       reponses:
         - valeur:
       options:
@@ -143,7 +143,7 @@ panneau_informations_personnelles:
         requis: true
         message_erreur: "Veuillez entrer une date valide"
         controle:
-        fond_image_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Libya_(1977-2011).svg/2000px-Flag_of_Libya_(1977-2011).svg.png"
+        fond_image_path:
         fond_color:
     - type: champ_libre_court
       nom_machine: "champ_nom"
@@ -156,7 +156,7 @@ panneau_informations_personnelles:
         requis: true
         message_erreur: "Veuillez remplir ce champ"
         controle:
-        fond_image_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Libya_(1977-2011).svg/2000px-Flag_of_Libya_(1977-2011).svg.png"
+        fond_image_path:
         fond_color:
     - type: champ_libre_court
       nom_machine: "champ_prenom"
@@ -169,7 +169,7 @@ panneau_informations_personnelles:
         requis: true
         message_erreur: "Veuillez remplir ce champ"
         controle:
-        fond_image_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Libya_(1977-2011).svg/2000px-Flag_of_Libya_(1977-2011).svg.png"
+        fond_image_path:
         fond_color:
     - type: champ_libre_court
       nom_machine: "champ_ville"
@@ -182,7 +182,7 @@ panneau_informations_personnelles:
         requis: true
         message_erreur: "Veuillez remplir ce champ"
         controle:
-        fond_image_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Libya_(1977-2011).svg/2000px-Flag_of_Libya_(1977-2011).svg.png"
+        fond_image_path:
         fond_color:
     - type: champ_libre_court
       nom_machine: "champ_pays"
@@ -195,7 +195,7 @@ panneau_informations_personnelles:
         requis: true
         message_erreur: "Veuillez remplir ce champ"
         controle:
-        fond_image_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Libya_(1977-2011).svg/2000px-Flag_of_Libya_(1977-2011).svg.png"
+        fond_image_path:
         fond_color:
     - type: champ_libre_court
       nom_machine: "champ_tel"
@@ -208,10 +208,10 @@ panneau_informations_personnelles:
         requis: true
         message_erreur: "Veuillez remplir ce champ"
         controle:
-        fond_image_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Libya_(1977-2011).svg/2000px-Flag_of_Libya_(1977-2011).svg.png"
+        fond_image_path:
         fond_color:
     - type: choix_multiple
-      nom_machine: "champ_naissance"
+      nom_machine: "champ_verify"
       reponses:
         - valeur: En laissant mon numéro, j'accepte que ESF me contacte pour m'informer de ses projets.
       options:
@@ -221,10 +221,10 @@ panneau_informations_personnelles:
         requis: true
         message_erreur: "Veuillez cocher cette case choix"
         controle:
-        fond_image_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Libya_(1977-2011).svg/2000px-Flag_of_Libya_(1977-2011).svg.png"
+        fond_image_path:
         fond_color:
 options:
-  bouton_de_soumission: "Envoyer"
+  bouton_de_soumission: "Je valide"
   page_de_remerciement_path: /merci.html
   largeur_champs: "100%"
   champs_caches:
@@ -261,7 +261,7 @@ _comments:
 						<p id="first_text" class="texte-choix_unique">VOS ATTENTES</p>
 					</div>
 				</div>
-				<p id="second_text" class="text_small">
+				<p id="second_text" class="label-choix_unique">
           Tout au long de l’année, nous vous informons à propos de nos projets sur le terrain : ceux qui ont vu le jour grâce à vous mais aussi ceux à venir.<br>
           Confiez-nous ce que vous attendez d’Elevages sans frontières à ce sujet !
 				</p>

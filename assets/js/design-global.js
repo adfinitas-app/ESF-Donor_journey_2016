@@ -1,5 +1,5 @@
-/* 
- * This file is made to be edited 
+/*
+ * This file is made to be edited
  * It will be available for formulaire and petition layouts
  */
 
@@ -15,6 +15,8 @@
   apply_last_slide();
   if(document.title == "Vos attentes")
     place_question(3);
+  apply_textarea();
+  apply_text_option();
 
   function  count_slides()
   {
@@ -24,6 +26,55 @@
     while ($("#slide-" + count).length != 0)
       count++;
     return (count);
+  }
+
+  function    apply_text_option()
+  {
+    var       count;
+    var       a;
+    var       temp;
+
+    count = 0;
+    while (count < slide_count)
+    {
+      /*
+      temp = null;
+      temp =  $("#slide-" + count + " > .field-row > .columns > .texte-choix_unique").html();
+      if (temp == null)
+        temp =  $("#slide-" + count + " > .field-row > .columns > .texte-choix_multiple").html();
+      temp = temp.toString();
+      console.log(temp);
+      a = 1;
+      while (a < 5)
+      {
+        if (temp.charAt(temp.length - a) == " ")
+          temp = temp.substr(0, temp.length - a - 1) + '&nbsp;' + temp.substr(0, temp.length - a + 2);
+        a++;
+      }
+      $("#slide-" + count + " > .field-row > .columns > .texte-choix_multiple").html(temp);*/
+      if ($("#slide-" + count + " > .field-row > .columns > .texte-choix_multiple").length != 0 && $(".input-container-choix_unique").is("#slide-" + count) == false)
+      {
+        temp = '<p class="text_small" style="text-align: center">(plusieurs réponses possibles)</p>'
+        $(temp).insertAfter($("#slide-" + count + " > .field-row > .columns > .texte-choix_multiple"));
+      }
+      count++;
+    }
+  }
+
+  function    apply_textarea()
+  {
+    var       count;
+    var       slide;
+
+    count = 0;
+    while (count < slide_count && $(".input-container-champ_libre_long").is("#slide-" + count) == false)
+      count++;
+    slide = count - 1;
+    $("#slide-" + count + " > .field-row > .columns").removeClass("small-12 medium-10 large-6 medium-offset-1 large-offset-3");
+    $("#slide-" + count + " > .field-row > .columns").addClass("small-12 medium-offset-1 medium-10 end ");
+    $("#slide-" + count + " > .field-row > .columns").css({"margin-top" : "4em"});
+    $("#slide-" + slide + " > .field-row > .columns").append($("#slide-" + count + " > .field-row > .columns"));
+    $("#slide-" + count).remove();
   }
 
   function    apply_margin()
@@ -75,9 +126,9 @@
       count++;
     }
     /*SUBMIT BUTTON*/
-    $('input[type="submit"]').parent().append("<br><input type='image' src='https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_down.png' alt='Submit'>");
     $('input[type="submit"]').parent().removeClass(" medium-offset-1 medium-10 large-offset-3 large-6");
     $('input[type="submit"]').parent().addClass("text-center");
+      $('input[type="submit"]').addClass("text_main");
     $("#slide-" + place + " > .field-row > .columns").append($('input[type="submit"]').parent());
 
     /*VOUS ETES*/
@@ -94,7 +145,7 @@
     $(selector).remove();
     $("#slide-" + place + " > .field-row > .columns").prepend('<p class="texte-choix_multiple text-center" style="margin-bottom: 2rem">MERCI DE RENSEIGNER LES INFORMATIONS SUIVANTES POUR ENREGISTRER VOS RÉPONSES</p>');
 
-    /*REST*/    
+    /*REST*/
     $("#slide-" + place + " > .field-row > .columns > .reponse-container-choix_multiple").addClass("small-6 columns");
     $("#slide-" + place + " > .field-row > .columns > .reponse-container-choix_multiple").css({"margin-bottom" : "0px", "padding-top" : "0em", "margin-top" : "0px", "line-height" : "1em"});
     $("#slide-" + place + " > .field-row > .columns > .champ_libre_court > .label-champ_libre").addClass("small-12 columns");

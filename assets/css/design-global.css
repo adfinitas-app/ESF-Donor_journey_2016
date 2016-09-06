@@ -63,7 +63,7 @@
 
 .img_top
 {
-  height: 50px;
+  height: 5em;
   margin-top: 30px;
 }
 
@@ -286,19 +286,30 @@ label {
 
 [type="submit"]
 {
-  margin-top: 2em;
-  background: none;
-  border: none;
-  color: white;
-  font-family: 'tk-nimbus-sans-condensed-n4', serif;
-  font-size: 1.2em;
-  text-transform: uppercase;
-  font-weight: bold
+    margin-top: 1.5em;
+    transition: 0.3s ease all;
+    background: none;
+    color: white;
+    border: solid 0.1em white;
+    border-radius: 0.2em;
+    text-transform: uppercase;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+[type="submit"]:hover
+{
+  background-color: rgba(255, 255, 255, 0.302);
+}
+
+[type="submit"]:active
+{
+  transform: scale(0.8);
 }
 
 @media (max-width: 640px) {
-  .img_top_right /*Merci.html*/
-  {height: 50px;}
+  .img_top /*Merci.html*/
+  {height: 4em;}
   .responsive_padding
   {padding-left: 0.8em;}
 }
@@ -334,7 +345,7 @@ label {
  .text_title
  {font-size: 3em;}
  .img_top
- {height:80px;}
+ {height:10em;}
 }
 
 @media (min-width: 2200px){
@@ -370,8 +381,7 @@ label {
   {font-size: 4.5em;}
   .text_title
   {font-size: 6em;}
-  .img_top
-  {height:160px;}
+  .img_top,
   .img_top_right
-  {height:300px;}
+  {height:15em;}
 }
