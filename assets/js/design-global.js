@@ -17,7 +17,35 @@
     place_question(3);
   apply_textarea();
   apply_text_option();
+  set_insecable();
 
+  function replaceAt(word, index, character) {
+    return word.substr(0, index) + character + word.substr(index+character.length);
+  }
+
+  function  set_insecable()
+  {
+    var     a;
+    var     word;
+
+    $(".text_scoring, .texte-choix_multiple, .texte-choix_unique").each(function()
+    {
+      word = $(this).html();
+      if (word != null)
+      {
+        word = word.toString();
+        a = word.length - 1;
+        while (a > word.length - 5)
+        {
+          if (word.charAt(a) == ' ')
+            word = replaceAt(word, a, '\xa0');
+          a--;
+        }
+        $(this).html(word);
+
+      }
+    });
+  }
   function  count_slides()
   {
     var     count;
