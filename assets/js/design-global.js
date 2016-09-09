@@ -13,8 +13,16 @@
   $('.field-row > .columns > .text-scoring').parent().addClass("text-center");
   apply_margin();
   apply_last_slide();
-  if(document.title == "On se dit tout")
-    place_bullet_subtitle();
+  if(document.title == "On se dit tout" || document.title == "Ce qui vous tient au coeur")
+  {
+    var   temp;
+
+    if(document.title == "On se dit tout")
+      temp = '<p class="text_small" style="text-align: center">(1 pas du tout confiance, 10 entièrement confiance)</p>';
+    else
+      temp = '<p class="text_small" style="text-align: center">(1 pas du tout qualitatifs, 10 très qualitatifs)</p>';
+    $(temp).insertAfter($("#slide-4 > .field-row > .columns > .text-scoring"));
+  }
   if(document.title == "Vos attentes")
     place_question(3);
   apply_textarea();
@@ -68,12 +76,6 @@ window.addEventListener("resize", vertical_center, true);
       }
     console.log(space);
     $("#first_text").css({"padding-top" : space + "px"});
-  }
-
-  function  place_bullet_subtitle()
-  {
-    temp = '<p class="text_small" style="text-align: center">(1 pas du tout confiance, 10 entièrement confiance)</p>';
-    $(temp).insertAfter($("#slide-4 > .field-row > .columns > .text-scoring"));
   }
 
   function  count_slides()
