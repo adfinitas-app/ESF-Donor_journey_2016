@@ -65,7 +65,6 @@ window.addEventListener("resize", vertical_center, true);
     var     total;
     var     space;
 
-    console.log("resizing");
     total = $("#first_text").height();
     total += $("#second_text").height();
     space = ($("#accueil").height() - ($("#first_text").offset().top + $("#second_text").offset().top)) / 2;
@@ -74,7 +73,6 @@ window.addEventListener("resize", vertical_center, true);
         total += $("#third_text").height();
         space = ($("#accueil").height() - ($("#first_text").offset().top + $("#third_text").offset().top)) / 2;
       }
-    console.log(space);
     $("#first_text").css({"padding-top" : space + "px"});
   }
 
