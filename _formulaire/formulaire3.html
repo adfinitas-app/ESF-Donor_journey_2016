@@ -12,7 +12,7 @@ panneau_question:
     - type: choix_unique
       nom_machine: "cause_soutiens"
       reponses:
-        - valeur: La lutte contre la faim à travers la production animale et végétale par le développement de petits élevages et de potagers
+        - valeur: La lutte contre la faim par le développement de petits élevages et de potagers
         - valeur: L'accès à l'eau propre
         - valeur: L'accaparement des terres
         - valeur: La reconnaissance du statut des femmes paysannes
@@ -41,6 +41,7 @@ panneau_question:
         - valeur: Haïti
         - valeur: Kosovo
         - valeur: Maroc
+        - valeur: Sénégal
       options:
         propriete_visiteur: true
         label: "2. Avez-vous déjà voyagé ou vécu dans l'un de ces pays"
@@ -134,7 +135,7 @@ panneau_informations_personnelles:
         - valeur:
       options:
         propriete_visiteur: true
-        label: "Votre année de naissance* :"
+        label: "Votre année de naissance :"
         placeholder: "Choisissez votre tranche d'âge"
         requis: true
         message_erreur: "Veuillez entrer une date valide"
@@ -275,8 +276,10 @@ _comments:
   </div>
     {% include form.html %}
   <div class="row field-row">
+    <div class="scale_up">
     <a id="next_container" href="#" class="small-12 hide-for-small-only columns text-center">
       <p class="text_bold">QUESTION SUIVANTE</p>
       <img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_down.png">
     </a>
+  </div>
   </div>

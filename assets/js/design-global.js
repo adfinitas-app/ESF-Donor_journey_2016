@@ -58,7 +58,7 @@
     });
   }
 
-window.addEventListener("resize", vertical_center, true);
+  window.addEventListener("resize", vertical_center, true);
 
   function  vertical_center()
   {
@@ -69,10 +69,10 @@ window.addEventListener("resize", vertical_center, true);
     total += $("#second_text").height();
     space = ($("#accueil").height() - ($("#first_text").offset().top + $("#second_text").offset().top)) / 2;
     if (document.title == "On se dit tout")
-      {
-        total += $("#third_text").height();
-        space = ($("#accueil").height() - ($("#first_text").offset().top + $("#third_text").offset().top)) / 2;
-      }
+    {
+      total += $("#third_text").height();
+      space = ($("#accueil").height() - ($("#first_text").offset().top + $("#third_text").offset().top)) / 2;
+    }
     $("#first_text").css({"padding-top" : space + "px"});
   }
 
@@ -156,9 +156,11 @@ window.addEventListener("resize", vertical_center, true);
     set_count = 1;
     count = slide_count - 7;
     place = slide_count - 8;
+
     /*VOUS ETES*/
     $("#slide-" + count - 1 + " > .field-row > .columns").removeClass("small-12 medium-10 large-6 medium-offset-1 large-offset-3");
     $("#slide-" + count - 1 + " > .field-row > .columns").addClass(set[0]);
+
     /*REMOVE UNWANTED CLASSES AND REPLACE THE FORMATTING CLASSES*/
     while (count < slide_count)
     {
@@ -169,11 +171,26 @@ window.addEventListener("resize", vertical_center, true);
       set_count++;
       count++;
     }
+
     /*SUBMIT BUTTON*/
     $('input[type="submit"]').parent().removeClass(" medium-offset-1 medium-10 large-offset-3 large-6");
     $('input[type="submit"]').parent().addClass("text-center");
     $('input[type="submit"]').addClass("text_main");
     $("#slide-" + place + " > .field-row > .columns").append($('input[type="submit"]').parent());
+    $("#slide-" + place + " > .field-row > .columns").append("<div class='columns small-12' style='margin-top: 1.5em'><p style='color:white; font-size: 1.3em;'>* réponses obligatoires</p></div>");
+    $(".field-row > .columns > .reponse-container-choix_multiple > label, .field-row > .columns > .reponse-container-choix_unique > label").css({"display" : "flex"});
+    $(".field-row > .columns > .reponse-container-choix_multiple > label, .field-row > .columns > .reponse-container-choix_unique > label").each(function()
+    {
+      var   initial_text;
+
+      initial_text = "<p>" + $(this).html(); + "</p>"
+      $(this).html(initial_text);
+    });
+    $(".field-row > .columns > .reponse-container-choix_unique > label > span, .field-row > .columns > .reponse-container-choix_multiple > label > span").css({"display" : "block"});
+    $(".field-row > .columns > .reponse-container-choix_unique > label > span, .field-row > .columns > .reponse-container-choix_multiple > label > p").css({"display" : "block"});
+
+    /*QUESTION ALIGNEMENT*/
+
 
     /*VOUS ETES*/
     selector = $("#slide-" + place  + " > .field-row > .columns > .texte-choix_unique");

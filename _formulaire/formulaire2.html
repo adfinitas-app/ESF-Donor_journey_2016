@@ -13,7 +13,7 @@ panneau_question:
       nom_machine: "support_préférés"
       reponses:
         - valeur: Notre newsletter
-        - valeur: Les réseaux sociaux (Facebook, Twitter, Instagram)
+        - valeur: Notre site et Nos réseaux sociaux (Facebook, Twitter, Instagram)
         - valeur: Le site internet
         - valeur: Nos courriers
         - valeur: Nos dépliants explicatifs
@@ -53,7 +53,7 @@ panneau_question:
         - valeur: Des vidéos
         - valeur: Des annonces sur nos prochains projets
         - valeur: Des actualités autour de notre vie associative en régions
-        - valeur: Des informations pratiques sur l’élevage et l’agriculture en zone tropicale
+        - valeur: Des informations sur l’élevage et l’agriculture en zone tropicale
         - valeur: Autre
       options:
         propriete_visiteur: true
@@ -78,7 +78,7 @@ panneau_question:
         controle:
         fond_image_path: "/assets/img/quest2-slide-4.jpg"
         fond_color:
-    - type: choix_unique
+    - type: choix_multiple
       nom_machine: "element_déclencheur"
       reponses:
         - valeur: Un courrier
@@ -93,7 +93,7 @@ panneau_question:
         propriete_visiteur: true
         label: "Si oui, quel fut l'élément déclencheur de votre don ?"
         placeholder:
-        requis: true
+        requis: false
         message_erreur: "Veuillez faire au moins un choix"
         controle:
         fond_image_path: "/assets/img/quest2-slide-4.jpg"
@@ -104,7 +104,7 @@ panneau_question:
         - valeur: En faisant un don
         - valeur: En m'investissant en tant que bénévole
         - valeur: En relayant son actualité sur internet
-        - valeur: Je ne sais pas prêt(e)
+        - valeur: Je ne suis pas prêt(e)
       options:
         propriete_visiteur: true
         label: "5. Seriez-vous prêt(e) à soutenir notre association au cours des 12 mois à venir ?"
