@@ -178,6 +178,8 @@
     $('input[type="submit"]').addClass("text_main");
     $("#slide-" + place + " > .field-row > .columns").append($('input[type="submit"]').parent());
     $("#slide-" + place + " > .field-row > .columns").append("<div class='columns small-12' style='margin-top: 1.5em'><p style='color:white; font-size: 1.3em;'>* réponses obligatoires</p></div>");
+    
+    /*RADIO and CHECKBOXES*/
     $(".field-row > .columns > .reponse-container-choix_multiple > label, .field-row > .columns > .reponse-container-choix_unique > label").css({"display" : "flex"});
     $(".field-row > .columns > .reponse-container-choix_multiple > label, .field-row > .columns > .reponse-container-choix_unique > label").each(function()
     {
