@@ -190,7 +190,6 @@ label {
   width: 1em;
   height: 1em;
   display: inline-block;
-  vertical-align: -0.3em;
   margin-right: 1em;
   transition: 0.5s ease all;
   -webkit-user-select: none;
@@ -215,7 +214,6 @@ label {
   width: 1em;
   height: 1em;
   display: inline-block;
-  vertical-align: -0.3em;
   margin-right: 1em;
   transition: 0.5s ease all;
   -webkit-user-select: none;
