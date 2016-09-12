@@ -142,23 +142,25 @@
 	  {% endif %}
 	  {% for reponse in champ.reponses %}
 	    {% if reponse.valeur == "Autre" %}
-	      <input type="radio" id="input-{{ inputId }}"
-	             value=""
-	             name="{{ champ.nom_machine }}"
-	             {% if champ.options.requis == true %}
-	             required
-	             {% endif %}
-	             {% if champ.options.propriete_visiteur %}
-	             class="input-choix_unique other visitor_property"
-	             {% else %}
-	             class="input-choix_unique other"
-   	             {% endif %}
-	      />
-	      <label class="label-choix_unique label-other" for="input-{{ inputId }}">
-	        <span class="text-other">Autre :</span>
-	        <input type="text" class="other-choice-text no-send"
-	    	   id="other-{{ inputId }}"/>
-	      </label>
+	    <div class="reponse-container-choix-unique other-container">
+		<input type="radio" id="input-{{ inputId }}"
+	      	       value=""
+	      	       name="{{ champ.nom_machine }}"
+	      	       {% if champ.options.requis == true %}
+	      	       required
+	      	       {% endif %}
+	      	       {% if champ.options.propriete_visiteur %}
+	      	       class="input-choix_unique other visitor_property"
+	      	       {% else %}
+	      	       class="input-choix_unique other"
+   	      	       {% endif %}
+	      	/>
+	      	<label class="label-choix_unique label-other" for="input-{{ inputId }}">
+	      	  <span class="text-other">Autre :</span>
+	      	  <input type="text" class="other-choice-text no-send"
+	      	     id="other-{{ inputId }}"/>
+	      	</label>
+	      </div>
 	      {% assign inputId=inputId | plus:1 %}
 	    {% else %}
 	      <div class="reponse-container-choix_multiple">
@@ -188,23 +190,25 @@
 	  {% endif %}
 	  {% for reponse in champ.reponses %}
 	    {% if reponse.valeur == "Autre" %}
-	      <input type="checkbox" id="input-{{ inputId }}"
-	             value=""
-	             name="{{ champ.nom_machine }}"
-	             {% if champ.options.requis == true %}
-	             required
-	             {% endif %}
-	             {% if champ.options.propriete_visiteur %}
-	             class="input-choix_multiple other visitor_property"
-	             {% else %}
-	             class="input-choix_multiple other"
-   	             {% endif %}
-	      />
-	      <label class="label-choix_multiple label-other" for="input-{{ inputId }}">
-	        <span class="text-other">Autre :</span>
-	        <input type="text" class="other-choice-text no-send"
-	             id="other-{{ inputId }}"/>
-	      </label>
+	      <div class="reponse-container-choix-unique other-container">
+		<input type="checkbox" id="input-{{ inputId }}"
+	      	       value=""
+	      	       name="{{ champ.nom_machine }}"
+	      	       {% if champ.options.requis == true %}
+	      	       required
+	      	       {% endif %}
+	      	       {% if champ.options.propriete_visiteur %}
+	      	       class="input-choix_multiple other visitor_property"
+	      	       {% else %}
+	      	       class="input-choix_multiple other"
+   	      	       {% endif %}
+	      	/>
+	      	<label class="label-choix_multiple label-other" for="input-{{ inputId }}">
+	      	  <span class="text-other">Autre :</span>
+	      	  <input type="text" class="other-choice-text no-send"
+	      	       id="other-{{ inputId }}"/>
+	      	</label>
+	      </div>
 	      {% assign inputId=inputId | plus:1 %}
 	    {% else %}
 	      <div class="reponse-container-choix_multiple">

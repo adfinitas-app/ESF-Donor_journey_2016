@@ -6,7 +6,7 @@ function isValidEmail(email) {
 function hideError()
 {
   if ($(this).attr("type") === "radio" || $(this).attr("type") === "checkbox") {
-    $("input[name='" + $(this).attr("name") + "']").parent().removeClass("error");
+    $("input[name='" + $(this).attr("name") + "']").parent().parent().removeClass("error");
   } else if ($(this).hasClass("check-phone")) {
     $(this).parent().parent().removeClass("error");
   } else if ($(this).prop("tagName") === "SELECT") {
@@ -19,7 +19,7 @@ function hideError()
 
 function showError(elem) {
   if (elem.attr("type") === "radio" || elem.attr("type") === "checkbox") {
-    $("input[name='" + elem.attr("name") + "']").parent().addClass("error");
+    $("input[name='" + elem.attr("name") + "']").parent().parent().addClass("error");
     $("input[name='" + elem.attr("name") + "']").on("change", hideError);
   } else if (elem.prop("tagName") === "SELECT") {
     elem.parent().parent().addClass("error");

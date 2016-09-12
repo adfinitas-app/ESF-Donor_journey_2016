@@ -24,7 +24,7 @@ function makeCorsRequest(data, success) {
 
   var xhr = createCORSRequest('POST', url);
   if (!xhr) {
-    alert("{{ site.message_erreur}}" + ' : CORS non supporté');
+    alert("{{ site.form-to-db_config.message_erreur}}" + ' : CORS non supporté');
     return;
   }
 
@@ -35,7 +35,7 @@ function makeCorsRequest(data, success) {
 
   // Error Handler
   xhr.onerror = function() {
-    alert("{{ site.message_erreur}}" + ' : Erreur inconnue');
+    alert("{{ site.form-to-db_config.message_erreur}}" + ' : Erreur inconnue');
   };
 
   xhr.send(body);
