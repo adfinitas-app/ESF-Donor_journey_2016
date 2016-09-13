@@ -20,7 +20,7 @@
    margin-left:-150px;
    padding-bottom: 10px;
  }
- 
+
  .scale_up:active
  {
    transform: scale(0.9);
@@ -189,6 +189,7 @@ label {
   content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/unchecked.png');
   width: 1em;
   height: 1em;
+  vertical-align: -0.3em;
   display: inline-block;
   margin-right: 1em;
   transition: 0.5s ease all;
@@ -215,6 +216,7 @@ label {
   height: 1em;
   display: inline-block;
   margin-right: 1em;
+    vertical-align: -0.13em;
   transition: 0.5s ease all;
   -webkit-user-select: none;
   -khtml-user-select: none;
