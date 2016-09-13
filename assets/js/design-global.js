@@ -12,6 +12,7 @@
   $('.field-row > .columns').addClass("small-12 medium-offset-1 medium-10 large-offset-3 large-6 columns");
   $('.field-row > .columns > .text-scoring').parent().addClass("text-center");
   apply_margin();
+  apply_text_option();
   apply_last_slide();
   if(document.title == "On se dit tout" || document.title == "Ce qui vous tient au coeur")
   {
@@ -26,7 +27,6 @@
   if(document.title == "Vos attentes")
     place_question(3);
   apply_textarea();
-  apply_text_option();
   set_insecable();
   vertical_center();
 
@@ -178,7 +178,7 @@
     $('input[type="submit"]').addClass("text_main");
     $("#slide-" + place + " > .field-row > .columns").append($('input[type="submit"]').parent());
     $("#slide-" + place + " > .field-row > .columns").append("<div class='columns small-12' style='margin-top: 1.5em'><p style='color:white; font-size: 1.3em;'>* réponses obligatoires</p></div>");
-    
+
     /*RADIO and CHECKBOXES*/
     $(".field-row > .columns > .reponse-container-choix_multiple > label, .field-row > .columns > .reponse-container-choix_unique > label").css({"display" : "flex"});
     $(".field-row > .columns > .reponse-container-choix_multiple > label, .field-row > .columns > .reponse-container-choix_unique > label").each(function()
@@ -190,9 +190,6 @@
     });
     $(".field-row > .columns > .reponse-container-choix_unique > label > span, .field-row > .columns > .reponse-container-choix_multiple > label > span").css({"display" : "block"});
     $(".field-row > .columns > .reponse-container-choix_unique > label > span, .field-row > .columns > .reponse-container-choix_multiple > label > p").css({"display" : "block"});
-
-    /*QUESTION ALIGNEMENT*/
-
 
     /*VOUS ETES*/
     selector = $("#slide-" + place  + " > .field-row > .columns > .texte-choix_unique");
@@ -215,7 +212,7 @@
     $("#slide-" + place + " > .field-row > .columns > .champ_libre_court > .label-champ_libre").addClass("small-12 columns");
     $("#slide-" + place + " > .field-row > .columns > .champ_libre_court > .input-champ_libre").addClass("small-12 columns");
     $("#slide-" + place + " > .field-row > .columns").css({"padding-bottom" : "4em"});
-    $("#slide-" + place + " > .field-row > .columns > .columns > .reponse-container-choix_multiple > .label-choix_multiple").css({"font-size" : "1.1em"});
+    $("#slide-" + place + " > .field-row > .columns > .columns > .reponse-container-choix_multiple > .label-choix_multiple").css({"font-size" : "1.1em", "line-height" : "1.44"});
     $("#slide-" + place).css({"padding-bottom":"0em"});
 
     slide_count = count_slides();
