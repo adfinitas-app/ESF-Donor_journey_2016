@@ -77,7 +77,7 @@
   margin-top: 30px;
 }
 
-[type="text"], [type="email"] {
+[type="text"], [type="email"], select {
   background-color: #f6f0e7;
   border-radius: 7px;
   font-family: 'tk-nimbus-sans-condensed-n4', serif;
@@ -92,11 +92,16 @@
   flex:1;
 }
 
-[type="text"]:focus, [type="email"]:focus {
+[type="text"]:focus, [type="email"]:focus, select:focus {
   outline-color: transparent;
   outline-style: none;
   box-shadow: none;
   border: none;
+}
+
+select
+{
+  color: #c3afa0;
 }
 
 p {

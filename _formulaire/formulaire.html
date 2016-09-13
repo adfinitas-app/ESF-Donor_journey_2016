@@ -132,14 +132,22 @@ panneau_informations_personnelles:
         controle:
         fond_image_path:
         fond_color: '#40b082'
-    - type: champ_libre_court
+    - type: liste_deroulante
       nom_machine: champ_age
       reponses:
-        - valeur:
+        - valeur: 2000 - aujourd'hui
+        - valeur: 1990 - 1999
+        - valeur: 1980 - 1989
+        - valeur: 1970 - 1979
+        - valeur: 1960 - 1969
+        - valeur: 1950 - 1959
+        - valeur: 1940 - 1949
+        - valeur: 1930 - 1939
+        - valeur: Avant 1930
       options:
         propriete_visiteur: true
         label: 'Votre année de naissance* :'
-        placeholder: "Choisissez votre tranche d'âge"
+        placeholder: "Année de naissance"
         requis: true
         message_erreur: Veuillez entrer une date valide
         controle:
