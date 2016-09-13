@@ -334,6 +334,7 @@ label {
  [type="submit"],
  p
  {font-size: 1em;}
+ select{font-size: 1em}
  [type="email"],
  [type="text"],
  textarea {font-size: 1.4em;}
@@ -369,6 +370,7 @@ label {
   [type="submit"],
   p
   {font-size: 1em;}
+  select {font-size: 1.8em}
   textarea {font-size: 1.5em;}
   textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder, [type="email"]::-webkit-input-placeholder
   {font-size: 1.8em;}
