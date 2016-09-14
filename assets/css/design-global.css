@@ -77,6 +77,19 @@
   margin-top: 30px;
 }
 
+.error-message-highlight{
+  color: white;
+  background: red;
+  border-radius: 7px;
+  text-align" : center;
+}
+
+.error{
+  color: red;
+  background: none;
+  border-radius: 0px;
+}
+
 [type="text"], [type="email"], select {
   background-color: #f6f0e7;
   border-radius: 7px;

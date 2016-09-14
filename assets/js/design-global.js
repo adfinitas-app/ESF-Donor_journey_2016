@@ -12,6 +12,7 @@
   $('.field-row > .columns').addClass("small-12 medium-offset-1 medium-10 large-offset-3 large-6 columns");
   $('.field-row > .columns > .text-scoring').parent().addClass("text-center");
   apply_margin();
+  move_error();
   apply_text_option();
   apply_last_slide();
   if(document.title == "On se dit tout" || document.title == "Ce qui vous tient au coeur")
@@ -137,6 +138,19 @@
     }
   }
 
+  function    move_error()
+  {
+    var       count;
+
+    count = 0;
+    while (count < slide_count - 8)
+    {
+      $("#slide-" + count + " > .field-row > .columns > *").last().insertAfter($("#slide-" + count + " > .field-row > .columns > .text-scoring, #slide-" + count + " > .field-row > .columns > .texte-choix_multiple, #slide-" + count + " > .field-row > .columns > .texte-choix_unique"));
+      $("#slide-" + count + " > .field-row > .columns > .error-message").addClass("error-message-highlight");
+      count++;
+    }
+  }
+
   function    apply_last_slide()
   {
     var     count;
@@ -145,9 +159,9 @@
     var     place;
     var     set =
     ["small-12",
+    "small-12 medium-6",
+    "small-12 medium-6",
     "small-12",
-    "small-12 medium-6",
-    "small-12 medium-6",
     "small-12 medium-6",
     "small-12 medium-6",
     "small-12 medium-6",
@@ -207,6 +221,7 @@
     $("#slide-" + place + " > .field-row > .columns").prepend('<p class="texte-choix_multiple text-center" style="margin-bottom: 2rem">MERCI DE RENSEIGNER LES INFORMATIONS SUIVANTES POUR ENREGISTRER VOS RÉPONSES</p>');
 
     /*REST*/
+    $("#slide-" + place + " > .field-row > .columns > .error-message").addClass("columns");
     $("#slide-" + place + " > .field-row > .columns > .reponse-container-choix_multiple").addClass("small-6 columns");
     $("#slide-" + place + " > .field-row > .columns > .reponse-container-choix_multiple").css({"margin-bottom" : "0px", "padding-top" : "0em", "margin-top" : "0px", "line-height" : "1em"});
     $("#slide-" + place + " > .field-row > .columns > .champ_libre_court > .label-champ_libre").addClass("small-12 columns");
