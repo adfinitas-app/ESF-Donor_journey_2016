@@ -21,6 +21,11 @@
    padding-bottom: 10px;
  }
 
+ .scale_up:active
+ {
+   transform: scale(0.9);
+ }
+
  @keyframes slide_in {
   100% {
     bottom: 0px;
@@ -63,7 +68,7 @@
 
 .img_top
 {
-  height: 5em;
+  height: 6em;
   margin-top: 30px;
 }
 
@@ -72,7 +77,20 @@
   margin-top: 30px;
 }
 
-[type="text"], [type="email"] {
+.error-message-highlight{
+  color: white;
+  background: red;
+  border-radius: 7px;
+  text-align : center;
+}
+
+.error{
+  color: red;
+  background: none;
+  border-radius: 0px;
+}
+
+[type="text"], [type="email"], select {
   background-color: #f6f0e7;
   border-radius: 7px;
   font-family: 'tk-nimbus-sans-condensed-n4', serif;
@@ -87,16 +105,22 @@
   flex:1;
 }
 
-[type="text"]:focus, [type="email"]:focus {
+[type="text"]:focus, [type="email"]:focus, select:focus {
   outline-color: transparent;
   outline-style: none;
   box-shadow: none;
   border: none;
 }
 
+select
+{
+  color: #c3afa0;
+}
+
 p {
   font-family: 'tk-nimbus-sans-condensed-n4', serif;
   font-size: 1.3em;
+  line-height: 1.3;
 }
 
 textarea {
@@ -183,8 +207,8 @@ label {
   content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/unchecked.png');
   width: 1em;
   height: 1em;
-  display: inline-block;
   vertical-align: -0.3em;
+  display: inline-block;
   margin-right: 1em;
   transition: 0.5s ease all;
   -webkit-user-select: none;
@@ -209,8 +233,8 @@ label {
   width: 1em;
   height: 1em;
   display: inline-block;
-  vertical-align: -0.3em;
   margin-right: 1em;
+    vertical-align: -0.13em;
   transition: 0.5s ease all;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -286,19 +310,20 @@ label {
 [type="submit"]
 {
   margin-top: 1.5em;
-  transition: 0.3s ease all;
-  background: none;
-  color: white;
+  transition: 0.2s ease all;
+  background: white;
+  color: #40b082;
   border: solid 0.1em white;
   border-radius: 0.2em;
   text-transform: uppercase;
   padding-left: 0.5em;
   padding-right: 0.5em;
+  outline: none;
 }
 
 [type="submit"]:hover
 {
-  background-color: rgba(255, 255, 255, 0.302);
+  background-color: rgba(255, 255, 255, 0.802);
 }
 
 [type="submit"]:active
@@ -311,6 +336,8 @@ label {
   {height: 4em;}
   .responsive_padding
   {padding-left: 0.8em;}
+  p
+  {font-size: 1.1em}
 }
 
 @media (min-width: 1440px) and (min-height:600px){
@@ -320,7 +347,8 @@ label {
  .text_small,
  [type="submit"],
  p
- {font-size: 1.8em;}
+ {font-size: 1em;}
+ select{font-size: 1em}
  [type="email"],
  [type="text"],
  textarea {font-size: 1.4em;}
@@ -355,7 +383,8 @@ label {
   .text_small,
   [type="submit"],
   p
-  {font-size: 3em;}
+  {font-size: 1em;}
+  select {font-size: 1.8em}
   textarea {font-size: 1.5em;}
   textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder, [type="email"]::-webkit-input-placeholder
   {font-size: 1.8em;}

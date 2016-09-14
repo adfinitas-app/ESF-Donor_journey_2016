@@ -13,14 +13,13 @@ panneau_question:
       nom_machine: rencontre
       reponses:
         - valeur: 'Je vous ai découvert grâce à ma famille, mes amis'
-        - valeur: 'Je vous ai découvert sur internet, en faisant des recherches'
-        - valeur: "J'ai offert ou reçu une carte cadeaux"
+        - valeur: 'Je vous ai découvert sur internet'
+        - valeur: "J'ai offert ou reçu une carte Cadeau solidaire"
         - valeur: "J'ai signé une pétition"
-        - valeur: 'Je vous ai découvert sur les réseaux sociaux (Facebook, Twitter, Instagram)'
+        - valeur: 'Je vous ai découvert sur un réseau social (Facebook, Twitter, Instagram)'
         - valeur: J’ai reçu un courrier de la votre part
-        - valeur: J’ai découvert votre association lors d’un évènement public près de chez moi
+        - valeur: J’ai découvert votre association lors d’un évènement près de chez moi
         - valeur: Autre
-        - valeur:
       options:
         propriete_visiteur: true
         label: "1. Comment nous sommes-nous rencontrés\_?"
@@ -35,9 +34,9 @@ panneau_question:
       reponses:
         - valeur: Il y a quelques jours
         - valeur: Il y a 1 à 2 mois
-        - valeur: Il y a 3 à 6 mois
+        - valeur: Moins de 6 mois
+        - valeur: Moins d'1 an
         - valeur: Il y a entre 1 et 5 ans
-        - valeur: Il y a entre 5 et 10 ans
         - valeur: Il y a plus de 10 ans
       options:
         propriete_visiteur: true
@@ -51,13 +50,13 @@ panneau_question:
     - type: choix_multiple
       nom_machine: engagement
       reponses:
-        - valeur: Je suis sympathisant et je partage vos convictions
+        - valeur: Je partage vos convictions
         - valeur: 'Je vous suis sur les réseaux sociaux (Facebook, Twitter, Instagram)'
-        - valeur: Je suis inscrit à Newsletter
+        - valeur: Je suis inscrit à votre actualité
         - valeur: Je signe des pétitions
         - valeur: Je suis donateur
         - valeur: Je suis bénévole ponctuel ou régulier
-        - valeur: Je suis ambassadeur de votre association dans ma région
+        - valeur: Je suis ambassadeur de l'association dans ma région
         - valeur: Autre
       options:
         propriete_visiteur: true
@@ -75,7 +74,7 @@ panneau_question:
         - valeur: Nos projets agricoles
         - valeur: Notre défense de l’agriculture paysanne locale
         - valeur: Notre savoir-faire professionnel
-        - valeur: Notre principe de microcrédit solidaire de « Qui reçoit donne »
+        - valeur: Notre principe de microcrédit solidaire « Qui reçoit donne »
         - valeur: Notre façon de communiquer
         - valeur: Notre proximité avec le terrain
         - valeur: L’aspect durable des projets
@@ -133,19 +132,6 @@ panneau_informations_personnelles:
         fond_image_path:
         fond_color: '#40b082'
     - type: champ_libre_court
-      nom_machine: champ_age
-      reponses:
-        - valeur:
-      options:
-        propriete_visiteur: true
-        label: 'Votre année de naissance* :'
-        placeholder: "Choisissez votre tranche d'âge"
-        requis: true
-        message_erreur: Veuillez entrer une date valide
-        controle:
-        fond_image_path:
-        fond_color:
-    - type: champ_libre_court
       nom_machine: champ_nom
       reponses:
         - valeur:
@@ -168,6 +154,27 @@ panneau_informations_personnelles:
         placeholder: 'Prénom*'
         requis: true
         message_erreur: Veuillez remplir ce champ
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: liste_deroulante
+      nom_machine: champ_age
+      reponses:
+        - valeur: entre 2000 et aujourd'hui
+        - valeur: entre 1990 et 1999
+        - valeur: entre 1980 et 1989
+        - valeur: entre 1970 et 1979
+        - valeur: entre 1960 et 1969
+        - valeur: entre 1950 et 1959
+        - valeur: entre 1940 et 1949
+        - valeur: entre 1930 et 1939
+        - valeur: Avant 1930
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: "Année de naissance"
+        requis: true
+        message_erreur: Veuillez entrer une date valide
         controle:
         fond_image_path:
         fond_color:
@@ -218,7 +225,7 @@ panneau_informations_personnelles:
         propriete_visiteur: true
         label:
         placeholder: Numéro de téléphone
-        requis: true
+        requis: false
         message_erreur: Veuillez cocher cette case choix
         controle:
         fond_image_path:
