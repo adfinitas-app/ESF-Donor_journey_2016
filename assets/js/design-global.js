@@ -314,8 +314,8 @@
   $('a').click(function(){
     if ($($(this).attr('href')).length != 0)
     {
-      $('html, body').animate({
-        scrollTop: $( $(this).attr('href') ).offset().top
+      $('html, body').stop().animate({
+        scrollTop: $( $(this).attr('href') ).offset().top + 1
       }, 500, 'swing');
       return false;
     }
