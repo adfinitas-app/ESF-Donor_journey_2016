@@ -158,27 +158,6 @@ panneau_informations_personnelles:
         controle:
         fond_image_path:
         fond_color:
-    - type: liste_deroulante
-      nom_machine: champ_age
-      reponses:
-        - valeur: entre 2000 et aujourd'hui
-        - valeur: entre 1990 et 1999
-        - valeur: entre 1980 et 1989
-        - valeur: entre 1970 et 1979
-        - valeur: entre 1960 et 1969
-        - valeur: entre 1950 et 1959
-        - valeur: entre 1940 et 1949
-        - valeur: entre 1930 et 1939
-        - valeur: Avant 1930
-      options:
-        propriete_visiteur: true
-        label:
-        placeholder: "Choisissez votre tranche d'âge"
-        requis: true
-        message_erreur: "Veuillez entrer une date valide"
-        controle:
-        fond_image_path:
-        fond_color:
     - type: champ_libre_court
       nom_machine: "champ_ville"
       reponses:
@@ -202,6 +181,27 @@ panneau_informations_personnelles:
         placeholder: "Pays*"
         requis: true
         message_erreur: "Veuillez remplir ce champ"
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: liste_deroulante
+      nom_machine: champ_age
+      reponses:
+        - valeur: entre 2000 et aujourd'hui
+        - valeur: entre 1990 et 1999
+        - valeur: entre 1980 et 1989
+        - valeur: entre 1970 et 1979
+        - valeur: entre 1960 et 1969
+        - valeur: entre 1950 et 1959
+        - valeur: entre 1940 et 1949
+        - valeur: entre 1930 et 1939
+        - valeur: Avant 1930
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: "Choisissez votre tranche d’âge"
+        requis: true
+        message_erreur: Veuillez entrer une date valide
         controle:
         fond_image_path:
         fond_color:
@@ -233,7 +233,7 @@ panneau_informations_personnelles:
         fond_color:
 options:
   bouton_de_soumission: "Je valide"
-  page_de_remerciement_path: /merci.html
+  page_de_remerciement_path: https://dons.elevagessansfrontieres.org/onsedittout/
   largeur_champs: "100%"
   champs_caches:
     - nom:

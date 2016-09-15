@@ -51,6 +51,11 @@
         {
           if (word.charAt(a) == ' ')
             word = replaceAt(word, a, '\xa0');
+          else if (word.charAt(a) == '*')
+          {
+            console.log("hjeyyy");
+            word = word.substr(0, a) + "<span style='font-size: 0.6em'>*</span>" + word.substr(a+word.charAt(a).length);
+          }
           a--;
         }
         $(this).html(word);
@@ -161,9 +166,9 @@
     ["small-12",
     "small-12 medium-6",
     "small-12 medium-6",
+    "small-12 medium-6",
+    "small-12 medium-6",
     "small-12",
-    "small-12 medium-6",
-    "small-12 medium-6",
     "small-12 medium-6",
     "small-12 medium-6"];
 
