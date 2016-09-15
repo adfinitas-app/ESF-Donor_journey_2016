@@ -40,7 +40,7 @@
     var     a;
     var     word;
 
-    $(".text_scoring, .texte-choix_multiple, .texte-choix_unique").each(function()
+    $(".text-scoring, .texte-choix_multiple, .texte-choix_unique").each(function()
     {
       word = $(this).html();
       if (word != null)
