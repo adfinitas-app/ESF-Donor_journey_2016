@@ -40,10 +40,3 @@ _comments:
   fond_image_path: Image de fond du champ
 ---
 
-<div class="row">
-  <div class="large-12 columns">
-    <h1>adfinitas.cx - {{ page.title }}</h1>
-  </div>
-</div>
-
-{% include form.html %}

@@ -7,17 +7,22 @@
 */
 
 .other-choice-text {
-  display: inline-block;
-  width: auto;
-  margin-left: 10px;
+	display: inline-block;
+	width: auto;
+	margin-left: 10px;
 }
 
 .error-message {
-  color: red;
+	color: red;
 }
 .error-message {
-  display: none;
+	display: none;
 }
 .error .error-message {
-  display: block;
+	display: block;
+}
+
+.panneau-question-texte,
+.input-container {
+	background: white;
 }
