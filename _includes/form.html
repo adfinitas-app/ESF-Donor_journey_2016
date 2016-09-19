@@ -109,7 +109,7 @@
     {% include form-fields.html champs=page.panneau_informations_personnelles.champs %}
   </div>
   <div class="hidden_fields" style="display: none;">
-    {% for champ in page.options.champs_caches %}
+    {% for champ in page.options.champs_caches_liste %}
       <input id="input-{{ inputId }}"
              type="hidden"
              value="{{ champ.valeur }}"

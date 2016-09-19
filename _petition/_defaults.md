@@ -21,7 +21,7 @@ panneau_informations_personnelles:
         fond_image_path: 'http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg'
         fond_color:
 options:
-  champs_caches:
+  champs_caches_liste:
     - nom: hidden
       valeur: test-ok
       dynamique: true
