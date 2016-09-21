@@ -340,6 +340,35 @@
   $(".label-choix_unique, .label-choix_multiple, .label-other, .label-scoring").prepend("<span></span>");
 });
 
+generate_url();
+function  generate_url()
+{
+  var     civility;
+
+  console.log("hello");
+  $('#third_text').parent().attr('href', $('#third_text').parent().attr('href') + "b?" + window.location.href.slice(window.location.href.indexOf('?') + 1));
+}
+
+function    change_civility(url)
+{
+  var       pos;
+  var       end;
+  var       extract;
+
+  pos = -1;
+  if ((pos = url.indexOf("civility=")) == -1)
+    return (url);
+  pos += 9;
+  end = pos + 1;
+  while (url.charAt(end) != '&' && end < url.length)
+    end++;
+  if (url.substring(pos, end) == "un+homme")
+    url = url.substr(0, pos - 9) + "1" + url.substr(end, url.length);
+  else
+    url = url.substr(0, pos) + "2" + url.substr(end, url.length);
+  console.log(url);
+  return (url);
+}
 /*function  extract_values(address)
 {
   var     a;

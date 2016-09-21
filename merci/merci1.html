@@ -80,11 +80,10 @@ generate_url();
 
 function  generate_url()
 {
-  var     new_url;
   var     civility;
 
-  $('#third_text').parent().attr('href') =  $('#third_text').parent().attr('href') + "b?" + window.location.href.slice(window.location.href.indexOf('?') + 1);
-  return (new_url);
+  console.log("hello");
+  $('#third_text').parent().attr('href', $('#third_text').parent().attr('href') + "b?" + window.location.href.slice(window.location.href.indexOf('?') + 1));
 }
 
 function    change_civility(url)
@@ -104,6 +103,7 @@ function    change_civility(url)
     url = url.substr(0, pos - 9) + "1" + url.substr(end, url.length);
   else
     url = url.substr(0, pos) + "2" + url.substr(end, url.length);
+  console.log(url);
   return (url);
 }
 </script>
