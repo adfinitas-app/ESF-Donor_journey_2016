@@ -203,6 +203,13 @@ label {
   overflow: hidden;
 }
 
+[type="radio"]:before {
+  content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/checked.png');
+  width:0;
+  height:0;
+  visibility:hidden;
+}
+
 [type="radio"] + label span:first-child::before {
   content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/unchecked.png');
   width: 1em;
@@ -228,13 +235,20 @@ label {
   overflow: hidden;
 }
 
+[type="checkbox"]:before {
+  content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_checked.png');
+  width:0;
+  height:0;
+  visibility:hidden;
+}
+
 [type="checkbox"] + label span:first-child::before {
   content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_unchecked.png');
   width: 1em;
   height: 1em;
   display: inline-block;
   margin-right: 1em;
-    vertical-align: -0.13em;
+  vertical-align: -0.13em;
   transition: 0.5s ease all;
   -webkit-user-select: none;
   -khtml-user-select: none;

@@ -75,4 +75,35 @@ logo_path: "http://www.elevagessansfrontieres.org/"
  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
  fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+
+generate_url();
+
+function  generate_url()
+{
+  var     new_url;
+  var     civility;
+
+  $('#third_text').parent().attr('href') =  $('#third_text').parent().attr('href') + "b?" + window.location.href.slice(window.location.href.indexOf('?') + 1);
+  return (new_url);
+}
+
+function    change_civility(url)
+{
+  var       pos;
+  var       end;
+  var       extract;
+
+  pos = -1;
+  if ((pos = url.indexOf("civility=")) == -1)
+    return (url);
+  pos += 9;
+  end = pos + 1;
+  while (url.charAt(end) != '&' && end < url.length)
+    end++;
+  if (url.substring(pos, end) == "un+homme")
+    url = url.substr(0, pos - 9) + "1" + url.substr(end, url.length);
+  else
+    url = url.substr(0, pos) + "2" + url.substr(end, url.length);
+  return (url);
+}
 </script>

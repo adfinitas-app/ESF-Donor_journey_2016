@@ -119,7 +119,7 @@ panneau_informations_personnelles:
   texte_html: ""
   champs:
     - type: choix_unique
-      nom_machine: "champ_naissance"
+      nom_machine: "civility"
       reponses:
         - valeur: une femme
         - valeur: un homme
@@ -133,7 +133,7 @@ panneau_informations_personnelles:
         fond_image_path:
         fond_color: "#40b082"
     - type: champ_libre_court
-      nom_machine: "champ_nom"
+      nom_machine: lastname
       reponses:
         - valeur:
       options:
@@ -146,7 +146,7 @@ panneau_informations_personnelles:
         fond_image_path:
         fond_color:
     - type: champ_libre_court
-      nom_machine: "champ_prenom"
+      nom_machine: firstname
       reponses:
         - valeur:
       options:
@@ -159,7 +159,7 @@ panneau_informations_personnelles:
         fond_image_path:
         fond_color:
     - type: champ_libre_court
-      nom_machine: "champ_ville"
+      nom_machine: city
       reponses:
         - valeur:
       options:
@@ -172,7 +172,7 @@ panneau_informations_personnelles:
         fond_image_path:
         fond_color:
     - type: champ_libre_court
-      nom_machine: "champ_pays"
+      nom_machine: country
       reponses:
         - valeur:
       options:
@@ -185,7 +185,7 @@ panneau_informations_personnelles:
         fond_image_path:
         fond_color:
     - type: liste_deroulante
-      nom_machine: champ_age
+      nom_machine: age
       reponses:
         - valeur: entre 2000 et aujourd'hui
         - valeur: entre 1990 et 1999
@@ -206,7 +206,7 @@ panneau_informations_personnelles:
         fond_image_path:
         fond_color:
     - type: champ_libre_court
-      nom_machine: "champ_tel"
+      nom_machine: "phone"
       reponses:
         - valeur:
       options:
@@ -233,7 +233,7 @@ panneau_informations_personnelles:
         fond_color:
 options:
   bouton_de_soumission: "Je valide"
-  page_de_remerciement_path: https://dons.elevagessansfrontieres.org/onsedittout/
+  page_de_remerciement_path: /merci.html
   largeur_champs: "100%"
   champs_caches_liste:
     - nom:
