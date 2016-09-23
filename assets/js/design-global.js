@@ -217,6 +217,8 @@
     /*EMAIL*/
     selector = $(".container-panneau_informations_personnelles > .input-container > .field-row > .columns > input[type='email']").parent().parent().parent();
     $(".container-panneau_informations_personnelles > .input-container > .field-row > .columns > input[type='email']").parent().removeClass("small-12 medium-10 large-6 medium-offset-1 large-offset-3");
+    $(".container-panneau_informations_personnelles > div > div > div > div > input[type='text'], .container-panneau_informations_personnelles > div > div > div > div > input[type='email']").css({"font-size" : "23px"});
+    $(".input-liste_deroulante").css({"font-size" : "23px"});
     $(".container-panneau_informations_personnelles > .input-container > .field-row > .columns > input[type='email']").parent().addClass("small-12")
     $("#slide-" + place + " > .field-row > .columns").prepend($(".container-panneau_informations_personnelles > .input-container > .field-row > .columns"));
     $(selector).remove();
@@ -369,6 +371,10 @@ function    change_civility(url)
   console.log(url);
   return (url);
 }
+
+$('select').on('change', function(){
+  $(this).addClass('selected'); 
+});
 /*function  extract_values(address)
 {
   var     a;

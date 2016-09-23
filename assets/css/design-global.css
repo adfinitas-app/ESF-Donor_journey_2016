@@ -114,7 +114,7 @@
 
 select
 {
-  color: #c3afa0;
+  color:  #C7C7CD;
 }
 
 p {
@@ -321,6 +321,11 @@ label {
   background: #eb6800;
 }
 
+.selected
+{
+  color: black;
+}
+
 [type="submit"]
 {
   margin-top: 1.5em;
@@ -375,12 +380,9 @@ label {
  {font-size: 2em;}
  [type="radio"] + label span:first-child::before {vertical-align: -0.14em;}
  [type="checkbox"] + label span:first-child::before {vertical-align: -0.1em;}
- textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder, [type="email"]::-webkit-input-placeholder
- {font-size: 1em;}
- textarea:-moz-placeholder, [type="text"]:-moz-placeholder, [type="email"]:-moz-placeholder
- {font-size: 1.3em;}
- textarea::-moz-placeholder, [type="text"]::-moz-placeholder, [type="email"]::-moz-placeholder
- {font-size: 1.3em;}
+ textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder, [type="email"]:-webkit-input-placeholder,
+ textarea:-moz-placeholder, [type="text"]:-moz-placeholder, [type="email"]:-moz-placeholder,
+ textarea::-moz-placeholder, [type="text"]::-moz-placeholder, [type="email"]::-moz-placeholder,
  textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder, [type="email"]:-ms-input-placeholder{font-size: 1.3em;}
  .text_main
  {font-size: 2em;}
@@ -400,12 +402,9 @@ label {
   {font-size: 1em;}
   select {font-size: 1.8em}
   textarea {font-size: 1.5em;}
-  textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder, [type="email"]::-webkit-input-placeholder
-  {font-size: 1.8em;}
-  textarea:-moz-placeholder, [type="text"]:-moz-placeholder, [type="email"]:-moz-placeholder
-  {font-size: 1.8em;}
-  textarea::-moz-placeholder, [type="text"]::-moz-placeholder, [type="email"]::-moz-placeholder
-  {font-size: 1.8em;}
+  textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder, [type="email"]::-webkit-input-placeholder,
+  textarea:-moz-placeholder, [type="text"]:-moz-placeholder, [type="email"]:-moz-placeholder,
+  textarea::-moz-placeholder, [type="text"]::-moz-placeholder, [type="email"]::-moz-placeholder,
   textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder, [type="email"]:-ms-input-placeholder
   {font-size: 1.8em;}
   .texte-choix_unique,
