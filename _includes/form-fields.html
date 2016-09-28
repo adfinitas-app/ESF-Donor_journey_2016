@@ -137,6 +137,7 @@
 	    {% assign inputId=inputId | plus:1 %}
 	    <p class="error-message">{{ champ.options.message_erreur }}</p>
 	{% when 'choix_unique' %}
+	<div class="container-all-radio">
 	  {% if champ.options.label != nill and champ.options.label != empty %}
 	    <p class="label-choix_unique">{{ champ.options.label }}{% if champ.options.requis == true %} *{% endif %}</p>
 	  {% endif %}
@@ -184,7 +185,9 @@
 	    {% endif %}
 	  {% endfor %}
 	    <p class="error-message">{{ champ.options.message_erreur }}</p>
+	</div>
 	{% when 'choix_multiple' %}
+	<div class="container-all-checkbox">
 	  {% if champ.options.label != nill and champ.options.label != empty %}
 	    <p class="label-choix_multiple">{{ champ.options.label }}{% if champ.options.requis == true %} *{% endif %}</p>
 	  {% endif %}
@@ -232,6 +235,7 @@
 	    {% endif %}
 	  {% endfor %}
 	  <p class="error-message">{{ champ.options.message_erreur }}</p>
+	</div>
 	{% when 'scoring' %}
 	  {% if champ.options.label != nill and champ.options.label != empty %}
 	    <p class="text-scoring">{{ champ.options.label }}{% if champ.options.requis == true %} *{% endif %}</p>
