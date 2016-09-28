@@ -12,7 +12,7 @@
   $('.field-row > .columns').addClass("small-12 medium-offset-1 medium-10 large-offset-3 large-6 columns");
   $('.field-row > .columns > .text-scoring').parent().addClass("text-center");
   apply_margin();
-  move_error();
+  //move_error();
   apply_text_option();
   apply_last_slide();
   if(document.title == "On se dit tout" || document.title == "Ce qui vous tient au coeur")
@@ -98,7 +98,7 @@
     count = 0;
     while (count < slide_count)
     {
-      if ($("#slide-" + count + " > .field-row > .columns > .texte-choix_multiple").length != 0 && $(".input-container-choix_unique").is("#slide-" + count) == false)
+      if ($("#slide-" + count + " > .field-row > .texte-choix_multiple").length != 0 && $(".input-container-choix_unique").is("#slide-" + count) == false)
       {
         temp = '<p class="text_small" style="text-align: center">(plusieurs réponses possibles)</p>'
         $(temp).insertAfter($("#slide-" + count + " > .field-row > .columns > .texte-choix_multiple"));
@@ -132,10 +132,10 @@
     while (count < slide_count)
     {
       $("#slide-" + count).css({"padding-bottom":"5em"});
-      $("#slide-" + count + " > .field-row > .columns > .label-choix_unique").first().addClass("texte-choix_unique");
-      $("#slide-" + count + " > .field-row > .columns > .label-choix_multiple").first().addClass("texte-choix_multiple");
-      $("#slide-" + count + " > .field-row > .columns > .label-choix_unique").first().removeClass("label-choix_unique");
-      $("#slide-" + count + " > .field-row > .columns > .label-choix_multiple").first().removeClass("label-choix_multiple");
+      $("#slide-" + count + " > .field-row > .columns .label-choix_unique").first().addClass("texte-choix_unique");
+      $("#slide-" + count + " > .field-row > .columns .label-choix_multiple").first().addClass("texte-choix_multiple");
+      $("#slide-" + count + " > .field-row > .columns .label-choix_unique").first().removeClass("label-choix_unique");
+      $("#slide-" + count + " > .field-row > .columns .label-choix_multiple").first().removeClass("label-choix_multiple");
       count++;
     }
   }
@@ -147,7 +147,7 @@
     count = 0;
     while (count < slide_count - 8)
     {
-      $("#slide-" + count + " > .field-row > .columns > *").last().insertAfter($("#slide-" + count + " > .field-row > .columns > .text-scoring, #slide-" + count + " > .field-row > .columns > .texte-choix_multiple, #slide-" + count + " > .field-row > .columns > .texte-choix_unique"));
+      $("#slide-" + count + " > .field-row > .columns > *").last().insertAfter($("#slide-" + count + " > .field-row > .columns > .text-scoring, #slide-" + count + " > .field-row > .columns .texte-choix_multiple, #slide-" + count + " > .field-row > .columns .texte-choix_unique"));
       $("#slide-" + count + " > .field-row > .columns > .error-message").addClass("error-message-highlight");
       count++;
     }
@@ -196,19 +196,19 @@
     $("#slide-" + place + " > .field-row > .columns").append("<div class='columns small-12' style='margin-top: 1.5em'><p style='color:white; font-size: 1.3em;'>* réponses obligatoires</p></div>");
 
     /*RADIO and CHECKBOXES*/
-    $(".field-row > .columns > .reponse-container-choix_multiple > label, .field-row > .columns > .reponse-container-choix_unique > label").css({"display" : "flex"});
-    $(".field-row > .columns > .reponse-container-choix_multiple > label, .field-row > .columns > .reponse-container-choix_unique > label").each(function()
+    $(".field-row > .columns .reponse-container-choix_multiple > label, .field-row > .columns .reponse-container-choix_unique > label").css({"display" : "flex"});
+    $(".field-row > .columns .reponse-container-choix_multiple > label, .field-row > .columns .reponse-container-choix_unique > label").each(function()
     {
       var   initial_text;
 
       initial_text = "<p>" + $(this).html(); + "</p>"
       $(this).html(initial_text);
     });
-    $(".field-row > .columns > .reponse-container-choix_unique > label > span, .field-row > .columns > .reponse-container-choix_multiple > label > span").css({"display" : "block"});
-    $(".field-row > .columns > .reponse-container-choix_unique > label > span, .field-row > .columns > .reponse-container-choix_multiple > label > p").css({"display" : "block"});
+    $(".field-row > .columns .reponse-container-choix_unique > label > span, .field-row > .columns .reponse-container-choix_multiple > label > span").css({"display" : "block"});
+    $(".field-row > .columns .reponse-container-choix_unique > label > span, .field-row > .columns .reponse-container-choix_multiple > label > p").css({"display" : "block"});
 
     /*VOUS ETES*/
-    selector = $("#slide-" + place  + " > .field-row > .columns > .texte-choix_unique");
+    selector = $("#slide-" + place  + " > .field-row > .columns .texte-choix_unique");
     $(selector).removeClass(".texte-choix_unique text-center");
     $(selector).addClass("small-12 columns label-choix_multiple text-left");
     $(selector).css({"margin-bottom" : "0px", "padding-top" : "0em", "margin-top" : "0px", "line-height" : "1em", "text-align" : "left"});
@@ -225,13 +225,13 @@
     $("#slide-" + place + " > .field-row > .columns").prepend('<p class="texte-choix_multiple text-center" style="margin-bottom: 2rem">MERCI DE RENSEIGNER LES INFORMATIONS SUIVANTES POUR ENREGISTRER VOS RÉPONSES</p>');
 
     /*REST*/
-    $("#slide-" + place + " > .field-row > .columns > .error-message").addClass("columns");
-    $("#slide-" + place + " > .field-row > .columns > .reponse-container-choix_multiple").addClass("small-6 columns");
-    $("#slide-" + place + " > .field-row > .columns > .reponse-container-choix_multiple").css({"margin-bottom" : "0px", "padding-top" : "0em", "margin-top" : "0px", "line-height" : "1em"});
-    $("#slide-" + place + " > .field-row > .columns > .champ_libre_court > .label-champ_libre").addClass("small-12 columns");
-    $("#slide-" + place + " > .field-row > .columns > .champ_libre_court > .input-champ_libre").addClass("small-12 columns");
+    $("#slide-" + place + " > .field-row > .columns .error-message").addClass("columns");
+    $("#slide-" + place + " > .field-row > .columns .reponse-container-choix_multiple").addClass("small-6 columns");
+    $("#slide-" + place + " > .field-row > .columns .reponse-container-choix_multiple").css({"margin-bottom" : "0px", "padding-top" : "0em", "margin-top" : "0px", "line-height" : "1em"});
+    $("#slide-" + place + " > .field-row > .columns .champ_libre_court > .label-champ_libre").addClass("small-12 columns");
+    $("#slide-" + place + " > .field-row > .columns .champ_libre_court > .input-champ_libre").addClass("small-12 columns");
     $("#slide-" + place + " > .field-row > .columns").css({"padding-bottom" : "4em"});
-    $("#slide-" + place + " > .field-row > .columns > .columns > .reponse-container-choix_multiple > .label-choix_multiple").css({"font-size" : "1.1em", "line-height" : "1.44"});
+    $("#slide-" + place + " > .field-row > .columns .reponse-container-choix_multiple label").css({"font-size" : "1.1em", "line-height" : "1.44"});
     $("#slide-" + place).css({"padding-bottom":"0em"});
 
     slide_count = count_slides();
@@ -342,7 +342,7 @@
   $(".label-choix_unique, .label-choix_multiple, .label-other, .label-scoring").prepend("<span></span>");
 });
 
-generate_url();
+//generate_url();
 function  generate_url()
 {
   var     civility;
