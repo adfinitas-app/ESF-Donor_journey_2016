@@ -104,6 +104,7 @@
 	  {% assign inputId=inputId | plus:1 %}
 	  <p class="error-message">{{ champ.options.message_erreur }}</p>
 	{% when 'liste_deroulante' %}
+	<div class="container-select">
 	  {% if champ.options.label != nill and champ.options.label != empty %}
 	    <label class="label-champ_libre" for="input-{{ inputId }}">
 	      {{ champ.options.label }}{% if champ.options.requis == true %} *{% endif %}
@@ -136,6 +137,7 @@
 	    </select>
 	    {% assign inputId=inputId | plus:1 %}
 	    <p class="error-message">{{ champ.options.message_erreur }}</p>
+	</div>
 	{% when 'choix_unique' %}
 	<div class="container-all-radio">
 	  {% if champ.options.label != nill and champ.options.label != empty %}
