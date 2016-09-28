@@ -114,7 +114,7 @@
 
 select
 {
-  color: #c3afa0;
+  color:  #C7C7CD;
 }
 
 p {
@@ -146,14 +146,14 @@ textarea:focus {
   border: none;
 }
 
-textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder, [type="email"]::-webkit-input-placeholder {
+textarea::-webkit-input-placeholder, [type="text"]:-webkit-input-placeholder, [type="email"]:-webkit-input-placeholder {
   color:    #c3afa0;
 }
 textarea:-moz-placeholder, [type="text"]:-moz-placeholder, [type="email"]:-moz-placeholder {
  color:    #c3afa0;
  opacity:  1;
 }
-textarea::-moz-placeholder, [type="text"]::-moz-placeholder, [type="email"]::-moz-placeholder{
+textarea::-moz-placeholder, [type="text"]:-moz-placeholder, [type="email"]:-moz-placeholder{
  color:    #c3afa0;
  opacity:  1;
 }
@@ -203,7 +203,14 @@ label {
   overflow: hidden;
 }
 
-[type="radio"] + label span:first-child::before {
+[type="radio"]:before {
+  content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/checked.png');
+  width:0;
+  height:0;
+  visibility:hidden;
+}
+
+[type="radio"] + label span:first-child:before {
   content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/unchecked.png');
   width: 1em;
   height: 1em;
@@ -218,7 +225,7 @@ label {
   user-select: none;
 }
 
-[type="radio"]:checked + label span:first-child::before {
+[type="radio"]:checked + label span:first-child:before {
   content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/checked.png');
 }
 
@@ -228,13 +235,20 @@ label {
   overflow: hidden;
 }
 
-[type="checkbox"] + label span:first-child::before {
+[type="checkbox"]:before {
+  content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_checked.png');
+  width:0;
+  height:0;
+  visibility:hidden;
+}
+
+[type="checkbox"] + label span:first-child:before {
   content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_unchecked.png');
   width: 1em;
   height: 1em;
   display: inline-block;
   margin-right: 1em;
-    vertical-align: -0.13em;
+  vertical-align: -0.13em;
   transition: 0.5s ease all;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -243,7 +257,7 @@ label {
   user-select: none;
 }
 
-[type="checkbox"]:checked + label span:first-child::before {
+[type="checkbox"]:checked + label span:first-child:before {
   content: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_checked.png');
 }
 
@@ -307,6 +321,11 @@ label {
   background: #eb6800;
 }
 
+.selected
+{
+  color: black;
+}
+
 [type="submit"]
 {
   margin-top: 1.5em;
@@ -361,12 +380,9 @@ label {
  {font-size: 2em;}
  [type="radio"] + label span:first-child::before {vertical-align: -0.14em;}
  [type="checkbox"] + label span:first-child::before {vertical-align: -0.1em;}
- textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder, [type="email"]::-webkit-input-placeholder
- {font-size: 1em;}
- textarea:-moz-placeholder, [type="text"]:-moz-placeholder, [type="email"]:-moz-placeholder
- {font-size: 1.3em;}
- textarea::-moz-placeholder, [type="text"]::-moz-placeholder, [type="email"]::-moz-placeholder
- {font-size: 1.3em;}
+ textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder, [type="email"]:-webkit-input-placeholder,
+ textarea:-moz-placeholder, [type="text"]:-moz-placeholder, [type="email"]:-moz-placeholder,
+ textarea::-moz-placeholder, [type="text"]::-moz-placeholder, [type="email"]::-moz-placeholder,
  textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder, [type="email"]:-ms-input-placeholder{font-size: 1.3em;}
  .text_main
  {font-size: 2em;}
@@ -386,12 +402,9 @@ label {
   {font-size: 1em;}
   select {font-size: 1.8em}
   textarea {font-size: 1.5em;}
-  textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder, [type="email"]::-webkit-input-placeholder
-  {font-size: 1.8em;}
-  textarea:-moz-placeholder, [type="text"]:-moz-placeholder, [type="email"]:-moz-placeholder
-  {font-size: 1.8em;}
-  textarea::-moz-placeholder, [type="text"]::-moz-placeholder, [type="email"]::-moz-placeholder
-  {font-size: 1.8em;}
+  textarea::-webkit-input-placeholder, [type="text"]::-webkit-input-placeholder, [type="email"]::-webkit-input-placeholder,
+  textarea:-moz-placeholder, [type="text"]:-moz-placeholder, [type="email"]:-moz-placeholder,
+  textarea::-moz-placeholder, [type="text"]::-moz-placeholder, [type="email"]::-moz-placeholder,
   textarea:-ms-input-placeholder, [type="text"]:-ms-input-placeholder, [type="email"]:-ms-input-placeholder
   {font-size: 1.8em;}
   .texte-choix_unique,

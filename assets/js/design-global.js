@@ -52,10 +52,7 @@
           if (word.charAt(a) == ' ')
             word = replaceAt(word, a, '\xa0');
           else if (word.charAt(a) == '*')
-          {
-            console.log("hjeyyy");
             word = word.substr(0, a) + "<span style='font-size: 0.6em'>*</span>" + word.substr(a+word.charAt(a).length);
-          }
           a--;
         }
         $(this).html(word);
@@ -220,6 +217,8 @@
     /*EMAIL*/
     selector = $(".container-panneau_informations_personnelles > .input-container > .field-row > .columns > input[type='email']").parent().parent().parent();
     $(".container-panneau_informations_personnelles > .input-container > .field-row > .columns > input[type='email']").parent().removeClass("small-12 medium-10 large-6 medium-offset-1 large-offset-3");
+    $(".container-panneau_informations_personnelles > div > div > div > div > input[type='text'], .container-panneau_informations_personnelles > div > div > div > div > input[type='email']").css({"font-size" : "23px"});
+    $(".input-liste_deroulante").css({"font-size" : "23px"});
     $(".container-panneau_informations_personnelles > .input-container > .field-row > .columns > input[type='email']").parent().addClass("small-12")
     $("#slide-" + place + " > .field-row > .columns").prepend($(".container-panneau_informations_personnelles > .input-container > .field-row > .columns"));
     $(selector).remove();
@@ -342,3 +341,69 @@
   });
   $(".label-choix_unique, .label-choix_multiple, .label-other, .label-scoring").prepend("<span></span>");
 });
+
+generate_url();
+function  generate_url()
+{
+  var     civility;
+
+  console.log("hello");
+  $('#third_text').parent().attr('href', $('#third_text').parent().attr('href') + "b?" + window.location.href.slice(window.location.href.indexOf('?') + 1));
+}
+
+function    change_civility(url)
+{
+  var       pos;
+  var       end;
+  var       extract;
+
+  pos = -1;
+  if ((pos = url.indexOf("civility=")) == -1)
+    return (url);
+  pos += 9;
+  end = pos + 1;
+  while (url.charAt(end) != '&' && end < url.length)
+    end++;
+  if (url.substring(pos, end) == "un+homme")
+    url = url.substr(0, pos - 9) + "1" + url.substr(end, url.length);
+  else
+    url = url.substr(0, pos) + "2" + url.substr(end, url.length);
+  console.log(url);
+  return (url);
+}
+
+$('select').on('change', function(){
+  $(this).addClass('selected'); 
+});
+/*function  extract_values(address)
+{
+  var     a;
+  var     b;
+  var     index;
+  var     variables = ["champ_naissance", "champ_nom", "champ_prenom", "champ_ville", "champ_pays", "champ_age", "champ_tel"];
+  var     values = [];
+
+  index = 0;
+  a = 0;
+  while (a + 15 < address.length && address.substring(a, a + 16) != "champ_naissance=")
+    a++;
+  a--;
+  while (index < 7)
+  {
+    a++;
+    b = a + variables[index].length + 1;
+    while (a < address.length && address.charAt(a) != '&')
+      a++;
+    values[index] = address.substring(b, a);
+    index++;
+  }
+  a = 0;
+  while (a < 7)
+  {
+    console.log(values[a]);
+    a++;
+  }*/
+  //https://dons.elevagessansfrontieres.org/onsedittout/~mon-don/?champ_naissance=une+femme&champ_nom=lel&champ_prenom=ll&champ_ville=Cusey&champ_pays=zefezf&champ_age=entre+2000+et+aujourd+hui&champ_tel=0616171717
+  //https://dons.elevagessansfrontieres.org/onsedittout/~mon-don/?champ_naissance=une+femme&champ_nom=poy&champ_prenom=yop&champ_ville=lille&champ_pays=fr&champ_age=entre+2000+et+aujourd+hui&champ_tel=0615101035&champ_verify=En+laissant+mon+num%C3%A9ro%2C+j+accepte+que+ESF+me+contacte+pour+m+informer+de+ses+projets.
+
+//}
