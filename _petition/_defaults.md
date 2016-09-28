@@ -1,6 +1,6 @@
 ---
 title: Petition
-event_woopra: Formulaire de test
+evenement_woopra: Formulaire de test
 panneau_introduction:
   fond_image_path:
   texte_html:
@@ -36,7 +36,7 @@ _comments:
   reponses: 'Seulement pour les champs de type "choix"'
   page_de_remerciement_path: "URL de la page lorsque l'utilisateur valide le formulaire"
   propriete_visiteur: Cochez cette case si vous souhaitez que ce champ remonte dans les propriétés du visiteur sur Woopra
-  event_woopra: "Nom de l'evenement sur Woopra qui stockera les répondants <a href=\"http://google.com\" target=\"_blank\">blabla</a>"
+  evenement_woopra: "Nom de l'evenement sur Woopra qui stockera les répondants"
   fond_image_path: Image de fond du champ
 ---
 

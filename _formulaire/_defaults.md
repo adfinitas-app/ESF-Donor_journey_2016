@@ -1,5 +1,5 @@
 ---
-event_woopra: formulaire
+evenement_woopra: formulaire
 panneau_introduction:
   fond_image_path:
   fond_color:
@@ -59,7 +59,7 @@ _comments:
   reponses: 'Seulement pour les champs de type "choix"'
   page_de_remerciement_path: "URL de la page lorsque l'utilisateur valide le formulaire"
   propriete_visiteur: Cochez cette case si vous souhaitez que ce champ remonte dans les propriétés du visiteur sur Woopra
-  event_woopra: "Nom de l'evenement sur Woopra qui stockera les répondants <a href=\'http://google.com\' target=\'_blank\'>blabla</a>"
+  evenement_woopra: "Nom de l'evenement sur Woopra qui stockera les répondants"
   fond_image_path: "Image de fond du champ"
   fond_image: "Couleur du fond (s'applique si fond_image_path est vide)"
   largeur_champ: "Définit la taille des champs"
