@@ -226,8 +226,11 @@
 
     /*REST*/
     $("#slide-" + place + " > .field-row > .columns .error-message").addClass("columns");
-    $("#slide-" + place + " > .field-row > .columns .reponse-container-choix_multiple").addClass("small-6 columns");
-    $("#slide-" + place + " > .field-row > .columns .reponse-container-choix_multiple").css({"margin-bottom" : "0px", "padding-top" : "0em", "margin-top" : "0px", "line-height" : "1em"});
+    $("#input-33").parent().addClass("small-6 columns");
+    $("#input-41").parent().parent().parent().css({"padding" : "0px"})
+    $("#slide-" + place + " > .field-row > .columns > .columns .reponse-container-choix_multiple > .texte-choix_multiple").css({"margin-bottom" : "0px", "padding-top" : "0em", "margin-top" : "0px", "line-height" : "1em"});
+    $("#slide-" + place + " > .field-row > .columns > .columns .reponse-container-choix_multiple > .texte-choix_multiple > p").css({"font-size" : "18px", "text-align" : "left"});
+    $("#slide-" + place + " > .field-row > .columns > .columns .reponse-container-choix_multiple").css({"margin-bottom" : "0px", "padding-top" : "0em", "margin-top" : "0px", "line-height" : "1em"});
     $("#slide-" + place + " > .field-row > .columns .champ_libre_court > .label-champ_libre").addClass("small-12 columns");
     $("#slide-" + place + " > .field-row > .columns .champ_libre_court > .input-champ_libre").addClass("small-12 columns");
     $("#slide-" + place + " > .field-row > .columns").css({"padding-bottom" : "4em"});
@@ -339,7 +342,7 @@
       return false;
     }
   });
-  $(".label-choix_unique, .label-choix_multiple, .label-other, .label-scoring").prepend("<span></span>");
+  $(".label-choix_unique, .label-choix_multiple, .label-other, .label-scoring, .texte-choix_unique, .texte-choix_multiple").prepend("<span></span>");
 });
 
 //generate_url();
