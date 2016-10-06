@@ -289,7 +289,6 @@
       divPosition = $('#slide-0').offset().top;
       divPosition -= $('#slide-0').height() / 2;
       next_question.href = refresh_next();
-      console.log(next_question.href);
       if ($(refresh_next()).length == 0)
         next_question.href = "#slide_last";
       if (divPosition < scrollPosition && on_last() == false){
@@ -357,14 +356,12 @@
   });
   $(".label-choix_unique, .label-choix_multiple, .label-other, .label-scoring, .texte-choix_unique, .texte-choix_multiple").prepend("<span></span>");
 
-  console.log($("#third_text").html());
   if ($("#third_text").html()  == "JE FAIS UN DON")
     generate_url();
   function  generate_url()
   {
     var     civility;
 
-    console.log("hello");
     $('#third_text').parent().attr('href', $('#third_text').parent().attr('href') + "b?" + window.location.href.slice(window.location.href.indexOf('?') + 1));
   }
 
@@ -416,8 +413,4 @@
     $(item).css({"padding-top" : padding});
     return (true);
   }
-
-  $("#next_container").click(function(){
-    console.log("jhzejhfje");
-  });
 });
