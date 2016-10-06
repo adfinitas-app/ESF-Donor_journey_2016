@@ -12,7 +12,7 @@
   $('.field-row > .columns').addClass("small-12 medium-offset-1 medium-10 large-offset-3 large-6 columns");
   $('.field-row > .columns > .text-scoring').parent().addClass("text-center");
   apply_margin();
-  //move_error();
+  move_error();
   apply_text_option();
   apply_last_slide();
   if(document.title == "On se dit tout" || document.title == "Ce qui vous tient au coeur")
@@ -77,6 +77,13 @@
       space = ($("#accueil").height() - ($("#first_text").offset().top + $("#third_text").offset().top)) / 2;
     }
     $("#first_text").css({"padding-top" : space + "px"});
+    $('.input-container').children().each(function(){
+     var   sub;
+
+     sub = $(this).parent().attr("id");
+     if (sub != null && sub.toString().indexOf("slide-") != -1)
+      center_this(this);
+  });
   }
 
   function  count_slides()
@@ -147,8 +154,8 @@
     count = 0;
     while (count < slide_count - 8)
     {
-      $("#slide-" + count + " > .field-row > .columns > *").last().insertAfter($("#slide-" + count + " > .field-row > .columns > .text-scoring, #slide-" + count + " > .field-row > .columns .texte-choix_multiple, #slide-" + count + " > .field-row > .columns .texte-choix_unique"));
-      $("#slide-" + count + " > .field-row > .columns > .error-message").addClass("error-message-highlight");
+      $("#slide-" + count + " > .field-row > .columns > div > *").last().insertAfter($("#slide-" + count + " > .field-row > .columns > .text-scoring, #slide-" + count + " > .field-row > .columns .texte-choix_multiple, #slide-" + count + " > .field-row > .columns .texte-choix_unique"));
+      $("#slide-" + count + " > .field-row > .columns > div > .error-message").addClass("error-message-highlight");
       count++;
     }
   }
@@ -225,9 +232,6 @@
     $("#slide-" + place + " > .field-row > .columns").prepend('<p class="texte-choix_multiple text-center" style="margin-bottom: 2rem">MERCI DE RENSEIGNER LES INFORMATIONS SUIVANTES POUR ENREGISTRER VOS RÉPONSES</p>');
 
     /*REST*/
-    $("#slide-" + place + " > .field-row > .columns .error-message").addClass("columns");
-    $("#input-33").parent().addClass("small-6 columns");
-    $("#input-41").parent().parent().parent().css({"padding" : "0px"})
     $("#slide-" + place + " > .field-row > .columns > .columns .reponse-container-choix_multiple > .texte-choix_multiple").css({"margin-bottom" : "0px", "padding-top" : "0em", "margin-top" : "0px", "line-height" : "1em"});
     $("#slide-" + place + " > .field-row > .columns > .columns .reponse-container-choix_multiple > .texte-choix_multiple > p").css({"font-size" : "18px", "text-align" : "left"});
     $("#slide-" + place + " > .field-row > .columns > .columns .reponse-container-choix_multiple").css({"margin-bottom" : "0px", "padding-top" : "0em", "margin-top" : "0px", "line-height" : "1em"});
@@ -236,6 +240,9 @@
     $("#slide-" + place + " > .field-row > .columns").css({"padding-bottom" : "4em"});
     $("#slide-" + place + " > .field-row > .columns .reponse-container-choix_multiple label").css({"font-size" : "1.1em", "line-height" : "1.44"});
     $("#slide-" + place).css({"padding-bottom":"0em"});
+    $("#slide-" + place + " > .field-row > .columns .error-message").addClass("columns");
+    $("#slide-" + place + "> .field-row > .columns > .container-all-radio > *").addClass("small-6 columns");
+    $("#input-41").parent().parent().parent().css({"padding" : "0px"});
 
     slide_count = count_slides();
   }
@@ -265,7 +272,10 @@
       return (true);
     return (false);
   }
-
+  $(".container-panneau_informations_personnelles").each(function()
+  {
+    $(this).attr("id", "slide_last");
+  });
   $(window).on('scroll', function()
   {
     var   divPosition;
@@ -279,7 +289,10 @@
       divPosition = $('#slide-0').offset().top;
       divPosition -= $('#slide-0').height() / 2;
       next_question.href = refresh_next();
-      if(divPosition < scrollPosition && on_last() == false){
+      console.log(next_question.href);
+      if ($(refresh_next()).length == 0)
+        next_question.href = "#slide_last";
+      if (divPosition < scrollPosition && on_last() == false){
         $('#next_container').css({"animation" : "slide_in 0.4s ease-out", "animation-direction": "normal"});
         $('#next_container').on('animationend webkitAnimationEnd oAnimationEnd oanimationend MSAnimationEnd', function() {
           $('#next_container').css({"bottom" : "0px"});
@@ -294,16 +307,6 @@
       }
     }
   });
-
-  function  place_question(slide)
-  {
-    var     remove;
-    var     new_id;
-
-    remove = slide + 1;
-    $("#slide-" + slide + " > .field-row > .columns").append($('#slide-' + remove + " > .field-row > .columns > "));
-    $("#slide-" + remove).css({"display":"none"});
-  }
 
   function  refresh_next()
   {
@@ -333,6 +336,16 @@
     return current;
   }
 
+  function  place_question(slide)
+  {
+    var     remove;
+    var     new_id;
+
+    remove = slide + 1;
+    $("#slide-" + slide + " > .field-row > .columns").append($('#slide-' + remove + " > .field-row > .columns > "));
+    $("#slide-" + remove).css({"display":"none"});
+  }
+
   $('a').click(function(){
     if ($($(this).attr('href')).length != 0)
     {
@@ -343,70 +356,65 @@
     }
   });
   $(".label-choix_unique, .label-choix_multiple, .label-other, .label-scoring, .texte-choix_unique, .texte-choix_multiple").prepend("<span></span>");
-});
 
-//generate_url();
-function  generate_url()
-{
-  var     civility;
 
-  console.log("hello");
-  $('#third_text').parent().attr('href', $('#third_text').parent().attr('href') + "b?" + window.location.href.slice(window.location.href.indexOf('?') + 1));
-}
-
-function    change_civility(url)
-{
-  var       pos;
-  var       end;
-  var       extract;
-
-  pos = -1;
-  if ((pos = url.indexOf("civility=")) == -1)
-    return (url);
-  pos += 9;
-  end = pos + 1;
-  while (url.charAt(end) != '&' && end < url.length)
-    end++;
-  if (url.substring(pos, end) == "un+homme")
-    url = url.substr(0, pos - 9) + "1" + url.substr(end, url.length);
-  else
-    url = url.substr(0, pos) + "2" + url.substr(end, url.length);
-  console.log(url);
-  return (url);
-}
-
-$('select').on('change', function(){
-  $(this).addClass('selected'); 
-});
-/*function  extract_values(address)
-{
-  var     a;
-  var     b;
-  var     index;
-  var     variables = ["champ_naissance", "champ_nom", "champ_prenom", "champ_ville", "champ_pays", "champ_age", "champ_tel"];
-  var     values = [];
-
-  index = 0;
-  a = 0;
-  while (a + 15 < address.length && address.substring(a, a + 16) != "champ_naissance=")
-    a++;
-  a--;
-  while (index < 7)
+  //generate_url();
+  function  generate_url()
   {
-    a++;
-    b = a + variables[index].length + 1;
-    while (a < address.length && address.charAt(a) != '&')
-      a++;
-    values[index] = address.substring(b, a);
-    index++;
+    var     civility;
+
+    $('#third_text').parent().attr('href', $('#third_text').parent().attr('href') + "b?" + window.location.href.slice(window.location.href.indexOf('?') + 1));
   }
-  a = 0;
-  while (a < 7)
-  {
-    console.log(values[a]);
-    a++;
-  }*/
-  //https://dons.elevagessansfrontieres.org/onsedittout/~mon-don/?champ_naissance=une+femme&champ_nom=lel&champ_prenom=ll&champ_ville=Cusey&champ_pays=zefezf&champ_age=entre+2000+et+aujourd+hui&champ_tel=0616171717
-  //https://dons.elevagessansfrontieres.org/onsedittout/~mon-don/?champ_naissance=une+femme&champ_nom=poy&champ_prenom=yop&champ_ville=lille&champ_pays=fr&champ_age=entre+2000+et+aujourd+hui&champ_tel=0615101035&champ_verify=En+laissant+mon+num%C3%A9ro%2C+j+accepte+que+ESF+me+contacte+pour+m+informer+de+ses+projets.
 
-//}
+  function    change_civility(url)
+  {
+    var       pos;
+    var       end;
+    var       extract;
+
+    pos = -1;
+    if ((pos = url.indexOf("civility=")) == -1)
+      return (url);
+    pos += 9;
+    end = pos + 1;
+    while (url.charAt(end) != '&' && end < url.length)
+      end++;
+    if (url.substring(pos, end) == "un+homme")
+      url = url.substr(0, pos - 9) + "1" + url.substr(end, url.length);
+    else
+      url = url.substr(0, pos) + "2" + url.substr(end, url.length);
+    return (url);
+  }
+
+  $('select').on('change', function(){
+    $(this).addClass('selected'); 
+  });
+
+  $('.input-container').children().each(function(){
+   var   sub;
+
+   sub = $(this).parent().attr("id");
+   if (sub != null && sub.toString().indexOf("slide-") != -1)
+    center_this(this);
+});
+
+  //CENTER
+  function  center_this(item)
+  {
+    var   height;
+    var   total_height;
+    var   padding;
+
+    height = $(item).height();
+    total_height = $(item).parent().height();
+    if (total_height - 1 < height)
+      return (false);
+    padding = (total_height - height) / 2 - 20;
+    $(item).css({"padding-top" : padding});
+    return (true);
+  }
+
+  $("#next_container").click(function(){
+    console.log("jhzejhfje");
+  });
+});
