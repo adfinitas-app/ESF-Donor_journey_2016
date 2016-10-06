@@ -357,14 +357,17 @@
   });
   $(".label-choix_unique, .label-choix_multiple, .label-other, .label-scoring, .texte-choix_unique, .texte-choix_multiple").prepend("<span></span>");
 
-
-  //generate_url();
+  console.log($("#third_text").html());
+  if ($("#third_text").html()  == "JE FAIS UN DON")
+    generate_url();
   function  generate_url()
   {
     var     civility;
 
+    console.log("hello");
     $('#third_text').parent().attr('href', $('#third_text').parent().attr('href') + "b?" + window.location.href.slice(window.location.href.indexOf('?') + 1));
   }
+
 
   function    change_civility(url)
   {
