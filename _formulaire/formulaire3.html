@@ -1,22 +1,22 @@
 ---
-evenement_woopra: "ESF - On se dit tout"
+evenement_woopra: ESF - On se dit tout
 panneau_introduction:
-  fond_image_path: ''
-  fond_color: ''
-  texte_html: ""
+  fond_image_path:
+  fond_color:
+  texte_html:
 panneau_question:
   fond_image_path:
   fond_color:
-  texte_html: ''
+  texte_html:
   champs:
     - type: choix_unique
-      nom_machine: "cause_soutiens"
+      nom_machine: cause_soutiens
       reponses:
         - valeur: La lutte contre la faim par le développement de petits élevages et de potagers
-        - valeur: L'accès à l'eau propre
-        - valeur: L'accaparement des terres
+        - valeur: "L'accès à l'eau propre"
+        - valeur: "L'accaparement des terres"
         - valeur: La reconnaissance du statut des femmes paysannes
-        - valeur: L'éducation des enfants
+        - valeur: "L'éducation des enfants"
         - valeur: La santé et le bien-être animal
         - valeur: Le développement des ventes des produits paysans en circuits courts
         - valeur: La défense de la souveraineté alimentaire des pays en développement
@@ -26,12 +26,12 @@ panneau_question:
         label: "1. Quelle est la cause qui vous tient le plus à coeur, si vous deviez n'en choisir qu'une"
         placeholder:
         requis: true
-        message_erreur: "Veuillez faire un choix"
+        message_erreur: Veuillez faire un choix
         controle:
-        fond_image_path: "/assets/img/quest3-slide-1.jpg"
+        fond_image_path: /assets/img/quest3-slide-1.jpg
         fond_color:
     - type: choix_multiple
-      nom_machine: "pays"
+      nom_machine: pays
       reponses:
         - valeur: Albanie
         - valeur: Algérie
@@ -48,15 +48,15 @@ panneau_question:
         label: "2. Avez-vous déjà voyagé ou vécu dans l'un de ces pays"
         placeholder:
         requis: true
-        message_erreur: "Veuillez faire au moins un choix"
+        message_erreur: Veuillez faire au moins un choix
         controle:
-        fond_image_path: "/assets/img/quest3-slide-2.jpg"
+        fond_image_path: /assets/img/quest3-slide-2.jpg
         fond_color:
     - type: choix_multiple
-      nom_machine: "environnement"
+      nom_machine: environnement
       reponses:
         - valeur: Vous consommez bio
-        - valeur: Vous mangez moins de viande ou n'en consommez plus
+        - valeur: "Vous mangez moins de viande ou n'en consommez plus"
         - valeur: Vous achetez moins et tentez de réparer avant de jeter
         - valeur: Vous triez vos déchets
         - valeur: Vous trouvez des moyens de déplacement alternatifs à la voiture
@@ -65,15 +65,15 @@ panneau_question:
         - valeur: Vous faites du bénévolat
       options:
         propriete_visiteur: true
-        label: "3. Comment agissez-vous dans votre environnement ?"
+        label: 3. Comment agissez-vous dans votre environnement ?
         placeholder:
         requis: true
-        message_erreur: "Veuillez faire au moins un choix"
+        message_erreur: Veuillez faire au moins un choix
         controle:
-        fond_image_path: "/assets/img/quest3-slide-3.jpg"
+        fond_image_path: /assets/img/quest3-slide-3.jpg
         fond_color:
     - type: choix_unique
-      nom_machine: "attention"
+      nom_machine: attention
       reponses:
         - valeur: Sur mobile/tablette
         - valeur: Sur ordinateur
@@ -83,29 +83,29 @@ panneau_question:
         label: "4. Vous accordez plus d'attention aux informations..."
         placeholder:
         requis: true
-        message_erreur: "Veuillez faire au moins un choix"
+        message_erreur: Veuillez faire au moins un choix
         controle:
-        fond_image_path: "/assets/img/quest3-slide-4.jpg"
+        fond_image_path: /assets/img/quest3-slide-4.jpg
         fond_color:
     - type: scoring
-      nom_machine: "évaluation"
+      nom_machine: évaluation
       reponses:
       options:
         propriete_visiteur: true
-        label: "5. Comment évaluez-vous la qualité de nos projets et pourquoi?"
+        label: 5. Comment évaluez-vous la qualité de nos projets et pourquoi?
         placeholder:
         requis: true
-        message_erreur: "Veuillez faire un choix"
+        message_erreur: Veuillez faire un choix
         controle:
-        fond_image_path: "/assets/img/quest3-slide-5.jpg"
+        fond_image_path: /assets/img/quest3-slide-5.jpg
         fond_color:
     - type: champ_libre_long
-      nom_machine: "champ_avis"
+      nom_machine: champ_avis
       reponses:
       options:
         propriete_visiteur: true
-        label: "Laissez-nous un petit mot complémentaire"
-        placeholder: "Votre avis sur le sujet..."
+        label: Laissez-nous un petit mot complémentaire
+        placeholder: Votre avis sur le sujet...
         requis: false
         message_erreur:
         controle:
@@ -114,7 +114,7 @@ panneau_question:
 panneau_informations_personnelles:
   fond_image_path:
   fond_color:
-  texte_html: ""
+  texte_html:
   champs:
     - type: choix_unique
       nom_machine: civility
@@ -123,13 +123,13 @@ panneau_informations_personnelles:
         - valeur: un homme
       options:
         propriete_visiteur: true
-        label: "Vous êtes :"
+        label: 'Vous êtes :'
         placeholder:
         requis: true
-        message_erreur: "Veuillez faire un choix"
+        message_erreur: Veuillez faire un choix
         controle:
         fond_image_path:
-        fond_color: "#40b082"
+        fond_color: '#40b082'
     - type: champ_libre_court
       nom_machine: firstname
       reponses:
@@ -137,9 +137,9 @@ panneau_informations_personnelles:
       options:
         propriete_visiteur: true
         label:
-        placeholder: "Nom*"
+        placeholder: 'Nom*'
         requis: true
-        message_erreur: "Veuillez remplir ce champ"
+        message_erreur: Veuillez remplir ce champ
         controle:
         fond_image_path:
         fond_color:
@@ -150,9 +150,9 @@ panneau_informations_personnelles:
       options:
         propriete_visiteur: true
         label:
-        placeholder: "Prénom*"
+        placeholder: 'Prénom*'
         requis: true
-        message_erreur: "Veuillez remplir ce champ"
+        message_erreur: Veuillez remplir ce champ
         controle:
         fond_image_path:
         fond_color:
@@ -163,9 +163,9 @@ panneau_informations_personnelles:
       options:
         propriete_visiteur: true
         label:
-        placeholder: "Ville*"
+        placeholder: 'Ville*'
         requis: true
-        message_erreur: "Veuillez remplir ce champ"
+        message_erreur: Veuillez remplir ce champ
         controle:
         fond_image_path:
         fond_color:
@@ -176,16 +176,16 @@ panneau_informations_personnelles:
       options:
         propriete_visiteur: true
         label:
-        placeholder: "Pays*"
+        placeholder: 'Pays*'
         requis: true
-        message_erreur: "Veuillez remplir ce champ"
+        message_erreur: Veuillez remplir ce champ
         controle:
         fond_image_path:
         fond_color:
     - type: liste_deroulante
       nom_machine: age
       reponses:
-        - valeur: entre 2000 et aujourd'hui
+        - valeur: "entre 2000 et aujourd'hui"
         - valeur: entre 1990 et 1999
         - valeur: entre 1980 et 1989
         - valeur: entre 1970 et 1979
@@ -197,49 +197,50 @@ panneau_informations_personnelles:
       options:
         propriete_visiteur: true
         label:
-        placeholder: "Année de naissance*"
+        placeholder: 'Année de naissance*'
         requis: true
         message_erreur: Veuillez entrer une date valide
         controle:
         fond_image_path:
         fond_color:
     - type: champ_libre_court
-      nom_machine: "phone"
+      nom_machine: phone
       reponses:
         - valeur:
       options:
         propriete_visiteur: true
         label:
-        placeholder: "Numéro de téléphone"
+        placeholder: Numéro de téléphone
         requis: true
-        message_erreur: "Veuillez remplir ce champ"
+        message_erreur: Veuillez remplir ce champ
         controle:
         fond_image_path:
         fond_color:
     - type: choix_multiple
-      nom_machine: "champ_verify"
+      nom_machine: champ_verify
       reponses:
-        - valeur: En laissant mon numéro, j'accepte que ESF me contacte pour m'informer de ses projets.
+        - valeur: "En laissant mon numéro, j'accepte que ESF me contacte pour m'informer de ses projets."
       options:
         propriete_visiteur: true
         label:
-        placeholder: "Numéro de téléphone"
+        placeholder: Numéro de téléphone
         requis: false
-        message_erreur: "Veuillez cocher cette case choix"
+        message_erreur: Veuillez cocher cette case choix
         controle:
         fond_image_path:
         fond_color:
 options:
-  bouton_de_soumission: "Je valide"
+  bouton_de_soumission: Je valide
   page_de_remerciement_path: /merci/merci1.html
-  largeur_champs: "100%"
+  largeur_champs:
+    - '100%'
   champs_caches_liste:
     - nom:
       valeur:
       propriete_visiteur: false
   meta:
-    title: "Ce qui vous tient au coeur"
-    description: 'Enquete ESF'
+    title: Ce qui vous tient au coeur
+    description: Enquete ESF
 _comments:
   nom: Obligatoire et unique. Description courte du champ
   texte: Ce champ peut etre vide
@@ -250,7 +251,7 @@ _comments:
   propriete_visiteur: Cochez cette case si vous souhaitez que ce champ remonte dans les propriétés du visiteur sur Woopra
   evenement_woopra: "Nom de l'evenement sur Woopra qui stockera les répondants"
   fond_image_path: Image de fond du champ
-  largeur_champs: "Définit la taille des champs"
+  largeur_champs: Définit la taille des champs
 ---
 
 <div id="accueil" class="row input-container" style="background-image: url('/assets/img/quest3-slide-0.jpg'); position: relative">
