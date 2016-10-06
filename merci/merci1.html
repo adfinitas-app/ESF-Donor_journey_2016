@@ -1,6 +1,6 @@
 ---
 layout: formulaire
-title: "On se dit tout"
+title: "Merci pour vos réponses"
 source: "ESF - On se dit tout"
 text_title: "Merci pour vos réponses !"
 text: "<br>Nous allons désormais mieux vous connaître et nous serons plus à même de vous informer sur les projets qui vous intéressent.<br><br>Comprendre vos attentes nous aide aussi à mieux communiquer : cela nous permet de sensibiliser davantage de personnes sur les conditions de vie difficiles des familles paysannes dans les pays en développement.<br><br>Grâce à vous, nous allons vers toujours plus d’efficacité dans nos actions et plus de proximité avec les personnes qui nous soutiennent ! Merci !"
@@ -75,16 +75,6 @@ logo_path: "http://www.elevagessansfrontieres.org/"
  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
  fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-
-generate_url();
-
-function  generate_url()
-{
-  var     civility;
-
-  console.log("hello");
-  $('#third_text').parent().attr('href', $('#third_text').parent().attr('href') + "b?" + window.location.href.slice(window.location.href.indexOf('?') + 1));
-}
 
 function    change_civility(url)
 {
