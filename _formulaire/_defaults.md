@@ -45,8 +45,8 @@ options:
   page_de_remerciement_path: /index.html
   largeur_champ: "100%"
   champs_caches_liste:
-    - nom:
-      valeur:
+    - nom: cid
+      valeur: 1
       propriete_visiteur: false
   meta:
     title:

@@ -22,9 +22,8 @@ panneau_informations_personnelles:
         fond_color:
 options:
   champs_caches_liste:
-    - nom: hidden
-      valeur: test-ok
-      dynamique: true
+    - nom: cid
+      valeur: 1
       propriete_visiteur: true
 bouton_de_soumission: "Signer l'a pétiton"
 page_de_remerciement_path: /index.html
