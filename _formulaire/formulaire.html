@@ -39,7 +39,7 @@ panneau_question:
         - valeur: Il y a entre 1 et 5 ans
         - valeur: Il y a plus de 10 ans
       options:
-        propriete_visiteur: true
+        propriete_visiteur: false
         label: "2. C’était il y a combien de temps\_?"
         placeholder:
         requis: true
@@ -68,7 +68,7 @@ panneau_question:
         fond_image_path: /assets/img/quest1-slide-3.jpg
         fond_color:
     - type: choix_multiple
-      nom_machine: choix
+      nom_machine: aspects_proche
       reponses:
         - valeur: "Nos projets d'élevage"
         - valeur: Nos projets agricoles
@@ -89,7 +89,7 @@ panneau_question:
         fond_image_path: /assets/img/quest1-slide-4.jpg
         fond_color:
     - type: scoring
-      nom_machine: choix
+      nom_machine: degre_confiance
       reponses:
       options:
         propriete_visiteur: true
@@ -101,7 +101,7 @@ panneau_question:
         fond_image_path: /assets/img/quest1-slide-5.jpg
         fond_color:
     - type: champ_libre_long
-      nom_machine: champ_avis
+      nom_machine: avis
       reponses:
       options:
         propriete_visiteur: true
