@@ -1,0 +1,99 @@
+---
+layout: merci
+title: "Merci pour vos réponses"
+source: "ESF - On se dit tout"
+text_title: "Merci pour vos réponses !"
+text: "<br>Nous allons désormais mieux vous connaître et nous serons plus à même de vous informer sur les projets qui vous intéressent.<br><br>Comprendre vos attentes nous aide aussi à mieux communiquer : cela nous permet de sensibiliser davantage de personnes sur les conditions de vie difficiles des familles paysannes dans les pays en développement.<br><br>Grâce à vous, nous allons vers toujours plus d’efficacité dans nos actions et plus de proximité avec les personnes qui nous soutiennent ! Merci !"
+don_path: "https://dons.elevagessansfrontieres.org/"
+site_path: "http://www.elevagessansfrontieres.org/"
+fb_path: "https://www.facebook.com/ONGElevagesSansFrontieres"
+twitter_path: "https://twitter.com/ElevagesSF"
+share_path: "https://www.facebook.com/sharer/sharer.php?u=%20http%3A//www.elevagessansfrontieres.org/a-propos/qui-recoit-donne/"
+confiance: "http://www.donenconfiance.org/"
+background: "/assets/img/background_merci.jpg"
+logo: "https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/logo_esf.png"
+logo_path: "http://www.elevagessansfrontieres.org/"
+
+---
+
+<div class="row input-container" style="background-image: url('{{ page.background }}');">
+ <div class=" small-6 text-center medium-offset-1 medium-2 columns">
+  <a href="{{ page.logo_path }}" target="_blank"><img src="{{ page.logo }}" class="img_top"></a>
+</div>
+<div class="small-6  text-center medium-6 columns">
+  <img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/logo_tout.png" class="img_top_right">
+</div>
+<div class="small-centered small-10 medium-8 large-5 text-center columns" style="text-transform: uppercase; padding-top: 9em;">
+  <p id="first_text" class="text_title">{{ page.text_title }}</p>
+</div>
+<p id="second_text" class= "small-10 medium-8 large-6 text-center columns small-centered text_main">
+  {{ page.text }}
+</p>
+<a href="{{ page.don_path }}" target="_blank" style="padding-bottom: 1em">
+  <p id="third_text" class="text_main small-10 medium-6 large-4 small-centered text-center columns bouton_merci" style="border: solid 2px white; margin-top: 3%; border-radius: 0.2em;">JE FAIS UN DON</p>
+</a>
+</div>
+<div class="row" style="background: #d54200;">
+ <div class="small-centered small-10 medium-8 large-5 text-center columns" style="text-transform: uppercase;">
+  <p class="text_title">Notre principe du &#34;qui reçoit ... donne&#34;</p>
+</div>
+<p class= "small-10 medium-8 large-5 text-center columns small-centered text_main">
+  Tous le projets soutenus par Elevages sans frontières sont basés sur ce principe unique de microcrédit ! Il crée un effet multiplicateur qui permet à une communauté entière de profiter de cette aide durable au développement.<br><span style="font-weight:bold">Aidez-nous à étendre cette formidable chaîne de solidarité en partageant notre principe avec vos amis !</span>
+</p>
+<div class= "small-10 medium-8 large-6 text-center columns small-offset-1 medium-offset-2 large-offset-3 text_main">
+  <img class= "text_main" src="/assets/img/cycle.jpg" style="width: 100%;">
+</div>
+<a href="{{ page.share_path }}" target="_blank" style="display : inline">
+  <p id="third_text" class="text_main small-offset-2 small-8 medium-offset-3 medium-6 large-offset-4 large-4 text-center columns bouton_merci end" style="border: solid 2px white; margin-top: 2%; display:inline-block; border-radius: 0.2em;">JE PARTAGE<img src="/assets/img/icon_fb.png" alt="facebook" style="display: inline-block; padding-left: 0.15em; height: 1em; padding-bottom: 0.2em;"></p>
+</a>
+</div>
+<div class="row" style="background: #f7f0e6; margin-bottom: 1.5em">
+  <div class="small-12 medium-offset-1 medium-3 large-offset-2 large-2 text-center columns" style="margin-top: 1.5em">
+    <p class="text_main" style="color: #483a31">SUIVEZ-NOUS SUR</p>
+    <div class="text-center" style="display: inline;">
+      <a href="{{ page.fb_path }}" target="_blank"><img src="/assets/img/icon_fb.png" style="display: inline-block; max-height: 3em; margin-top: -1em"></a>
+      <a href="{{ page.twitter_path }}" target="_blank"><img src="/assets/img/icon_twitter.png" style="display: inline-block; padding-left: 1em;  max-height: 3em; margin-top: -1em"></a>
+    </div>
+  </div>
+  <div class="small-12 medium-4 large-4 text-center columns" style="margin-top: 1.5em;">
+    <p class="text_main" style="color: #483a31;">VISITEZ NOTRE SITE</p>
+    <a href="{{ page.site_path }}" target="_blank" style="background: #d54200; padding:10px; font-weight: bold; color: white; border-radius: 0.2em; font-size: 1em">{{ page.site_path }}</a>
+  </div>
+  <div class="small-12 medium-3 large-2 text-center columns" style="margin-top: 1.5em; display: inline">
+    <a href="{{ page.confiance }}" target="_blank"><img src="/assets/img/don_confiance.png" style="height:6em"></a>
+  </div>
+</div>
+<div class="row" style="background: #49382e;">
+  <div class="small-12 text-center small-centered columns">
+    <p style="color : white; padding-top: 0.5em">Réalisé par <a href="http://www.adfinitas.fr/" target="_blank" class="slide-url">Adfinitas</a></p>
+  </div>
+</div>
+<script>(function(d, s, id) {
+ var js, fjs = d.getElementsByTagName(s)[0];
+ if (d.getElementById(id)) return;
+ js = d.createElement(s); js.id = id;
+ js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+ fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+function    change_civility(url)
+{
+  var       pos;
+  var       end;
+  var       extract;
+
+  pos = -1;
+  if ((pos = url.indexOf("civility=")) == -1)
+    return (url);
+  pos += 9;
+  end = pos + 1;
+  while (url.charAt(end) != '&' && end < url.length)
+    end++;
+  if (url.substring(pos, end) == "un+homme")
+    url = url.substr(0, pos - 9) + "1" + url.substr(end, url.length);
+  else
+    url = url.substr(0, pos) + "2" + url.substr(end, url.length);
+  console.log(url);
+  return (url);
+}
+</script>
