@@ -39,7 +39,10 @@ function showError(elem) {
  * - input[type="text"], input[type="email"]
  * - input[type="checkbox"], input[type="radio"]
 */
-function isValidField(jqueryFieldSelector, allowEmpty = true) {
+function isValidField(jqueryFieldSelector, allowEmpty) {
+  if (typeof(allowEmpty) == "undefined") {
+    allowEmpty = true;
+  }
   var field = jqueryFieldSelector;
   var status = false;
   if (field.hasClass("other") && (field.hasClass("input-choix_multiple") ||
