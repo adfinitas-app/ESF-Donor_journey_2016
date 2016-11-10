@@ -1,0 +1,205 @@
+---
+evenement_woopra: ESF - On se dit tout - 1
+panneau_introduction:
+  fond_image_path: /uploads/Fond-Formulaire.jpg
+  fond_color:
+  texte_html: "<h1>JOUEZ A NOTRE GRAND JEU CONCOURS !</h1><h2>Laissez-nous vos coordonn&eacute;es pour tenter de remporter six mois de paniers de produits locaux !</h2><p>Ces paniers, d'une valeur de 8&euro; chacun, seront &agrave; retirer chaque semaine dans un point de distribution proche de chez vous ou de votre lieu de travail.</p><p>&nbsp;</p><p>&nbsp;</p>"
+panneau_question:
+  fond_image_path:
+  fond_color:
+  texte_html:
+  champs:
+    - type: choix_unique
+      nom_machine: abonnement
+      reponses:
+      options:
+        propriete_visiteur: false
+        label:
+        placeholder: "Souhaitez-vous vous abonner aux actualités d'Elevages sans frontières ?"
+        requis: true
+        message_erreur: Merci de choisir si vous souhaitez ou non vous abonner.
+        controle:
+        fond_image_path:
+        fond_color:
+panneau_informations_personnelles:
+  fond_image_path:
+  fond_color:
+  texte_html:
+  champs:
+    - type: choix_unique
+      nom_machine: civility
+      reponses:
+        - valeur: une femme
+        - valeur: un homme
+      options:
+        propriete_visiteur: true
+        label: 'Vous êtes :'
+        placeholder:
+        requis: true
+        message_erreur: Veuillez faire un choix
+        controle:
+        fond_image_path:
+        fond_color: '#40b082'
+    - type: champ_libre_court
+      nom_machine: firstname
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: 'Nom*'
+        requis: true
+        message_erreur: Veuillez remplir ce champ
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: champ_libre_court
+      nom_machine: lastname
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: 'Prénom*'
+        requis: true
+        message_erreur: Veuillez remplir ce champ
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: champ_libre_court
+      nom_machine: city
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: 'Ville*'
+        requis: true
+        message_erreur: Veuillez remplir ce champ
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: champ_libre_court
+      nom_machine: country
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: 'Pays*'
+        requis: true
+        message_erreur: Veuillez remplir ce champ
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: liste_deroulante
+      nom_machine: age
+      reponses:
+        - valeur: "entre 2000 et aujourd'hui"
+        - valeur: entre 1990 et 1999
+        - valeur: entre 1980 et 1989
+        - valeur: entre 1970 et 1979
+        - valeur: entre 1960 et 1969
+        - valeur: entre 1950 et 1959
+        - valeur: entre 1940 et 1949
+        - valeur: entre 1930 et 1939
+        - valeur: Avant 1930
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: 'Année de naissance*'
+        requis: true
+        message_erreur: Veuillez entrer une date valide
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: champ_libre_court
+      nom_machine: phone
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: Numéro de téléphone
+        requis: false
+        message_erreur: Veuillez remplir ce champ
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: choix_multiple
+      nom_machine: champ_verify
+      reponses:
+        - valeur: "En laissant mon numéro, j'accepte que ESF me contacte pour m'informer de ses projets."
+      options:
+        propriete_visiteur: false
+        label:
+        placeholder: Numéro de téléphone
+        requis: false
+        message_erreur: Veuillez cocher cette case choix
+        controle:
+        fond_image_path:
+        fond_color:
+options:
+  bouton_de_soumission: Je valide
+  page_de_remerciement_path: /merci/merci1.html
+  largeur_champs:
+  champs_caches_liste:
+    - nom: cid
+      valeur: 1
+      propriete_visiteur: false
+  meta:
+    title: On se dit tout
+    description: Enquete ESF
+_comments:
+  nom: Obligatoire et unique. Description courte du champ
+  texte: Ce champ peut etre vide
+  placeholder: 'Seulement pour les champs de type "champ libre"'
+  controle: 'Seulement pour les champs de type "champ libre"'
+  reponses: 'Seulement pour les champs de type "choix"'
+  page_de_remerciement_path: "URL de la page lorsque l'utilisateur valide le formulaire"
+  propriete_visiteur: Cochez cette case si vous souhaitez que ce champ remonte dans les propriétés du visiteur sur Woopra
+  evenement_woopra: "Nom de l'evenement sur Woopra qui stockera les répondants"
+  fond_image_path: Image de fond du champ
+  largeur_champs: Définit la taille des champs
+---
+
+<!--<div id="accueil" class="row input-container" style="background-image: url('/assets/img/quest1-slide-0.jpg'); position:relative">
+			<div class=" small-6 text-center medium-offset-1 medium-2 columns">
+				<img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/logo_esf.png" class="img_top">
+			</div>
+			<div class="small-6  text-center medium-6 columns">
+				<img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/logo_tout.png" class="img_top">
+			</div>
+			<div class="small-0 medium-4"></div>
+			<div class="small-12 text-center columns">
+				<div class="row">
+					<div class="small-offset-1 small-centered small-10 medium-8 large-8 text-center columns">
+						<p id="first_text" class="texte-choix_unique">AIDEZ-NOUS À MIEUX VOUS CONNAÎTRE !</p>
+					</div>
+				</div>
+				<p id="second_text" class="label-choix_unique">
+					Le soutien que vous nous apportez est très important à nos yeux et nous aimerions en apprendre davantage…<br>
+					Racontez-nous comment Elevages sans frontières est entré dans votre vie !
+				</p>
+        <p id="third_text" class="label-choix_unique text-center" style="padding-bottom: 3.5em;">
+          Vos attentes, vos remarques, vos interrogations :<br>
+          parlez-nous de VOUS en répondant à notre enquête!
+        </p>
+			</div>
+      <div id="fourth_text" class="small-12 columns text-center" style="position: absolute; bottom: 0; left: 0; padding-bottom: 20px;">
+        <div class="row">
+          <div class="small-centered columns ">
+            <a href="#slide-0">
+              <p class="text_bold" style="line-height: 0;">JE RÉPONDS</p>
+              <img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_down.png">
+            </a>
+          </div>
+			</div>
+    </div>
+  </div>-->
+    {% include form.html %}
+  <div class="row field-row">
+    <a id="next_container" href="#" class="small-12 hide-for-small-only columns text-center">
+      <p class="text_bold">QUESTION SUIVANTE</p>
+      <img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_down.png">
+    </a>
