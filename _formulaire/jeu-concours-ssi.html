@@ -10,105 +10,14 @@ panneau_question:
   texte_html:
   champs:
     - type: choix_unique
-      nom_machine: rencontre
-      reponses:
-        - valeur: 'Je vous ai découvert grâce à ma famille, mes amis'
-        - valeur: Je vous ai découvert sur internet
-        - valeur: "J'ai offert ou reçu une carte Cadeau solidaire"
-        - valeur: "J'ai signé une pétition"
-        - valeur: 'Je vous ai découvert sur un réseau social (Facebook, Twitter, Instagram)'
-        - valeur: J’ai reçu un courrier de la votre part
-        - valeur: J’ai découvert votre association lors d’un évènement près de chez moi
-        - valeur: Autre
-      options:
-        propriete_visiteur: false
-        label: "1. Comment nous sommes-nous rencontrés\_?"
-        placeholder:
-        requis: true
-        message_erreur: Veuillez faire un choix
-        controle:
-        fond_image_path: /assets/img/quest1-slide-1.jpg
-        fond_color:
-    - type: choix_unique
-      nom_machine: date_rencontre
-      reponses:
-        - valeur: Il y a quelques jours
-        - valeur: Il y a 1 à 2 mois
-        - valeur: Il y a moins de 6 mois
-        - valeur: "Moins d'1 an"
-        - valeur: Il y a entre 1 et 5 ans
-        - valeur: Il y a plus de 10 ans
-      options:
-        propriete_visiteur: false
-        label: "2. C’était il y a combien de temps\_?"
-        placeholder:
-        requis: true
-        message_erreur: Veuillez faire un choix
-        controle:
-        fond_image_path: /assets/img/quest1-slide-2.jpg
-        fond_color:
-    - type: choix_multiple
-      nom_machine: engagement
-      reponses:
-        - valeur: Je partage vos convictions
-        - valeur: 'Je vous suis sur les réseaux sociaux (Facebook, Twitter, Instagram)'
-        - valeur: Je suis inscrit à votre actualité
-        - valeur: Je signe des pétitions
-        - valeur: Je suis donateur
-        - valeur: Je suis bénévole ponctuel ou régulier
-        - valeur: "Je suis ambassadeur de l'association dans ma région"
-        - valeur: Autre
-      options:
-        propriete_visiteur: false
-        label: 3. Comment êtes-vous engagé(e) à nos côtés ?
-        placeholder:
-        requis: true
-        message_erreur: Veuillez faire au moins un choix
-        controle:
-        fond_image_path: /assets/img/quest1-slide-3.jpg
-        fond_color:
-    - type: choix_multiple
-      nom_machine: aspects_proche
-      reponses:
-        - valeur: "Nos projets d'élevage"
-        - valeur: Nos projets agricoles
-        - valeur: Notre défense de l’agriculture paysanne locale
-        - valeur: Notre savoir-faire professionnel
-        - valeur: Notre principe de microcrédit solidaire « Qui reçoit donne »
-        - valeur: Notre façon de communiquer
-        - valeur: Notre proximité avec le terrain
-        - valeur: L’aspect durable des projets
-        - valeur: Autre
-      options:
-        propriete_visiteur: false
-        label: 4. De quel(s) aspect(s) de notre action vous sentez-vous proche ?
-        placeholder:
-        requis: true
-        message_erreur: Veuillez faire au moins un choix
-        controle:
-        fond_image_path: /assets/img/quest1-slide-4.jpg
-        fond_color:
-    - type: scoring
-      nom_machine: degre_confiance
-      reponses:
-      options:
-        propriete_visiteur: false
-        label: 5. Faites-vous confiance à Elevages sans frontières ?
-        placeholder:
-        requis: true
-        message_erreur: Veuillez faire au moins un choix
-        controle:
-        fond_image_path: /assets/img/quest1-slide-5.jpg
-        fond_color:
-    - type: champ_libre_long
-      nom_machine: avis
+      nom_machine: abonnement
       reponses:
       options:
         propriete_visiteur: false
         label:
-        placeholder: Laissez-nous votre avis sur le sujet...
-        requis: false
-        message_erreur:
+        placeholder: "Souhaitez-vous vous abonner aux actualités d'Elevages sans frontières ?"
+        requis: true
+        message_erreur: Merci de choisir si vous souhaitez ou non vous abonner.
         controle:
         fond_image_path:
         fond_color:
