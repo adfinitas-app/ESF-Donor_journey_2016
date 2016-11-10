@@ -57,6 +57,7 @@
 .panneau-introduction
 {
   min-height: 100vh;
+  position: relative;
 }
 
 .panneau-introduction-texte > *
@@ -80,6 +81,10 @@
   text-transform: uppercase;
 }
 
+#second_text
+{
+  padding-bottom: 100px;
+}
 
 .other-choice-text {
   display: inline-block;
