@@ -54,6 +54,33 @@
  font-size: 1.2em;
 }
 
+.panneau-introduction
+{
+  min-height: 100vh;
+}
+
+.panneau-introduction-texte > *
+{
+  color: white;
+}
+
+.panneau-introduction-texte > .row > .columns
+{
+  text-align: center
+}
+
+.panneau-introduction-texte > .row > .columns > *
+{
+  text-align: center;
+  display: inline-block;
+}
+
+.intro_title
+{
+  text-transform: uppercase;
+}
+
+
 .other-choice-text {
   display: inline-block;
   width: auto;

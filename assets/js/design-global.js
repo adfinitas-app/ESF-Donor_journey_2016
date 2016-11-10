@@ -29,10 +29,22 @@
     place_question(3);
   apply_textarea();
   set_insecable();
+  set_header();
   vertical_center();
 
   function replaceAt(word, index, character) {
     return word.substr(0, index) + character + word.substr(index+character.length);
+  }
+
+  function  set_header()
+  {
+    $(".panneau-introduction").addClass('input-container');
+    $(".panneau-introduction-texte > .row > .columns").children().first().attr("id", "first_text");
+    $(".panneau-introduction-texte > .row > .columns").children().first().addClass("texte-choix_unique intro_title");
+    $(".panneau-introduction-texte > .row > .columns > *:not(:first-child)").addClass("label-choix_unique");
+    $(".panneau-introduction-texte > .row > .columns > *:not(:first-child, br)").wrap("<div id='second_text' style='max-width : 900px'></div>");
+    $(".panneau-introduction-texte > .row").prepend('<div class=" small-6 text-center medium-offset-1 medium-2 columns"><img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/logo_esf.png" class="img_top"></div><div class="small-6  text-center medium-6 columns"><img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/logo_tout.png" class="img_top"></div><br>')
+    $(".panneau-introduction-texte > .row").append('<div id="third_text" class="small-12 columns text-center" style="position: absolute; bottom: 0; left: 0; padding-bottom: 20px;"><div class="row"><div class="small-centered columns"><a href="#slide-0"><p class="text_bold" style="line-height: 0;">JE RÉPONDS</p><img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_down.png"></a></div></div>')
   }
 
   function  set_insecable()
@@ -73,7 +85,7 @@
       if ($("#slide-" + slide).find(".error").length)
         return (true);
       slide++;
-    }    
+    }
     return (false);
   }
 
@@ -99,11 +111,12 @@
 
   total = $("#first_text").height();
   total += $("#second_text").height();
-  space = ($("#accueil").height() - ($("#first_text").offset().top + $("#second_text").offset().top)) / 2;
+  console.log($("#panneau-introduction").height());
+  space = ($("#panneau-introduction").height() - ($("#first_text").offset().top + $("#second_text").offset().top)) / 2;
   if (document.title == "On se dit tout")
   {
     total += $("#third_text").height();
-    space = ($("#accueil").height() - ($("#first_text").offset().top + $("#third_text").offset().top)) / 2;
+    space = ($("#panneau-introduction").height() - ($("#first_text").offset().top + $("#third_text").offset().top)) / 2;
   }
   $("#first_text").css({"padding-top" : space + "px"});
   $('.input-container').children().each(function(){

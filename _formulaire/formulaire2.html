@@ -1,9 +1,9 @@
 ---
 evenement_woopra: ESF - On se dit tout - 2
 panneau_introduction:
-  fond_image_path:
+  fond_image_path: '/assets/img/quest2-slide-0.jpg'
   fond_color:
-  texte_html:
+  texte_html: '<h1>Vos attentes</h1><br><h3>Tout au long de l’année, nous vous informons à propos de nos projets sur le terrain : ceux qui ont vu le jour grâce à vous mais aussi ceux à venir.<br>Confiez-nous ce que vous attendez d’Elevages sans frontières à ce sujet !</h3>'
 panneau_question:
   fond_image_path:
   fond_color:
@@ -255,8 +255,8 @@ _comments:
   fond_image_path: Image de fond du champ
   largeur_champs: Définit la taille des champs
 ---
-
-<div id="accueil" class="row input-container" style="background-image: url('/assets/img/quest2-slide-0.jpg'); position: relative">
+<!--
+<div id="accueil" class="row" style="background-image: url('{{ page.panneau_introduction.fond_image_path }}'); position: relative">
 			<div class=" small-6 text-center medium-offset-1 medium-2 columns">
 				<img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/logo_esf.png" class="img_top">
 			</div>
@@ -264,8 +264,8 @@ _comments:
 				<img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/logo_tout.png" class="img_top">
 			</div>
 			<div class="small-0 medium-4"></div>
-			<div class="small-12 text-center columns">
-				<div class="row">
+			<div class="small-12 text-center columns panneau_intro">
+				<!--<div class="row">
 					<div class="small-offset-1 small-centered small-10 medium-8 large-8 text-center columns">
 						<p id="first_text" class="texte-choix_unique">VOS ATTENTES</p>
 					</div>
@@ -274,10 +274,11 @@ _comments:
           Tout au long de l’année, nous vous informons à propos de nos projets sur le terrain : ceux qui ont vu le jour grâce à vous mais aussi ceux à venir.<br>
           Confiez-nous ce que vous attendez d’Elevages sans frontières à ce sujet !
 				</p>
+        {{ page.panneau_introduction.texte_html }}
 			</div>
       <div id="third_text" class="small-12 columns text-center" style="position: absolute; bottom: 0; left: 0; padding-bottom: 20px;">
         <div class="row">
-          <div class="small-centered columns ">
+          <div class="small-centered columns">
             <a href="#slide-0">
               <p class="text_bold" style="line-height: 0;">JE RÉPONDS</p>
               <img src="https://s3.amazonaws.com/heroku-adfinitas-campaign/ESF-Donor-Journey-2016/arrow_down.png">
@@ -285,7 +286,7 @@ _comments:
           </div>
 			</div>
     </div>
-  </div>
+  </div>-->
     {% include form.html %}
   <div class="row field-row">
     <a id="next_container" href="#" class="small-12 hide-for-small-only columns text-center">
