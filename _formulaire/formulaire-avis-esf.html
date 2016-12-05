@@ -50,106 +50,6 @@ panneau_informations_personnelles:
   fond_color:
   texte_html:
   champs:
-    - type: choix_unique
-      nom_machine: civility
-      reponses:
-        - valeur: une femme
-        - valeur: un homme
-      options:
-        propriete_visiteur: true
-        label: 'Vous êtes :'
-        placeholder:
-        requis: true
-        message_erreur: Veuillez faire un choix
-        controle:
-        fond_image_path:
-        fond_color: '#40b082'
-    - type: champ_libre_court
-      nom_machine: firstname
-      reponses:
-        - valeur:
-      options:
-        propriete_visiteur: true
-        label:
-        placeholder: 'Nom*'
-        requis: true
-        message_erreur: Veuillez remplir ce champ
-        controle:
-        fond_image_path:
-        fond_color:
-    - type: champ_libre_court
-      nom_machine: lastname
-      reponses:
-        - valeur:
-      options:
-        propriete_visiteur: true
-        label:
-        placeholder: 'Prénom*'
-        requis: true
-        message_erreur: Veuillez remplir ce champ
-        controle:
-        fond_image_path:
-        fond_color:
-    - type: champ_libre_court
-      nom_machine: city
-      reponses:
-        - valeur:
-      options:
-        propriete_visiteur: true
-        label:
-        placeholder: 'Ville*'
-        requis: true
-        message_erreur: Veuillez remplir ce champ
-        controle:
-        fond_image_path:
-        fond_color:
-    - type: champ_libre_court
-      nom_machine: country
-      reponses:
-        - valeur:
-      options:
-        propriete_visiteur: true
-        label:
-        placeholder: 'Pays*'
-        requis: true
-        message_erreur: Veuillez remplir ce champ
-        controle:
-        fond_image_path:
-        fond_color:
-    - type: liste_deroulante
-      nom_machine: age
-      reponses:
-        - valeur: "entre 2000 et aujourd'hui"
-        - valeur: entre 1990 et 1999
-        - valeur: entre 1980 et 1989
-        - valeur: entre 1970 et 1979
-        - valeur: entre 1960 et 1969
-        - valeur: entre 1950 et 1959
-        - valeur: entre 1940 et 1949
-        - valeur: entre 1930 et 1939
-        - valeur: Avant 1930
-      options:
-        propriete_visiteur: true
-        label:
-        placeholder: 'Année de naissance*'
-        requis: true
-        message_erreur: Veuillez entrer une date valide
-        controle:
-        fond_image_path:
-        fond_color:
-    - type: champ_libre_court
-      nom_machine: phone
-      reponses:
-        - valeur:
-      options:
-        propriete_visiteur: true
-        label:
-        placeholder: Numéro de téléphone
-        requis: false
-        message_erreur: Veuillez remplir ce champ
-        controle:
-        fond_image_path:
-        fond_color:
     - type: choix_multiple
       nom_machine: champ_verify
       reponses:
@@ -160,6 +60,19 @@ panneau_informations_personnelles:
         placeholder: Numéro de téléphone
         requis: false
         message_erreur: Veuillez cocher cette case choix
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: champ_libre_long
+      nom_machine: email
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: false
+        label: email
+        placeholder:
+        requis: true
+        message_erreur: Merci de compléter votre adresse email
         controle:
         fond_image_path:
         fond_color:
