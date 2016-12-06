@@ -456,6 +456,7 @@ function    apply_last_slide()
 $(document).ready(function() {
    if ($('#first_text').html() == "VOTRE AVIS NOUS INTÉRESSE")
    {
+       console.log("hide");
        $( "input[name='city']").parent().css("display","none");
        $( "input[name='country']").parent().css("display","none");
        $( "input[name='age']").parent().css("display","none");
