@@ -474,7 +474,7 @@ function    hide_fields()
     var     count = 0;
     var     text_cmp;
     
-    while (count < text.length())
+    while (count < text.length)
     {
         text_cmp = "hide_" + text[count];
         if (url_var[text_cmp] == 1)
