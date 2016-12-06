@@ -453,31 +453,15 @@ function    apply_last_slide()
   }
 });
 
-function getUrlVars()
-{
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
-}
-
 //SINCE IT WAS BADLY IMPLEMENTED THIS IS HERE TO HIDE FIELDS, MAKE SURE THEY ARE NOT REQUIRED AND NOT TRACED BACK TO WOOPRA
 function    hide_fields()
 {
-    var     text = ["email", "firstname", "lastname", "city", "country", "age", "phone", "tel"];
-    var     url_var = getUrlVars();
+    var     text = ["hide_email", "hide_firstname", "hide_lastname", "hide_city", "hide_country", "hide_age", "hide_phone", "hide_tel"];
     var     count = 0;
-    var     text_cmp;
     
     while (count < text.length)
     {
-        text_cmp = "hide_" + text[count];
-        if (url_var[text_cmp] == 1)
+        if ($("input='" + text[count] + "'").length == 1)
         {
             console.log("hiding " + text[count]);
             $( "input[name='" + text[count] + "']").parent().css("display","none");
