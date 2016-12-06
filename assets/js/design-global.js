@@ -476,7 +476,7 @@ function    hide_fields()
     while (count < text.length())
     {
         text_cmp = "hide_" + text[count];
-        if (text[count] )
+        if (text_cmp )
         count++;
     }
 
