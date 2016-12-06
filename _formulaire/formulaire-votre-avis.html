@@ -101,10 +101,10 @@ panneau_informations_personnelles:
       reponses:
         - valeur:
       options:
-        propriete_visiteur: true
+        propriete_visiteur: false
         label:
         placeholder: 'Ville*'
-        requis: true
+        requis: false
         message_erreur: Veuillez remplir ce champ
         controle:
         fond_image_path:
@@ -114,10 +114,10 @@ panneau_informations_personnelles:
       reponses:
         - valeur:
       options:
-        propriete_visiteur: true
+        propriete_visiteur: false
         label:
         placeholder: 'Pays*'
-        requis: true
+        requis: false
         message_erreur: Veuillez remplir ce champ
         controle:
         fond_image_path:
@@ -135,10 +135,10 @@ panneau_informations_personnelles:
         - valeur: entre 1930 et 1939
         - valeur: Avant 1930
       options:
-        propriete_visiteur: true
+        propriete_visiteur: false
         label:
         placeholder: 'Année de naissance*'
-        requis: true
+        requis: false
         message_erreur: Veuillez entrer une date valide
         controle:
         fond_image_path:
@@ -177,6 +177,15 @@ options:
   champs_caches_liste:
     - nom: cid
       valeur: 1
+      propriete_visiteur: false
+    - nom: hide_country
+      valeur: '1'
+      propriete_visiteur: false
+    - nom: hide_city
+      valeur: '1'
+      propriete_visiteur: false
+    - nom: hide_age
+      valeur: '1'
       propriete_visiteur: false
   meta:
     title: Vos attentes
