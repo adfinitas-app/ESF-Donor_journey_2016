@@ -466,16 +466,20 @@ function getUrlVars()
     return vars;
 }
 
+//SINCE IT WAS BADLY IMPLEMENTED THIS IS HERE TO HIDE FIELDS, MAKE SURE THEY ARE NOT REQUIRED AND NOT TRACED BACK TO WOOPRA
 function    hide_fields()
 {
-    var     text = ["email", "firstname", "lastname"];
-    if ($('#first_text').html() == "VOTRE AVIS NOUS INTÉRESSE")
-   {
-       console.log("hide");
-       $( "input[name='city']").parent().css("display","none");
-       $( "input[name='country']").parent().css("display","none");
-       $( "input[name='age']").parent().css("display","none");
-   }
+    var     text = ["email", "firstname", "lastname", "city", "country", "age", "phone", "tel"];
+    var     count = 0;
+    var     text_cmp;
+    
+    while (count < text.length())
+    {
+        text_cmp = "hide_" + text[count];
+        if (text[count] )
+        count++;
+    }
+
 }
 
 $(document).ready(function() {
