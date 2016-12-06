@@ -468,7 +468,7 @@ function    hide_fields()
     {
         if ($("input[name='" + text[count] + "']").length == 1) {
             $("input[name='" + hide[count] + "']").css({"display":"none"});
-            console.log(hide[count])
+            console.log("input[name='" + hide[count] + "']");
         }
         
         count++;
