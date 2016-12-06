@@ -9,96 +9,8 @@ panneau_question:
   fond_color:
   texte_html:
   champs:
-    - type: choix_multiple
-      nom_machine: supports_preferes
-      reponses:
-        - valeur: Notre newsletter
-        - valeur: 'Nos réseaux sociaux (Facebook, Twitter, Instagram)'
-        - valeur: Notre site internet
-        - valeur: Nos courriers
-        - valeur: Nos dépliants explicatifs
-        - valeur: Autre
-      options:
-        propriete_visiteur: false
-        label: 1. Quels sont vos supports d’information préferés?
-        placeholder:
-        requis: true
-        message_erreur: Veuillez faire un choix
-        controle:
-        fond_image_path: /assets/img/quest2-slide-1.jpg
-        fond_color:
-    - type: choix_unique
-      nom_machine: frequence_envoi
-      reponses:
-        - valeur: Je souhaite une actualité plus régulière
-        - valeur: Je suis satisfait(e) de la fréquence d’envoi des newsletters
-        - valeur: J’estime en recevoir trop souvent
-      options:
-        propriete_visiteur: false
-        label: 2. Que pensez-vous de la fréquence d’envoi de nos newsletters ?
-        placeholder:
-        requis: true
-        message_erreur: Veuillez faire un choix
-        controle:
-        fond_image_path: /assets/img/quest2-slide-2.jpg
-        fond_color:
-    - type: choix_multiple
-      nom_machine: type_informations_souhaite
-      reponses:
-        - valeur: Des informations sur nos projets d’élevage
-        - valeur: Des informations sur nos projets agricoles
-        - valeur: Des témoignages des familles soutenues
-        - valeur: Des photos ou diaporamas commentés
-        - valeur: Des vidéos
-        - valeur: Des annonces sur nos prochains projets
-        - valeur: Des actualités sur  notre vie associative en régions
-        - valeur: Des informations sur l’élevage et l’agriculture en zone tropicale
-        - valeur: Autre
-      options:
-        propriete_visiteur: false
-        label: 3. Quelles informations souhaitez-vous recevoir ?
-        placeholder:
-        requis: true
-        message_erreur: Veuillez faire au moins un choix
-        controle:
-        fond_image_path: /assets/img/quest2-slide-3.jpg
-        fond_color:
-    - type: choix_unique
-      nom_machine: don_oui_non
-      reponses:
-        - valeur: Oui
-        - valeur: Non
-      options:
-        propriete_visiteur: false
-        label: 4. Avez-vous déjà fait un don à notre association?
-        placeholder:
-        requis: true
-        message_erreur: Veuillez faire au moins un choix
-        controle:
-        fond_image_path: /assets/img/quest2-slide-4.jpg
-        fond_color:
-    - type: choix_multiple
-      nom_machine: element_declencheur_don
-      reponses:
-        - valeur: Un courrier
-        - valeur: Un email
-        - valeur: "L'envie d’offrir un cadeau solidaire"
-        - valeur: Le témoignage d’un proche
-        - valeur: Une pétition
-        - valeur: Un article dans la presse
-        - valeur: "L'avantage fiscal"
-        - valeur: Autre
-      options:
-        propriete_visiteur: false
-        label: "Si oui, quel fut l'élément déclencheur de votre don ?"
-        placeholder:
-        requis: false
-        message_erreur: Veuillez faire au moins un choix
-        controle:
-        fond_image_path: /assets/img/quest2-slide-4.jpg
-        fond_color:
-    - type: choix_multiple
-      nom_machine: type_soutiens
+    - type: scoring
+      nom_machine: accord-avec-esf
       reponses:
         - valeur: En faisant un don
         - valeur: "En m'investissant en tant que bénévole"
@@ -106,12 +18,38 @@ panneau_question:
         - valeur: Je ne suis pas prêt(e)
       options:
         propriete_visiteur: false
-        label: 5. Seriez-vous prêt(e) à soutenir notre association au cours des 12 mois à venir ?
+        label: Etes-vous en accord avec nos actions solidaires ?
         placeholder:
         requis: true
         message_erreur: Veuillez faire au moins un choix
         controle:
-        fond_image_path: /assets/img/quest2-slide-5.jpg
+        fond_image_path: /assets/img/mail2-slide-1.jpg
+        fond_color:
+    - type: scoring
+      nom_machine: asso-preferee
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: false
+        label: 'Parmi vos associations préférées, quelle place tient Elevages sans frontières ?'
+        placeholder:
+        requis: true
+        message_erreur: Faites votre choix
+        controle:
+        fond_image_path: /assets/img/mail2-slide-4.jpg
+        fond_color:
+    - type: scoring
+      nom_machine: recommande-esf
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: false
+        label: Recommanderiez Elevages sans frontières à vos proches ?
+        placeholder:
+        requis: true
+        message_erreur: Veuillez faire un choix
+        controle:
+        fond_image_path: /assets/img/OSDT_FondSenegal1.jpg
         fond_color:
 panneau_informations_personnelles:
   fond_image_path:
