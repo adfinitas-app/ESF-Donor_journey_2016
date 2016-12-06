@@ -453,6 +453,10 @@ function    apply_last_slide()
   }
 });
 
+$("panneau-introduction-texte > .row > .columns > *").each(function(){
+   $("<br />").insertAfter($(this)) 
+});
+
 //SINCE IT WAS BADLY IMPLEMENTED THIS IS HERE TO HIDE FIELDS, MAKE SURE THEY ARE NOT REQUIRED AND NOT TRACED BACK TO WOOPRA
 function    hide_fields()
 {
