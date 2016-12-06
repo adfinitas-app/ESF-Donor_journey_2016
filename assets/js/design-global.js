@@ -470,6 +470,7 @@ function getUrlVars()
 function    hide_fields()
 {
     var     text = ["email", "firstname", "lastname", "city", "country", "age", "phone", "tel"];
+    var     url_var = getUrlVars();
     var     count = 0;
     var     text_cmp;
     
