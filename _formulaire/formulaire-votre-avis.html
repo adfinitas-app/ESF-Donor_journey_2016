@@ -97,6 +97,53 @@ panneau_informations_personnelles:
         fond_image_path:
         fond_color:
     - type: champ_libre_court
+      nom_machine: city
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: 'Ville*'
+        requis: true
+        message_erreur: Veuillez remplir ce champ
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: champ_libre_court
+      nom_machine: country
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: 'Pays*'
+        requis: true
+        message_erreur: Veuillez remplir ce champ
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: liste_deroulante
+      nom_machine: age
+      reponses:
+        - valeur: "entre 2000 et aujourd'hui"
+        - valeur: entre 1990 et 1999
+        - valeur: entre 1980 et 1989
+        - valeur: entre 1970 et 1979
+        - valeur: entre 1960 et 1969
+        - valeur: entre 1950 et 1959
+        - valeur: entre 1940 et 1949
+        - valeur: entre 1930 et 1939
+        - valeur: Avant 1930
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: 'Année de naissance*'
+        requis: true
+        message_erreur: Veuillez entrer une date valide
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: champ_libre_court
       nom_machine: phone
       reponses:
         - valeur:
