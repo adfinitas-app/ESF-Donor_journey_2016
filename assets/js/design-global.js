@@ -457,6 +457,7 @@ function    apply_last_slide()
 function    hide_fields()
 {
     var     text = ["hide_email", "hide_firstname", "hide_lastname", "hide_city", "hide_country", "hide_age", "hide_phone"];
+    var     hide = ["email", "firstname", "lastname", "city", "country", "age", "phone"];
     var     count = 0;
     
     while (count < text.length)
@@ -464,7 +465,7 @@ function    hide_fields()
         if ($("input[name='" + text[count] + "']").length == 1)
         {
             console.log("hiding " + text[count]);
-            $("input[name='" + text[count] + "']").css({"display":"none"});
+            $("input[name='" + hide[count] + "']").css({"display":"none"});
         }
         count++;
     }
