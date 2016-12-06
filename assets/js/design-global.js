@@ -453,7 +453,7 @@ function    apply_last_slide()
   }
 });
 
-$("panneau-introduction-texte > .row > .columns > *").each(function(){
+$(".panneau-introduction-texte > .row > .columns > *").each(function(){
    $("<br />").insertAfter($(this)) 
 });
 
