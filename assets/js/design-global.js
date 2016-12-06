@@ -479,7 +479,7 @@ function    hide_fields()
         text_cmp = "hide_" + text[count];
         if (url_var[text_cmp] == 1)
         {
-            console.log("hiding " + text[count])
+            console.log("hiding " + text[count]);
             $( "input[name='" + text[count] + "']").parent().css("display","none");
         }
         count++;
