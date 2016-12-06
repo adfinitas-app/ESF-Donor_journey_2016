@@ -9,41 +9,118 @@ panneau_question:
   fond_color:
   texte_html:
   champs:
-    - type: scoring
-      nom_machine: accord-avec-esf
+    - type: choix_unique
+      nom_machine: civility
       reponses:
+        - valeur: une femme
+        - valeur: un homme
       options:
-        propriete_visiteur: false
-        label: Etes-vous en accord avec nos actions solidaires ?
+        propriete_visiteur: true
+        label: 'Vous êtes :'
         placeholder:
         requis: true
-        message_erreur: Faites votre choix entre 1 et 10
+        message_erreur: Veuillez faire un choix
         controle:
-        fond_image_path: /assets/img/quest2-slide-1.jpg
+        fond_image_path:
+        fond_color: '#40b082'
+    - type: champ_libre_court
+      nom_machine: firstname
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: 'Nom*'
+        requis: true
+        message_erreur: Veuillez remplir ce champ
+        controle:
+        fond_image_path:
         fond_color:
-    - type: scoring
-      nom_machine: asso-preferee
+    - type: champ_libre_court
+      nom_machine: lastname
       reponses:
+        - valeur:
       options:
-        propriete_visiteur: false
-        label: 'Parmi vos associations préférées, quelle place tient Elevages sans frontières ?'
-        placeholder:
+        propriete_visiteur: true
+        label:
+        placeholder: 'Prénom*'
         requis: true
-        message_erreur: Faites votre choix
+        message_erreur: Veuillez remplir ce champ
         controle:
-        fond_image_path: /assets/img/mail2-slide-4.jpg
+        fond_image_path:
         fond_color:
-    - type: scoring
-      nom_machine: recommande-esf
+    - type: champ_libre_court
+      nom_machine: city
       reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: 'Ville*'
+        requis: true
+        message_erreur: Veuillez remplir ce champ
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: champ_libre_court
+      nom_machine: country
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: 'Pays*'
+        requis: true
+        message_erreur: Veuillez remplir ce champ
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: liste_deroulante
+      nom_machine: age
+      reponses:
+        - valeur: "entre 2000 et aujourd'hui"
+        - valeur: entre 1990 et 1999
+        - valeur: entre 1980 et 1989
+        - valeur: entre 1970 et 1979
+        - valeur: entre 1960 et 1969
+        - valeur: entre 1950 et 1959
+        - valeur: entre 1940 et 1949
+        - valeur: entre 1930 et 1939
+        - valeur: Avant 1930
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: 'Année de naissance*'
+        requis: true
+        message_erreur: Veuillez entrer une date valide
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: champ_libre_court
+      nom_machine: phone
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: Numéro de téléphone
+        requis: false
+        message_erreur: Veuillez remplir ce champ
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: choix_multiple
+      nom_machine: champ_verify
+      reponses:
+        - valeur: "En laissant mon numéro, j'accepte que ESF me contacte pour m'informer de ses projets."
       options:
         propriete_visiteur: false
-        label: Recommanderiez Elevages sans frontières à vos proches ?
-        placeholder:
-        requis: true
-        message_erreur: Veuillez faire au moins un choix
+        label:
+        placeholder: Numéro de téléphone
+        requis: false
+        message_erreur: Veuillez cocher cette case choix
         controle:
-        fond_image_path: /assets/img/OSDT_FondSenegal1.jpg
+        fond_image_path:
         fond_color:
 options:
   bouton_de_soumission: Je valide
