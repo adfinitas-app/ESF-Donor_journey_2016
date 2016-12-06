@@ -474,8 +474,10 @@ function    hide_fields()
         count++;
     }
     
-    if ($("input[name='hide_gender']").length == 1)
-        $(".container-all-radio").css({"display": "none"})
+    if ($("input[name='hide_gender']").length == 1) {
+        $(".container-all-radio").prev().css({"display": "none"})
+        $(".container-all-radio").css({"display": "none"});
+    }
 
 }
 
