@@ -456,7 +456,7 @@ function    apply_last_slide()
 //SINCE IT WAS BADLY IMPLEMENTED THIS IS HERE TO HIDE FIELDS, MAKE SURE THEY ARE NOT REQUIRED AND NOT TRACED BACK TO WOOPRA
 function    hide_fields()
 {
-    var     text = ["hide_email", "hide_firstname", "hide_lastname", "hide_city", "hide_country", "hide_age", "hide_phone", "hide_tel"];
+    var     text = ["hide_email", "hide_firstname", "hide_lastname", "hide_city", "hide_country", "hide_age", "hide_phone"];
     var     count = 0;
     
     while (count < text.length)
