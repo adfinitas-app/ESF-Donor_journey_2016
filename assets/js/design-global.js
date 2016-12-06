@@ -453,12 +453,31 @@ function    apply_last_slide()
   }
 });
 
-$(document).ready(function() {
-   if ($('#first_text').html() == "VOTRE AVIS NOUS INTÉRESSE")
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
+function    hide_fields()
+{
+    var     text = ["email", "firstname", "lastname"];
+    if ($('#first_text').html() == "VOTRE AVIS NOUS INTÉRESSE")
    {
        console.log("hide");
        $( "input[name='city']").parent().css("display","none");
        $( "input[name='country']").parent().css("display","none");
        $( "input[name='age']").parent().css("display","none");
    }
+}
+
+$(document).ready(function() {
+    hide_fields();
 });
