@@ -467,6 +467,7 @@ function getUrlVars()
 }
 
 //SINCE IT WAS BADLY IMPLEMENTED THIS IS HERE TO HIDE FIELDS, MAKE SURE THEY ARE NOT REQUIRED AND NOT TRACED BACK TO WOOPRA
+//SINCE IT WAS BADLY IMPLEMENTED THIS IS HERE TO HIDE FIELDS, MAKE SURE THEY ARE NOT REQUIRED AND NOT TRACED BACK TO WOOPRA
 function    hide_fields()
 {
     var     text = ["email", "firstname", "lastname", "city", "country", "age", "phone", "tel"];
@@ -477,10 +478,22 @@ function    hide_fields()
     while (count < text.length())
     {
         text_cmp = "hide_" + text[count];
-        if (text_cmp )
+        if (url_var[text_cmp] == 1)
+            $( "input[name='" + text[count] + "']").parent().css("display","none");
         count++;
     }
 
+}
+function    hide_fields()
+{
+    var     text = ["email", "firstname", "lastname", "city", "country", "age", "phone"];
+    if ($('#first_text').html() == "VOTRE AVIS NOUS INTÉRESSE")
+   {
+       console.log("hide");
+       $( "input[name='city']").parent().css("display","none");
+       $( "input[name='country']").parent().css("display","none");
+       $( "input[name='age']").parent().css("display","none");
+   }
 }
 
 $(document).ready(function() {
