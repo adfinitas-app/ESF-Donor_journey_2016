@@ -471,9 +471,11 @@ function    hide_fields()
             $("select[name='" + hide[count] + "']").css({"display":"none"});
             console.log("input[name='" + hide[count] + "']");
         }
-        
         count++;
     }
+    
+    if ($("input[name='hide_gender']").length == 1)
+        $(".container-all-radio").css({"display": "none"})
 
 }
 
